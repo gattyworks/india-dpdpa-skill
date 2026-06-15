@@ -70,8 +70,10 @@ Verdict: <Materially compliant | Gaps found | Not assessed>
 - **Evidence:** `path/to/file:line`, or "not found".
 - **Fix:** the concrete change + the template/reference that closes it.
 
-Close with the risk-summary counts, gap details, top 3 risks, what to confirm with counsel/ops
-(things not visible in code), and the one-line disclaimer below.
+Write for a non-lawyer. Each gap's detail must state, in plain language: **what it is**, the **fix**,
+and **what happens if unfixed** (the penalty exposure and the real-world risk). Close with the
+risk-summary counts, those gap details, the top 3 risks, what to confirm with counsel/ops (things
+not visible in code), and the one-line disclaimer below.
 
 ## Reference map
 

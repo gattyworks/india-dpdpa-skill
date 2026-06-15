@@ -11,6 +11,17 @@ The **canonical issue catalog** is the dimension/check IDs in
 [audit-checklist.md](audit-checklist.md). A report references those IDs (A1 ... J5) and never
 creates new ones.
 
+## Write so a non-lawyer can act
+
+Legal and technical terms are allowed, but every gap must make four things obvious to someone who
+is not a lawyer:
+
+- **How serious it is** - the severity word (Critical / High / Medium / Low).
+- **What is wrong** - one plain sentence, not jargon alone.
+- **How to fix it** - a concrete step.
+- **What happens if it is not fixed** - the real consequence: the penalty exposure, plus the harm
+  to people or the enforcement risk. This line is mandatory for every gap.
+
 ## Report structure (fixed order)
 
 1. **Header** - `DPDPA Audit - <system> (DPDP Act 2023 + Rules 2025, sources verified <date>)`.
@@ -19,7 +30,7 @@ creates new ones.
 3. **Risk summary** - counts by severity and by status.
 4. **Findings** - the table: every applicable catalog ID, ordered by severity (Critical first),
    then by dimension.
-5. **Gap details** - for each Gap or Needs-review row, a short block: what was found and the fix.
+5. **Gap details** - for each Gap or Needs-review row, a plain-language block: what it is, the fix, and what happens if it is not fixed.
 6. **Top risks** - the 3 highest-exposure items in plain language.
 7. **Confirm with counsel / ops** - items not decidable from code (designations, contracts, process).
 8. **Disclaimer** - the one-line "engineering aid, not legal advice" note.
@@ -30,12 +41,12 @@ Severity reflects penalty exposure (see [penalties-schedule.md](penalties-schedu
 Each catalog ID has a default severity; raise it when the data is sensitive or volumes are high,
 and state why.
 
-| Level | Meaning | Typical penalty band | Example IDs |
+| Level | What it means in plain terms | Penalty exposure | Example IDs |
 |---|---|---|---|
-| **Critical** | Highest exposure or irreversible harm | up to ₹250 cr (security), ₹200 cr (children) | C1, E1, E2, E3, E4 |
-| **High** | Major obligation, or a core right denied | up to ₹200 cr (breach), ₹150 cr (SDF) | D2, D3, B3, B5, C4, C6, F1, F2, F3, G1, J4 |
-| **Medium** | Governance, documentation, or scoped duty | residuary, up to ₹50 cr | A2, A3, B1, C3, H1, H2, H3, I1, J1, J5 |
-| **Low** | Minor or supporting control | low / procedural | F4, I4, J2 |
+| **Critical** | Fix first. Largest fines, or direct harm to people. | up to ₹250 cr (security), ₹200 cr (children) | C1, E1, E2, E3, E4 |
+| **High** | A major legal duty is unmet, or a person's right is blocked. | up to ₹200 cr (breach), ₹150 cr (SDF) | D2, D3, B3, B5, C4, C6, F1, F2, F3, G1, J4 |
+| **Medium** | Required but lower-stakes: governance or documentation. | residuary, up to ₹50 cr | A2, A3, B1, C3, H1, H2, H3, I1, J1, J5 |
+| **Low** | Minor or supporting item; tidy up. | low / procedural | F4, I4, J2 |
 
 ## Status values
 
@@ -60,8 +71,8 @@ is genuinely empty (for example, Fix on a Compliant row).
 | **Evidence** | `path/to/file:line`, or `not found` when an expected control is absent. |
 | **Fix** | The concrete remediation + the template/reference that specifies it. |
 
-Gap and Needs-review rows expand in **Gap details** with a one-line *Finding* (what was observed)
-and the *Remediation*.
+Gap and Needs-review rows expand in **Gap details** with three plain-language lines: **What it is**,
+**Fix**, and **If unfixed** (the consequence).
 
 ## Markdown template
 
@@ -86,7 +97,10 @@ DPDP Act 2023 + Rules 2025 - sources verified <date>
 | C1 | Security safeguards (8(5), Rule 6) | ⚠️ Gap | Critical | path:line | ... |
 
 ### Gap details
-- **C1 Security safeguards:** <finding>. Fix: <remediation> (see <reference>).
+- **C1 - Security safeguards (Critical):**
+  - What it is: <plain English; what is wrong and why it matters>
+  - Fix: <concrete step> (see <reference>)
+  - If unfixed: <plain-English consequence, e.g. a breach here can mean a penalty of up to ₹250 crore plus harm to users>
 
 ### Top risks
 1. ...
@@ -135,9 +149,22 @@ A fictional app, to show the shape. The system and findings are invented.
 > | G1 | India-based DPO (10(2)) | ➖ N/A | - | - | Below plausible SDF threshold; revisit if the user base grows |
 >
 > ### Gap details
-> - **C1 Security safeguards:** API connects to Postgres without TLS and an API key is committed in `.env.example`. Fix: enforce TLS in transit, rotate and vault the key, enable at-rest encryption.
-> - **E3 No behavioural tracking of children:** Google Analytics and the ad pixel load for every visitor in `app/layout.tsx`. Fix: suppress trackers for users who are or may be under 18; never serve targeted ads to children.
-> - **J4 Vendor / DPA coverage:** the email and analytics vendors process personal data with no Data Processing Agreement on file. Fix: execute DPAs before continuing to share data.
+> - **C1 - Security safeguards (Critical):**
+>   - What it is: the app talks to its database without encryption and an API key is committed in `.env.example`, so personal data is exposed if anyone gets in.
+>   - Fix: enforce TLS in transit, move the key to a secrets vault, and turn on encryption at rest.
+>   - If unfixed: a breach traced to weak safeguards can draw a penalty of up to ₹250 crore (the Act's highest band), plus leaked customer data and reputational damage.
+> - **E3 - No tracking of children (Critical):**
+>   - What it is: analytics and the ad pixel load for every visitor in `app/layout.tsx`, including anyone under 18, which the law forbids.
+>   - Fix: turn trackers and targeted ads off for users who are or may be under 18.
+>   - If unfixed: children's-data breaches carry penalties up to ₹200 crore and are an enforcement priority, and they put minors at real risk.
+> - **F1 - Right to access (High):**
+>   - What it is: users have no way to see or download the personal data you hold about them.
+>   - Fix: add a "download my data" endpoint (see [dsar-request](templates/dsar-request.md)).
+>   - If unfixed: you are denying a statutory right; a complaint to the Data Protection Board can force compliance and impose a fine.
+> - **J4 - Vendor / DPA coverage (High):**
+>   - What it is: you share personal data with email and analytics vendors with no Data Processing Agreement in place.
+>   - Fix: sign a DPA with each vendor before sharing more data.
+>   - If unfixed: you stay liable for what those vendors do with the data, and using an uncontracted processor is itself a violation.
 >
 > ### Top risks
 > 1. **Security safeguards (C1)** - the ₹250 crore band; plaintext DB link and a committed secret.

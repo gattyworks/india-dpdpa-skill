@@ -23,10 +23,9 @@ A self-contained **skill** that audits an application, codebase, product, or dat
 checklist, codebase detection patterns, a GDPR vs DPDP map, and ready-reference policy templates -
 so the agent cites real sections and points every gap at the fix.
 
-**DPDP Act or "DPDPA"?** Same law. Its short title is the **Digital Personal Data Protection Act,
-2023** (the "DPDP Act"); appending the "A" for "Act" gives the widely used acronym **DPDPA**, which
-is why this project is named `india-dpdpa-skill`. The legal references keep the precise statutory
-forms ("DPDP Act", "DPDP Rules"). Background: [Digital Personal Data Protection Act, 2023 (Wikipedia)](https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023).
+**Naming.** "DPDP Act" and "DPDPA" are the same law: the **Digital Personal Data Protection Act, 2023**.
+This project uses DPDPA; the legal references use the official short forms "DPDP Act" and "DPDP Rules".
+Reference: [the Act on Wikipedia](https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023).
 
 ## What it checks
 
@@ -63,7 +62,7 @@ Every audit returns the **same structure, fields, severity levels, and issue IDs
 consistent and comparable from one run to the next. The full output contract and a complete worked
 example live in [`report-format.md`](plugins/dpdpa-india/skills/dpdpa-india/references/report-format.md).
 
-- **Severity levels:** `Critical` (the ₹250 crore security band, or children), `High`, `Medium`, `Low`.
+- **Severity:** `Critical` (fix first; biggest fines or harm to people), `High`, `Medium`, `Low`.
 - **Statuses:** ✅ Compliant, ⚠️ Gap, ❓ Needs review, ➖ N/A.
 - **Finding fields:** ID, Requirement (section/rule cite), Status, Severity, Evidence (`file:line`), Fix.
 - **Issue IDs:** every finding maps to a fixed catalog ID (`A1` ... `J5`) from the checklist, so two audits of the same system line up exactly.
@@ -83,8 +82,14 @@ Scope: Fiduciary | Children: unknown | SDF: no | Cross-border: yes
 | G1 | India-based DPO (10(2))            | ➖ N/A       | -        | -                 | Below SDF threshold; revisit at scale |
 ```
 
-The report then lists a risk summary, per-gap details, the top 3 risks, what to confirm with
-counsel or ops, and the disclaimer.
+Each gap is explained in plain language so a non-lawyer can act on it - what it is, the fix, and what happens if you do not fix it:
+
+> **C1 - Security safeguards (Critical)**
+> - What it is: the app talks to its database without encryption and a secret key is committed to the repo.
+> - Fix: enforce TLS, move the key to a secrets vault, and encrypt data at rest.
+> - If unfixed: a breach here can draw a penalty of up to ₹250 crore (the Act's highest band), plus leaked customer data and reputational damage.
+
+The report also includes a risk summary, the top 3 risks, what to confirm with counsel or ops, and the disclaimer.
 
 ## Install (Claude Code)
 
