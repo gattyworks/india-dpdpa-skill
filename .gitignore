@@ -1,0 +1,19 @@
+# This repo is a skill/plugin bundle — it ships NO secrets and no build artifacts.
+
+# Source downloads + local asset-build scratch (regenerate via assets/ generator)
+sources/
+
+# Node (only used transiently to render assets)
+node_modules/
+package-lock.json
+
+# Local Claude settings
+.claude/settings.local.json
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.venv/
+__pycache__/
+*.pyc
