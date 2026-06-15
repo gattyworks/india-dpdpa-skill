@@ -45,7 +45,7 @@ Source: third-party knowledge hub for India's DPDP Act 2023. Captured 2026-06-15
 - https://dpdpa.com/tools/legitimate-interest-tool/ - legitimate-interest assessment tool.
 
 ## Site policies (the site's own, for reference)
-- https://dpdpa.com/privacypolicy.html · https://dpdpa.com/cookiepolicy.html · https://dpdpa.com/disclaimer.html
+- https://dpdpa.com/privacypolicy.html, https://dpdpa.com/cookiepolicy.html, https://dpdpa.com/disclaimer.html
 
-## Key Act→Rule mapping (from mappingofdpdpatodpdprules.html)
-- Notice: S.5 → Rule 3 · Consent: S.6 → Rule 4 (Consent Manager) · Breach intimation: S.8(6) → Rule 7 · Retention/erasure: S.8(7-8) → Rule 8 · SDF/DPIA/audit: S.10 → Rule 13 · Rights & grievance: S.11-13 → Rule 14 · Cross-border: S.16 → Rule 15.
+## Key Act->Rule mapping (from mappingofdpdpatodpdprules.html)
+- Notice: S.5 -> Rule 3, Consent: S.6 -> Rule 4 (Consent Manager), Breach intimation: S.8(6) -> Rule 7, Retention/erasure: S.8(7-8) -> Rule 8, SDF/DPIA/audit: S.10 -> Rule 13, Rights & grievance: S.11-13 -> Rule 14, Cross-border: S.16 -> Rule 15.

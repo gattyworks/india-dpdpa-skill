@@ -29,7 +29,7 @@ Notice must be given at or before seeking consent, in **clear and plain language
 - Mechanisms to (i) **withdraw consent**, (ii) exercise DPDPA rights, and (iii) **complain to the Data Protection Board**.
 - A link/means to access the Consent Manager / data fiduciary platform.
 
-Consent standard (Act §6): **free, specific, informed, unconditional, unambiguous, with clear affirmative action**, limited to the specified purpose. Data principal may access the consent request in **English or any of the 22 languages in the Eighth Schedule** of the Constitution. Withdrawal must be as easy as giving consent.
+Consent standard (Act 6): **free, specific, informed, unconditional, unambiguous, with clear affirmative action**, limited to the specified purpose. Data principal may access the consent request in **English or any of the 22 languages in the Eighth Schedule** of the Constitution. Withdrawal must be as easy as giving consent.
 
 ## 2. Consent Manager - registration & obligations (Rule 4 / First Schedule)
 
@@ -77,7 +77,7 @@ Apply to fiduciary **and** any processor (via contract). Enumerated measures:
 
 ## 6. Children's data - verifiable consent & age verification (Rule ~10 / Fourth Schedule)
 
-- Child = **under 18**. Processing a child's (or a person-with-disability's) data requires **verifiable consent of the parent/lawful guardian** (Act §9).
+- Child = **under 18**. Processing a child's (or a person-with-disability's) data requires **verifiable consent of the parent/lawful guardian** (Act 9).
 - Verifiable consent requires the fiduciary to: (i) obtain parent/guardian consent; (ii) **confirm the consenter is an identifiable adult** using reliable identity & age details - e.g. government-issued ID held by the fiduciary, voluntarily provided, or via a **virtual token issued by an authorised entity / DigiLocker-type provider**; (iii) verify the parent-child relationship.
 - **Prohibitions:** no processing detrimental to a child's well-being; **no behavioural tracking / no targeted advertising directed at children.**
 - **Exemptions:** situation-specific carve-outs predominantly for **healthcare and educational institutions** processing children's data in a verifiably safe manner; government may extend exemptions to further classes (yet to be notified).
@@ -91,7 +91,7 @@ Government designates SDFs by volume/sensitivity of data, risk to principals, so
 - **Cross-border restriction:** may be barred from transferring **specified categories of personal data and related traffic data** outside India (de facto localisation; categories to be notified). Reporting indicates SDFs are prohibited from transferring **traffic data** out of India.
 - Appoint an **India-based representative** (the India DPO may fill this role).
 
-## 8. Cross-border transfer rules (Rule ~14 / Act §16)
+## 8. Cross-border transfer rules (Rule ~14 / Act 16)
 
 - **Permissive default:** transfers allowed to **any country except those on a government restricted-list** (no negative-list orders passed as of last verification - verify).
 - Transfers must meet conditions set by the government via **general or special order** (none yet issued).

@@ -9,7 +9,7 @@ It is an engineering aid, not legal advice - see [Legal and provenance](legal-an
 ```
 dpdpa-india/                                  # repo root
 ├── .claude-plugin/
-│   └── marketplace.json                     # marketplace manifest → lists the plugin, points at ./plugins/dpdpa-india
+│   └── marketplace.json                     # marketplace manifest -> lists the plugin, points at ./plugins/dpdpa-india
 ├── plugins/
 │   └── dpdpa-india/                          # the plugin
 │       ├── .claude-plugin/
@@ -27,15 +27,15 @@ dpdpa-india/                                  # repo root
 │           └── dpdpa-india/                   # the portable skill (self-contained)
 │               ├── SKILL.md                  # entry point: when-to-use, 4-pass method, output format, reference map
 │               └── references/               # read on demand (progressive disclosure)
-│                   ├── act-2023.md           # Act index + definitions (§2)
+│                   ├── act-2023.md           # Act index + definitions (2)
 │                   ├── audit-checklist.md    # section-by-section audit engine (core)
 │                   ├── code-patterns.md      # what to grep for in a codebase
-│                   ├── consent-notice.md     # consent & notice (§4-7)
-│                   ├── fiduciary-obligations.md # fiduciary duties (§8-10, 16)
-│                   ├── data-principal-rights.md # rights (§11-15)
-│                   ├── penalties-schedule.md  # the Schedule (max ₹250 crore, §8(5))
+│                   ├── consent-notice.md     # consent & notice (4-7)
+│                   ├── fiduciary-obligations.md # fiduciary duties (8-10, 16)
+│                   ├── data-principal-rights.md # rights (11-15)
+│                   ├── penalties-schedule.md  # the Schedule (max ₹250 crore, 8(5))
 │                   ├── rules-2025.md          # DPDP Rules 2025 operational detail
-│                   ├── gdpr-comparison.md     # GDPR ↔ DPDP gap mapping
+│                   ├── gdpr-comparison.md     # GDPR vs DPDP gap mapping
 │                   ├── legal-context.md       # Puttaswamy / IT Act / CERT-In context
 │                   ├── disclaimer.md          # "not legal advice" text
 │                   ├── sources/               # archived source artifacts (e.g. lw-dpdp-vs-gdpr.pdf/.txt)
@@ -91,9 +91,9 @@ reads .claude-plugin/marketplace.json
         ▼
 reads plugins/dpdpa-india/.claude-plugin/plugin.json   ← declares the plugin
         │
-        ├── commands/  → /dpdpa-audit, /dpdpa-update-check   (auto-discovered)
+        ├── commands/  -> /dpdpa-audit, /dpdpa-update-check   (auto-discovered)
         ├── skills/dpdpa-india/SKILL.md                     (auto-discovered; loaded on trigger)
-        └── scripts/   → resolved at run time via ${CLAUDE_PLUGIN_ROOT}
+        └── scripts/   -> resolved at run time via ${CLAUDE_PLUGIN_ROOT}
 ```
 
 1. **`/plugin marketplace add gattyworks/india-dpdpa-skill`** points Claude Code at the repo. It reads `.claude-plugin/marketplace.json`, which lists `dpdpa-india` with `source: "./plugins/dpdpa-india"`.
@@ -131,7 +131,7 @@ flowchart TD
         PJ["plugins/dpdpa-india/.claude-plugin/plugin.json"]
     end
     subgraph L3["Layer 3 - Behavior"]
-        CMD["commands/<br/>/dpdpa-audit · /dpdpa-update-check"]
+        CMD["commands/<br/>/dpdpa-audit, /dpdpa-update-check"]
         SK["skills/dpdpa-india/SKILL.md<br/>(entry point, small)"]
         REF["references/*.md + templates/<br/>(read on demand)"]
         SCR["scripts/check-updates.*<br/>+ sources.lock.json"]

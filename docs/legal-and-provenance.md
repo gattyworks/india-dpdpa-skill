@@ -15,8 +15,8 @@ Every reference file is built from a named upstream source. The two PDFs are the
 | [`fiduciary-obligations.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/fiduciary-obligations.md) | MeitY DPDP Act 2023 gazette PDF | Government PDF |
 | [`data-principal-rights.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/data-principal-rights.md) | MeitY DPDP Act 2023 gazette PDF | Government PDF |
 | [`penalties-schedule.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/penalties-schedule.md) | MeitY DPDP Act 2023 gazette PDF | Government PDF |
-| [`rules-2025.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/rules-2025.md) | dpdpa.com Rules landing + Section→Rule mapping; cross-verified against dpdpa.in | Third-party HTML hubs |
-| [`audit-checklist.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/audit-checklist.md) | dpdpa.com Section→Rule mapping | Third-party HTML hub |
+| [`rules-2025.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/rules-2025.md) | dpdpa.com Rules landing + Section->Rule mapping; cross-verified against dpdpa.in | Third-party HTML hubs |
+| [`audit-checklist.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/audit-checklist.md) | dpdpa.com Section->Rule mapping | Third-party HTML hub |
 | [`gdpr-comparison.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/gdpr-comparison.md) | Latham & Watkins DPDP-vs-GDPR comparison PDF | Third-party PDF |
 | [`templates/_site-map.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/templates/_site-map.md) | dpdpa.com home / Act section index | Third-party HTML hub |
 | [`templates/*.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/templates/) | dpdpa.com templates & policies index (12 templates) | Third-party HTML hub (paraphrased) |

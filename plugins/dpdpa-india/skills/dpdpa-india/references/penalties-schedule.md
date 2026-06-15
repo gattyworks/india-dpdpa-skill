@@ -1,9 +1,9 @@
 _Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
 
-# Penalties & Adjudication (§§33-34 + The Schedule)
+# Penalties & Adjudication (33-34 + The Schedule)
 
 ## Maximum penalty
-**Up to ₹250 crore (two hundred and fifty crore rupees)** - for breach of the obligation to take reasonable security safeguards to prevent a personal data breach (§8(5)). This is the single highest cap in the Act.
+**Up to ₹250 crore (two hundred and fifty crore rupees)** - for breach of the obligation to take reasonable security safeguards to prevent a personal data breach (8(5)). This is the single highest cap in the Act.
 
 ## The Schedule [See section 33(1)] - penalty table (verbatim)
 
@@ -21,23 +21,23 @@ _Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
 
 | Breach | Section | Cap |
 |---|---|---|
-| Reasonable security safeguards (data breach prevention) | §8(5) | **250 cr** |
-| Failure to notify breach (Board / affected Principals) | §8(6) | **200 cr** |
-| Children's-data obligations | §9 | **200 cr** |
-| SDF obligations | §10 | **150 cr** |
+| Reasonable security safeguards (data breach prevention) | 8(5) | **250 cr** |
+| Failure to notify breach (Board / affected Principals) | 8(6) | **200 cr** |
+| Children's-data obligations | 9 | **200 cr** |
+| SDF obligations | 10 | **150 cr** |
 | Residuary (any other provision/rule) | - | **50 cr** |
-| Data Principal duties | §15 | **₹10,000** |
-| Breach of voluntary undertaking | §32 | = cap of the underlying breach |
+| Data Principal duties | 15 | **₹10,000** |
+| Breach of voluntary undertaking | 32 | = cap of the underlying breach |
 
-## §33 - Penalties (adjudication by the Board)
-- **§33(1):** If, **on conclusion of an inquiry**, the Board determines a breach is **significant**, it may - after giving the person an **opportunity of being heard** - impose the monetary penalty specified in the Schedule.
-- **§33(2):** In setting the amount, the Board considers: **(a)** nature, gravity and duration of the breach; **(b)** type and nature of personal data affected; **(c)** repetitive nature; **(d)** whether the person realised a gain or avoided a loss; **(e)** mitigation actions and their timeliness/effectiveness; **(f)** proportionality and deterrent effect; **(g)** likely impact of the penalty on the person.
+## 33 - Penalties (adjudication by the Board)
+- **33(1):** If, **on conclusion of an inquiry**, the Board determines a breach is **significant**, it may - after giving the person an **opportunity of being heard** - impose the monetary penalty specified in the Schedule.
+- **33(2):** In setting the amount, the Board considers: **(a)** nature, gravity and duration of the breach; **(b)** type and nature of personal data affected; **(c)** repetitive nature; **(d)** whether the person realised a gain or avoided a loss; **(e)** mitigation actions and their timeliness/effectiveness; **(f)** proportionality and deterrent effect; **(g)** likely impact of the penalty on the person.
 
-## §34 - Crediting sums to Consolidated Fund of India
+## 34 - Crediting sums to Consolidated Fund of India
 > All sums realised by way of penalties imposed by the Board under this Act shall be **credited to the Consolidated Fund of India**.
 
-## Related: §42 - Power to amend Schedule (cap on increases)
-The Central Government may amend the Schedule by notification, but **no amendment may increase any penalty to more than twice** the amount originally enacted (§42(1)). So the §8(5) cap could rise to at most ₹500 crore via amendment (verify any future notification).
+## Related: 42 - Power to amend Schedule (cap on increases)
+The Central Government may amend the Schedule by notification, but **no amendment may increase any penalty to more than twice** the amount originally enacted (42(1)). So the 8(5) cap could rise to at most ₹500 crore via amendment (verify any future notification).
 
 ## Note on penalty caps
-All figures are **maximums** ("may extend to") - the Board sets the actual amount within the cap using the §33(2) factors. Penalties under this Act are **administrative/monetary** imposed by the Board; appeals go to the Appellate Tribunal (TDSAT) under §29 within 60 days.
+All figures are **maximums** ("may extend to") - the Board sets the actual amount within the cap using the 33(2) factors. Penalties under this Act are **administrative/monetary** imposed by the Board; appeals go to the Appellate Tribunal (TDSAT) under 29 within 60 days.

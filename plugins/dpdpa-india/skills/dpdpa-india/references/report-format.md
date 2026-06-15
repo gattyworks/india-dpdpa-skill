@@ -54,7 +54,7 @@ is genuinely empty (for example, Fix on a Compliant row).
 | Field | What it holds |
 |---|---|
 | **ID** | The catalog ID from audit-checklist.md (A1 ... J5). Fixed; never invented. |
-| **Requirement** | Short label + the DPDP section/rule cite, e.g. "Security safeguards (§8(5), Rule 6)". |
+| **Requirement** | Short label + the DPDP section/rule cite, e.g. "Security safeguards (8(5), Rule 6)". |
 | **Status** | One of the four statuses above. |
 | **Severity** | One of the four levels above (default per ID; raised with a stated reason). |
 | **Evidence** | `path/to/file:line`, or `not found` when an expected control is absent. |
@@ -83,7 +83,7 @@ DPDP Act 2023 + Rules 2025 - sources verified <date>
 ### Findings
 | ID | Requirement (cite) | Status | Severity | Evidence | Fix |
 |----|--------------------|--------|----------|----------|-----|
-| C1 | Security safeguards (§8(5), Rule 6) | ⚠️ Gap | Critical | path:line | ... |
+| C1 | Security safeguards (8(5), Rule 6) | ⚠️ Gap | Critical | path:line | ... |
 
 ### Gap details
 - **C1 Security safeguards:** <finding>. Fix: <remediation> (see <reference>).
@@ -118,21 +118,21 @@ A fictional app, to show the shape. The system and findings are invented.
 > ### Findings
 > | ID | Requirement (cite) | Status | Severity | Evidence | Fix |
 > |----|--------------------|--------|----------|----------|-----|
-> | C1 | Security safeguards (§8(5), Rule 6) | ⚠️ Gap | Critical | `api/db.ts:14`, `.env.example:3` | Enforce TLS, move secrets to a vault, encrypt at rest (code-patterns 3) |
-> | E1 | Age detection (§9) | ❓ Needs review | Critical | `not found` | Confirm if under-18 users are in the audience; add an age gate |
-> | E3 | No behavioural tracking of children (§9(3)) | ⚠️ Gap | Critical | `app/layout.tsx:22` | Gate analytics/ad SDKs off for under-18; no targeted ads to children |
-> | D3 | Notify Board within 72h (§8(6), Rule 7) | ⚠️ Gap | High | `not found` | Add breach detection + Board/principal notification ([data-breach-response](templates/data-breach-response.md)) |
-> | B3 | Consent quality (§6(1)) | ⚠️ Gap | High | `components/Signup.tsx:40` | Remove pre-ticked box; explicit, itemised consent |
-> | B5 | Withdrawal as easy as giving (§6(4)) | ⚠️ Gap | High | `not found` | Add a visible withdraw-consent control; stop processing on withdrawal |
-> | C4 | Erasure on withdrawal/purpose-end (§8(7)) | ⚠️ Gap | High | `not found` | Delete on request; propagate to processors |
-> | F1 | Right to access (§11) | ⚠️ Gap | High | `not found` | Add a data-export endpoint ([dsar-request](templates/dsar-request.md)) |
-> | C6 | Grievance mechanism (§8(10), §13) | ⚠️ Gap | High | `not found` | Add a grievance route + response SLA ([grievance-redressal](templates/grievance-redressal.md)) |
-> | J4 | Vendor / DPA coverage (§8(2)) | ⚠️ Gap | High | `not found` | Sign DPAs with the email + analytics vendors ([data-processing-agreement](templates/data-processing-agreement.md)) |
-> | H1 | Restricted-country transfer (§16) | ❓ Needs review | High | `infra/deploy.yml:8` | Map data egress (us-east-1) against the notified restriction list |
-> | J1 | Privacy notice published (§5) | ⚠️ Gap | Medium | `not found` (no `/privacy` route) | Publish a DPDP notice ([privacy-policy](templates/privacy-policy.md)) |
-> | I2 | Automated erasure (§8(7)) | ⚠️ Gap | Medium | `not found` | Add a retention TTL / purge job ([data-retention-policy](templates/data-retention-policy.md)) |
-> | A1 | Lawful basis (§4) | ✅ Compliant | High | `server/auth.ts:30` | - |
-> | G1 | India-based DPO (§10(2)) | ➖ N/A | - | - | Below plausible SDF threshold; revisit if the user base grows |
+> | C1 | Security safeguards (8(5), Rule 6) | ⚠️ Gap | Critical | `api/db.ts:14`, `.env.example:3` | Enforce TLS, move secrets to a vault, encrypt at rest (code-patterns 3) |
+> | E1 | Age detection (9) | ❓ Needs review | Critical | `not found` | Confirm if under-18 users are in the audience; add an age gate |
+> | E3 | No behavioural tracking of children (9(3)) | ⚠️ Gap | Critical | `app/layout.tsx:22` | Gate analytics/ad SDKs off for under-18; no targeted ads to children |
+> | D3 | Notify Board within 72h (8(6), Rule 7) | ⚠️ Gap | High | `not found` | Add breach detection + Board/principal notification ([data-breach-response](templates/data-breach-response.md)) |
+> | B3 | Consent quality (6(1)) | ⚠️ Gap | High | `components/Signup.tsx:40` | Remove pre-ticked box; explicit, itemised consent |
+> | B5 | Withdrawal as easy as giving (6(4)) | ⚠️ Gap | High | `not found` | Add a visible withdraw-consent control; stop processing on withdrawal |
+> | C4 | Erasure on withdrawal/purpose-end (8(7)) | ⚠️ Gap | High | `not found` | Delete on request; propagate to processors |
+> | F1 | Right to access (11) | ⚠️ Gap | High | `not found` | Add a data-export endpoint ([dsar-request](templates/dsar-request.md)) |
+> | C6 | Grievance mechanism (8(10), 13) | ⚠️ Gap | High | `not found` | Add a grievance route + response SLA ([grievance-redressal](templates/grievance-redressal.md)) |
+> | J4 | Vendor / DPA coverage (8(2)) | ⚠️ Gap | High | `not found` | Sign DPAs with the email + analytics vendors ([data-processing-agreement](templates/data-processing-agreement.md)) |
+> | H1 | Restricted-country transfer (16) | ❓ Needs review | High | `infra/deploy.yml:8` | Map data egress (us-east-1) against the notified restriction list |
+> | J1 | Privacy notice published (5) | ⚠️ Gap | Medium | `not found` (no `/privacy` route) | Publish a DPDP notice ([privacy-policy](templates/privacy-policy.md)) |
+> | I2 | Automated erasure (8(7)) | ⚠️ Gap | Medium | `not found` | Add a retention TTL / purge job ([data-retention-policy](templates/data-retention-policy.md)) |
+> | A1 | Lawful basis (4) | ✅ Compliant | High | `server/auth.ts:30` | - |
+> | G1 | India-based DPO (10(2)) | ➖ N/A | - | - | Below plausible SDF threshold; revisit if the user base grows |
 >
 > ### Gap details
 > - **C1 Security safeguards:** API connects to Postgres without TLS and an API key is committed in `.env.example`. Fix: enforce TLS in transit, rotate and vault the key, enable at-rest encryption.
@@ -146,7 +146,7 @@ A fictional app, to show the shape. The system and findings are invented.
 >
 > ### Confirm with counsel / ops
 > - Whether under-18 users are in the audience (drives all of dimension E).
-> - SDF designation status and the current notified restricted-country list (§16).
+> - SDF designation status and the current notified restricted-country list (16).
 > - Whether signed DPAs exist outside the repo.
 >
 > > Engineering aid, not legal advice. Run your own audit; have a qualified Indian data-protection practitioner review.

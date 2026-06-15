@@ -18,14 +18,14 @@ rg -l -i "create table|CREATE TABLE|@Entity|class .*\(models\.Model\)|Schema\(|p
 # Inbound collection points (forms, request bodies, query params)
 rg -i -n "req\.(body|query|params)|request\.(POST|GET|data)|formData|@RequestBody"
 ```
-Output: a data inventory (category → where stored → purpose → shared with). Drives dimension **A**.
+Output: a data inventory (category -> where stored -> purpose -> shared with). Drives dimension **A**.
 
 ## 2. Consent & notice (dimensions B)
 
 ```bash
 # Consent capture / storage
 rg -i -n "consent|opt[-_]?in|opt[-_]?out|gdpr|privacy_?(accepted|agreed)|terms_?accepted"
-# Pre-ticked / bundled consent smell (⚠️ §6 violation)
+# Pre-ticked / bundled consent smell (⚠️ 6 violation)
 rg -i -n "checked\s*=\s*[\"']?true|defaultChecked|isChecked\s*=\s*true"
 # Withdrawal path (must exist and be easy - B5)
 rg -i -n "withdraw|revoke|unsubscribe|delete_?consent|opt_?out"

@@ -20,7 +20,7 @@
 A self-contained **skill** that audits an application, codebase, product, or data flow against
 **India's Digital Personal Data Protection Act, 2023** and the **DPDP Rules, 2025** (notified
 13 Nov 2025). It ships the statutory text, the penalty schedule, a section-by-section audit
-checklist, codebase detection patterns, a GDPR↔DPDP map, and ready-reference policy templates -
+checklist, codebase detection patterns, a GDPR vs DPDP map, and ready-reference policy templates -
 so the agent cites real sections and points every gap at the fix.
 
 **DPDP Act or "DPDPA"?** Same law. Its short title is the **Digital Personal Data Protection Act,
@@ -28,15 +28,13 @@ so the agent cites real sections and points every gap at the fix.
 is why this project is named `india-dpdpa-skill`. The legal references keep the precise statutory
 forms ("DPDP Act", "DPDP Rules"). Background: [Digital Personal Data Protection Act, 2023 (Wikipedia)](https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023).
 
-> 🇮🇳 The first in a planned family of country-by-country compliance skills. **This repo is India.**
-
 ## What it checks
 
-Lawful basis & consent (§4-7) · notice quality · **reasonable security safeguards** (§8(5) - the
-₹250 crore band) · breach notification (Board within 72h, principals without delay) · **children's
-data** (§9, under-18) · Data Principal rights (§11-14) · retention & erasure (3-year inactivity
-class) · cross-border transfer (§16) · Significant Data Fiduciary duties (§10) · processor/DPA
-coverage · published privacy artifacts.
+Lawful basis & consent (4-7), notice quality, **reasonable security safeguards** (8(5) - the
+₹250 crore band), breach notification (Board within 72h, principals without delay), **children's
+data** (9, under-18), Data Principal rights (11-14), retention & erasure (3-year inactivity
+class), cross-border transfer (16), Significant Data Fiduciary duties (10), processor/DPA
+coverage, published privacy artifacts.
 
 Each finding comes back with a **status**, **severity mapped to penalty exposure**, real
 `file:line` **evidence**, a **remediation**, and the **template** that closes it.
@@ -78,11 +76,11 @@ Scope: Fiduciary | Children: unknown | SDF: no | Cross-border: yes
 
 | ID | Requirement (cite)                  | Status       | Severity | Evidence          | Fix |
 |----|-------------------------------------|--------------|----------|-------------------|-----|
-| C1 | Security safeguards (§8(5), Rule 6) | ⚠️ Gap       | Critical | api/db.ts:14      | Enforce TLS, vault secrets, encrypt at rest |
-| E3 | No tracking of children (§9(3))     | ⚠️ Gap       | Critical | app/layout.tsx:22 | Gate analytics/ads off for under-18 |
-| F1 | Right to access (§11)               | ⚠️ Gap       | High     | not found         | Add a data-export endpoint |
-| A1 | Lawful basis (§4)                   | ✅ Compliant | High     | server/auth.ts:30 | - |
-| G1 | India-based DPO (§10(2))            | ➖ N/A       | -        | -                 | Below SDF threshold; revisit at scale |
+| C1 | Security safeguards (8(5), Rule 6) | ⚠️ Gap       | Critical | api/db.ts:14      | Enforce TLS, vault secrets, encrypt at rest |
+| E3 | No tracking of children (9(3))     | ⚠️ Gap       | Critical | app/layout.tsx:22 | Gate analytics/ads off for under-18 |
+| F1 | Right to access (11)               | ⚠️ Gap       | High     | not found         | Add a data-export endpoint |
+| A1 | Lawful basis (4)                   | ✅ Compliant | High     | server/auth.ts:30 | - |
+| G1 | India-based DPO (10(2))            | ➖ N/A       | -        | -                 | Below SDF threshold; revisit at scale |
 ```
 
 The report then lists a risk summary, per-gap details, the top 3 risks, what to confirm with
@@ -141,7 +139,7 @@ re-verify. Run with `--update` to re-pin after you've refreshed the references.
 ```
 .
 ├── .claude-plugin/marketplace.json        # marketplace (gattyworks-compliance)
-├── assets/                                 # banner + logo (Ashoka Chakra · GattyWorks teal · tricolor)
+├── assets/                                 # banner + logo (Ashoka Chakra, GattyWorks teal, tricolor)
 └── plugins/dpdpa-india/
     ├── .claude-plugin/plugin.json
     ├── commands/                           # /dpdpa-audit, /dpdpa-update-check
@@ -151,9 +149,9 @@ re-verify. Run with `--update` to re-pin after you've refreshed the references.
         └── references/
             ├── audit-checklist.md          # the section-by-section engine
             ├── code-patterns.md            # what to grep for in a codebase
-            ├── act-2023.md · rules-2025.md · penalties-schedule.md
-            ├── consent-notice.md · fiduciary-obligations.md · data-principal-rights.md
-            ├── gdpr-comparison.md · legal-context.md · disclaimer.md
+            ├── act-2023.md, rules-2025.md, penalties-schedule.md
+            ├── consent-notice.md, fiduciary-obligations.md, data-principal-rights.md
+            ├── gdpr-comparison.md, legal-context.md, disclaimer.md
             └── templates/                  # 13 policy artifacts a compliant build needs
 ```
 
@@ -184,7 +182,7 @@ A [GattyWorks](https://github.com/gattyworks) project.
 ---
 
 <p align="center">
-  <sub>Built by <b>GattyWorks</b> · <a href="https://gattyworks.com">gattyworks.com</a> · hello@gattyworks.com · Mangaluru &amp; Bengaluru, India 🇮🇳</sub>
+  <sub>Built by <b>GattyWorks</b>, <a href="https://gattyworks.com">gattyworks.com</a>, hello@gattyworks.com, Mangaluru &amp; Bengaluru, India</sub>
 </p>
 
 <p align="center">

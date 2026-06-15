@@ -14,6 +14,7 @@ House rules for working in this repository. These override default behavior.
   - Ranges: write "sections 4 to 10" or "4-10".
   - Asides: use commas, parentheses, or a colon, never an em dash.
 - Stick to plain ASCII punctuation. Keep prose tight and concrete.
+- No decorative non-ASCII symbols: do not use the section sign (write the section number alone, e.g. "8(5)"), arrows, middots, or emoji (including flag emoji). Use words or commas instead. The only non-ASCII characters kept are the rupee sign in penalty figures and the functional status marks in the report format.
 
 ## Legal content
 

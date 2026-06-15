@@ -44,7 +44,7 @@
     },
     {
       "id": "dpdpa-com-mapping",
-      "label": "dpdpa.com - Section→Rule mapping",
+      "label": "dpdpa.com - Section->Rule mapping",
       "url": "https://www.dpdpa.com/mappingofdpdpatodpdprules.html",
       "type": "html",
       "sha256": "9398a7a453ac9493efe731d458db2cf7b1add865c4a73cec06ae63cb2ad26620",

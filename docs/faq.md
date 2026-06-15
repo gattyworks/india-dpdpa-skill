@@ -34,9 +34,9 @@ It re-fetches each pinned source and flags any that changed, telling you which r
 
 ## Am I a Significant Data Fiduciary (SDF)?
 
-You don't self-declare. Under §10(1), the Central Government **designates** a fiduciary or class as an SDF, weighing factors such as volume and sensitivity of data processed, risk to Data Principals' rights, and impact on India's sovereignty/integrity, electoral democracy, State security, and public order.
+You don't self-declare. Under 10(1), the Central Government **designates** a fiduciary or class as an SDF, weighing factors such as volume and sensitivity of data processed, risk to Data Principals' rights, and impact on India's sovereignty/integrity, electoral democracy, State security, and public order.
 
-If designated, §10(2) adds obligations: appoint a **Data Protection Officer based in India** (reporting to the board, named grievance contact), engage an **independent data auditor** for periodic data audits, and run **periodic DPIAs** for high-risk processing. See [fiduciary-obligations.md](../plugins/dpdpa-india/skills/dpdpa-india/references/fiduciary-obligations.md). The skill flags when you *could* fall in scope; designation itself is a government act.
+If designated, 10(2) adds obligations: appoint a **Data Protection Officer based in India** (reporting to the board, named grievance contact), engage an **independent data auditor** for periodic data audits, and run **periodic DPIAs** for high-risk processing. See [fiduciary-obligations.md](../plugins/dpdpa-india/skills/dpdpa-india/references/fiduciary-obligations.md). The skill flags when you *could* fall in scope; designation itself is a government act.
 
 ## Does the skill modify my code?
 
@@ -60,4 +60,4 @@ Yes. The skill is a portable **`SKILL.md` + references** bundle with no runtime 
 
 ## How are penalties "estimated"?
 
-They aren't predicted. The skill **maps each finding to the maximum penalty band** in the Act's Schedule - for example, a reasonable-security-safeguards failure (§8(5)) maps to the highest band, up to **Rs 250 crore**. That is a severity signal tied to statutory maximums, not a forecast of what any Board would actually impose. Treat it as a way to rank gaps by exposure, not as a number you will be fined.
+They aren't predicted. The skill **maps each finding to the maximum penalty band** in the Act's Schedule - for example, a reasonable-security-safeguards failure (8(5)) maps to the highest band, up to **Rs 250 crore**. That is a severity signal tied to statutory maximums, not a forecast of what any Board would actually impose. Treat it as a way to rank gaps by exposure, not as a number you will be fined.

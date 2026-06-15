@@ -1,4 +1,4 @@
-# Usage 🇮🇳
+# Usage
 
 How to install the `dpdpa-india` skill, invoke it, and run it outside Claude Code. The skill audits an app, codebase, or data flow against India's **DPDP Act 2023** (Act 22 of 2023) and the **DPDP Rules 2025** (notified 13 Nov 2025, G.S.R. 846(E)). It is an engineering aid for spotting likely gaps - not legal advice.
 
@@ -56,13 +56,13 @@ The skill activates without a slash command when the request reads like an India
 - "are we a Significant Data Fiduciary"
 - "what privacy policies / templates do we need for India"
 
-It triggers even on a bare "privacy audit" when the build targets an Indian audience. DPDP applies if you process digital personal data and either operate in India or offer goods/services to Data Principals in India from anywhere (extraterritorial, §3).
+It triggers even on a bare "privacy audit" when the build targets an Indian audience. DPDP applies if you process digital personal data and either operate in India or offer goods/services to Data Principals in India from anywhere (extraterritorial, 3).
 
 ## Run it in other harnesses
 
 The skill is a plain, portable `SKILL.md` + references bundle - no runtime, no secrets. Two ways to use it outside Claude Code:
 
-1. **Copy the folder.** Drop [`plugins/dpdpa-india/skills/dpdpa-india/`](../plugins/dpdpa-india/skills/dpdpa-india/) into any agent that reads `SKILL.md` plus markdown references - Cursor, Windsurf, the Claude Agent SDK, or your own RAG pipeline. The folder is self-contained: the Act and Rules text, penalty schedule, audit checklist, code-detection patterns, GDPR↔DPDP map, and 13 policy templates all travel with it.
+1. **Copy the folder.** Drop [`plugins/dpdpa-india/skills/dpdpa-india/`](../plugins/dpdpa-india/skills/dpdpa-india/) into any agent that reads `SKILL.md` plus markdown references - Cursor, Windsurf, the Claude Agent SDK, or your own RAG pipeline. The folder is self-contained: the Act and Rules text, penalty schedule, audit checklist, code-detection patterns, GDPR vs DPDP map, and 13 policy templates all travel with it.
 2. **Point the tool at the file.** Tell the model: *"read [SKILL.md](../plugins/dpdpa-india/skills/dpdpa-india/SKILL.md) and audit this codebase against it."* Everything it needs to follow the four-pass method is in the file and the `references/` it links.
 
 | Harness | How |
@@ -92,18 +92,18 @@ Skill (dpdpa-india activated):
 
   | # | Requirement (DPDP cite) | Status | Severity | Evidence | Fix |
   |---|------------------------|--------|----------|----------|-----|
-  | 1 | Reasonable security safeguards (§8(5)) | ⚠️ Gap | Critical | auth/store.js:42 - phone stored in plaintext | Encrypt at rest; see data-protection-policy.md |
-  | 2 | Children's data / age gate (§9, under 18) | ⚠️ Gap | Critical | signup/form.tsx:1 - no age check | Add age gate + verifiable parental consent |
-  | 3 | Consent notice at collection (§5-6) | ⚠️ Gap | High | signup/form.tsx:88 - submit, no notice | Add itemised notice; see consent-notice.md |
+  | 1 | Reasonable security safeguards (8(5)) | ⚠️ Gap | Critical | auth/store.js:42 - phone stored in plaintext | Encrypt at rest; see data-protection-policy.md |
+  | 2 | Children's data / age gate (9, under 18) | ⚠️ Gap | Critical | signup/form.tsx:1 - no age check | Add age gate + verifiable parental consent |
+  | 3 | Consent notice at collection (5-6) | ⚠️ Gap | High | signup/form.tsx:88 - submit, no notice | Add itemised notice; see consent-notice.md |
 
-  Top 3 risks: (1) plaintext PII under the §8(5) ₹250 crore band; (2) no under-18 handling;
+  Top 3 risks: (1) plaintext PII under the 8(5) ₹250 crore band; (2) no under-18 handling;
   (3) collection without a compliant notice.
-  Confirm with counsel/ops: whether the US analytics transfer hits a §16 restriction;
-  whether volume/sensitivity makes you a Significant Data Fiduciary (§10).
+  Confirm with counsel/ops: whether the US analytics transfer hits a 16 restriction;
+  whether volume/sensitivity makes you a Significant Data Fiduciary (10).
   Engineering aid, not legal advice - have a qualified Indian practitioner review.
 ```
 
-Findings shown are illustrative. Severity maps to penalty exposure; security-safeguard failures (§8(5), up to Rs 250 crore) and children's-data breaches are Critical.
+Findings shown are illustrative. Severity maps to penalty exposure; security-safeguard failures (8(5), up to Rs 250 crore) and children's-data breaches are Critical.
 
 ## See also
 

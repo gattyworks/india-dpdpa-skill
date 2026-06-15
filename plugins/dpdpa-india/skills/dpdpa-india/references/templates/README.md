@@ -22,6 +22,6 @@ _Structure informed by dpdpa.com; paraphrased._ Last verified: 2026-06-15.
 | [Employee Privacy Policy](employee-privacy-policy.md) | Lawful handling of employee personal data | S.8 (obligations); employment-purpose processing | Any organization with employees in India | https://www.dpdpa.com/templates/employeedataprotectionpolicytemplate.html |
 | [DPIA / Privacy Impact Assessment](dpia.md) | Risk assessment for high-risk / SDF processing | S.10 (SDF obligations: DPIA + audit); Rule 13 | Significant Data Fiduciaries; high-risk processing | https://www.dpdpa.com/templates/privacyimpactassessmenttemplate.html |
 
-**Statutory mapping summary** (Act → Rules): Notice S.5→Rule 3 · Consent S.6 / Consent Managers→Rule 4 · Breach intimation S.8(6)→Rule 7 · Retention/erasure S.8(7-8)→Rule 8 · SDF/DPIA/audit S.10→Rule 13 · Rights & grievance S.11-13→Rule 14 · Cross-border S.16→Rule 15.
+**Statutory mapping summary** (Act -> Rules): Notice S.5->Rule 3, Consent S.6 / Consent Managers->Rule 4, Breach intimation S.8(6)->Rule 7, Retention/erasure S.8(7-8)->Rule 8, SDF/DPIA/audit S.10->Rule 13, Rights & grievance S.11-13->Rule 14, Cross-border S.16->Rule 15.
 
 > Note: Section numbers for breach (S.8(6)) and rights/grievance follow the Act's Chapter II-III structure; some dpdpa.com pages cite a "72-hour" reporting figure - DPDP Rule 7 actually requires intimation **without delay** plus a detailed report to the Board within **72 hours** (or longer if the Board permits). Verify against the Rule text during audit.

@@ -1,6 +1,6 @@
 # The four-pass audit method
 
-The skill runs every audit in four passes: **Scope → Run the checklist → Find the evidence → Report.** The order is deliberate - each pass depends on facts the previous one established. References load on demand, not all up front.
+The skill runs every audit in four passes: **Scope -> Run the checklist -> Find the evidence -> Report.** The order is deliberate - each pass depends on facts the previous one established. References load on demand, not all up front.
 
 This is an engineering aid for finding likely compliance gaps. It is not legal advice. Have a qualified Indian data-protection practitioner review anything before you rely on it.
 
@@ -14,15 +14,15 @@ Establish the facts the rest of the audit hangs on. Skipping this produces findi
 
 | Question | Why it matters | Where to confirm |
 |---|---|---|
-| What **personal data** is collected/processed, and for what **purpose(s)**? | Builds the data inventory that drives dimension A and the evidence pass. | [../plugins/dpdpa-india/skills/dpdpa-india/references/code-patterns.md](../plugins/dpdpa-india/skills/dpdpa-india/references/code-patterns.md) §1 |
-| Is the org a **Data Fiduciary** (decides purpose & means) or a **Data Processor** (acts for a fiduciary)? | Determines which §8 duties land on you vs. your customer. | Act §2 |
-| Are **children (under 18)** in scope? | §9 is strict - verifiable parental consent, no behavioural tracking, no targeted ads. | Act §9 |
-| Could it be a **Significant Data Fiduciary** (high volume / sensitivity)? | Triggers the §10 extras (India-based DPO, independent audit, DPIA). | Act §10 + Rules |
-| Any **cross-border** transfer or third-party / processor sharing? | Pulls in §16 and the notified restricted-country list. | Act §16 + Rules |
+| What **personal data** is collected/processed, and for what **purpose(s)**? | Builds the data inventory that drives dimension A and the evidence pass. | [../plugins/dpdpa-india/skills/dpdpa-india/references/code-patterns.md](../plugins/dpdpa-india/skills/dpdpa-india/references/code-patterns.md) 1 |
+| Is the org a **Data Fiduciary** (decides purpose & means) or a **Data Processor** (acts for a fiduciary)? | Determines which 8 duties land on you vs. your customer. | Act 2 |
+| Are **children (under 18)** in scope? | 9 is strict - verifiable parental consent, no behavioural tracking, no targeted ads. | Act 9 |
+| Could it be a **Significant Data Fiduciary** (high volume / sensitivity)? | Triggers the 10 extras (India-based DPO, independent audit, DPIA). | Act 10 + Rules |
+| Any **cross-border** transfer or third-party / processor sharing? | Pulls in 16 and the notified restricted-country list. | Act 16 + Rules |
 
-DPDP reaches a system if it processes digital personal data and either operates **in India** or offers goods/services to **Data Principals in India** from anywhere (extraterritorial, §3). If the app touches Indian users' personal data, it is in scope.
+DPDP reaches a system if it processes digital personal data and either operates **in India** or offers goods/services to **Data Principals in India** from anywhere (extraterritorial, 3). If the app touches Indian users' personal data, it is in scope.
 
-The output of this pass is a quick data inventory - **category → where stored → purpose → shared with** - assembled from the §1 grep patterns in code-patterns.md.
+The output of this pass is a quick data inventory - **category -> where stored -> purpose -> shared with** - assembled from the 1 grep patterns in code-patterns.md.
 
 ---
 
@@ -32,23 +32,23 @@ The checklist in [../plugins/dpdpa-india/skills/dpdpa-india/references/audit-che
 
 | Dim | Area | Anchored in |
 |---|---|---|
-| A | Lawful basis & purpose | §4, §7 |
-| B | Notice & consent | §5, §6 + Rules |
-| C | Data Fiduciary security & duties | §8 + Rule 6 |
-| D | Breach handling | §8(6) + Rule 7 |
-| E | Children's data | §9 |
-| F | Data Principal rights | §11-14 |
-| G | Significant Data Fiduciary extras | §10 + Rules |
-| H | Cross-border transfer | §16 + Rules |
-| I | Retention & erasure | §8(7)-(8) + Rule 8 / Third Schedule |
+| A | Lawful basis & purpose | 4, 7 |
+| B | Notice & consent | 5, 6 + Rules |
+| C | Data Fiduciary security & duties | 8 + Rule 6 |
+| D | Breach handling | 8(6) + Rule 7 |
+| E | Children's data | 9 |
+| F | Data Principal rights | 11-14 |
+| G | Significant Data Fiduciary extras | 10 + Rules |
+| H | Cross-border transfer | 16 + Rules |
+| I | Retention & erasure | 8(7)-(8) + Rule 8 / Third Schedule |
 | J | Governance & documentation | mixed |
 
 Every item maps to a section or rule, so a finding is never a vibe - it points at the specific obligation. Examples from the checklist:
 
-- **B3** (free/specific/informed/unconditional/unambiguous consent - affirmative action, no pre-ticked or bundled boxes) → §6(1), rated **Critical**.
-- **C1** (reasonable security safeguards) → §8(5), the **₹250 crore** band, **Critical**.
-- **D3** (notify the Board - initial intimation without delay, detailed report within **72 hours**) → Rule 7, **Critical**.
-- **I3** (3-year inactivity erasure for specified classes - e-commerce ≥2 cr users, online gaming ≥50 lakh, social media ≥2 cr - with **48-hour pre-erasure notice**) → Rule 8 / Third Schedule.
+- **B3** (free/specific/informed/unconditional/unambiguous consent - affirmative action, no pre-ticked or bundled boxes) -> 6(1), rated **Critical**.
+- **C1** (reasonable security safeguards) -> 8(5), the **₹250 crore** band, **Critical**.
+- **D3** (notify the Board - initial intimation without delay, detailed report within **72 hours**) -> Rule 7, **Critical**.
+- **I3** (3-year inactivity erasure for specified classes - e-commerce ≥2 cr users, online gaming ≥50 lakh, social media ≥2 cr - with **48-hour pre-erasure notice**) -> Rule 8 / Third Schedule.
 
 For each item, decide a status (next section), cite evidence, and carry the severity into the report.
 
@@ -101,20 +101,20 @@ Verdict: <Materially compliant | Gaps found | Not assessed>
 | ❓ | Needs review (can't tell from code alone) |
 | ➖ | N/A |
 
-**Severity scale** - `C`ritical, `H`igh, `M`edium, `L`ow - maps to penalty exposure via [../plugins/dpdpa-india/skills/dpdpa-india/references/penalties-schedule.md](../plugins/dpdpa-india/skills/dpdpa-india/references/penalties-schedule.md). Security-safeguard failures (§8(5)) and children's-data breaches are always **Critical**.
+**Severity scale** - `C`ritical, `H`igh, `M`edium, `L`ow - maps to penalty exposure via [../plugins/dpdpa-india/skills/dpdpa-india/references/penalties-schedule.md](../plugins/dpdpa-india/skills/dpdpa-india/references/penalties-schedule.md). Security-safeguard failures (8(5)) and children's-data breaches are always **Critical**.
 
-### Severity → penalty exposure
+### Severity -> penalty exposure
 
-The severity is not arbitrary; it tracks the Schedule's caps (each figure is a "may extend to" maximum - the Board sets the actual amount using the §33(2) factors).
+The severity is not arbitrary; it tracks the Schedule's caps (each figure is a "may extend to" maximum - the Board sets the actual amount using the 33(2) factors).
 
 | Breach | Section | Cap | Default severity |
 |---|---|---|---|
-| Reasonable security safeguards (breach prevention) | §8(5) | **₹250 cr** | Critical |
-| Failure to notify breach (Board / affected Principals) | §8(6) | **₹200 cr** | Critical |
-| Children's-data obligations | §9 | **₹200 cr** | Critical |
-| SDF obligations | §10 | **₹150 cr** | High |
+| Reasonable security safeguards (breach prevention) | 8(5) | **₹250 cr** | Critical |
+| Failure to notify breach (Board / affected Principals) | 8(6) | **₹200 cr** | Critical |
+| Children's-data obligations | 9 | **₹200 cr** | Critical |
+| SDF obligations | 10 | **₹150 cr** | High |
 | Residuary (any other provision/rule) | - | **₹50 cr** | High / Medium |
-| Data Principal duties | §15 | **₹10,000** | Low |
+| Data Principal duties | 15 | **₹10,000** | Low |
 
 Close the report with the **top 3 risks**, **what to verify with counsel/ops** (things not visible in code), and the one-line not-legal-advice disclaimer.
 
@@ -129,10 +129,10 @@ Verdict: Gaps found
 
 | # | Requirement (DPDP cite) | Status | Severity | Evidence | Fix |
 |---|---|---|---|---|---|
-| C1 | Reasonable security safeguards (§8(5)) | ⚠️ | C | `src/auth/user.js:42` (MD5 password hashing) | Move to argon2/bcrypt; encrypt at rest + in transit per Rule 6 |
-| B3 | Consent by affirmative action (§6(1)) | ⚠️ | C | `web/signup.tsx:88` (`defaultChecked` consent box) | Remove pre-tick; unticked, per-purpose consent |
+| C1 | Reasonable security safeguards (8(5)) | ⚠️ | C | `src/auth/user.js:42` (MD5 password hashing) | Move to argon2/bcrypt; encrypt at rest + in transit per Rule 6 |
+| B3 | Consent by affirmative action (6(1)) | ⚠️ | C | `web/signup.tsx:88` (`defaultChecked` consent box) | Remove pre-tick; unticked, per-purpose consent |
 | D3 | Notify Board within 72h (Rule 7) | ❓ | C | not found in repo | Add breach handler + runbook; confirm process with ops |
-| F2 | Right to correction/erasure (§12) | ✅ | H | `api/account/delete.ts:15` | - |
+| F2 | Right to correction/erasure (12) | ✅ | H | `api/account/delete.ts:15` | - |
 | I3 | 3-year inactivity erasure (Rule 8 / Third Sch.) | ➖ | H | below scale thresholds | N/A unless user counts cross the Third-Schedule thresholds |
 
 ---

@@ -8,8 +8,8 @@
 - **Justice K.S. Puttaswamy (Retd.) v. Union of India (2017)** - 9-judge Supreme Court bench held the **right to privacy is a fundamental right** under Article 21. *Audit takeaway:* privacy is constitutionally protected, so data-handling failures carry weight beyond statutory penalties; the DPDP regime is the legislative response this judgment demanded.
 
 ## Predecessor / still-operative regime
-- **IT Act 2000 §43A + SPDI Rules 2011** - required "reasonable security practices" and consent for **Sensitive Personal Data or Information (SPDI)** (passwords, financial, health, biometric, sexual orientation, etc.). *Audit takeaway:* until DPDP substantive provisions fully commence (~May 2027), **SPDI Rules still apply** - an app handling SPDI should meet both; DPDP will eventually displace this (and notably **drops the special-category concept**).
-- **IT Act §79 + Intermediary Rules 2021** - intermediary due-diligence/safe-harbour. *Takeaway:* relevant for platforms/social-media apps; overlaps with DPDP fiduciary duties.
+- **IT Act 2000 43A + SPDI Rules 2011** - required "reasonable security practices" and consent for **Sensitive Personal Data or Information (SPDI)** (passwords, financial, health, biometric, sexual orientation, etc.). *Audit takeaway:* until DPDP substantive provisions fully commence (~May 2027), **SPDI Rules still apply** - an app handling SPDI should meet both; DPDP will eventually displace this (and notably **drops the special-category concept**).
+- **IT Act 79 + Intermediary Rules 2021** - intermediary due-diligence/safe-harbour. *Takeaway:* relevant for platforms/social-media apps; overlaps with DPDP fiduciary duties.
 
 ## Incident-reporting overlay (applies ALONGSIDE DPDP)
 - **CERT-In Directions, 28 Apr 2022** - mandatory reporting of specified **cyber incidents within 6 hours** of noticing; plus log retention (180 days, India) and KYC/time-sync (NTP) obligations. *Audit takeaway:* the **6-hour CERT-In clock is separate from and tighter than** DPDP's breach timeline (without delay / 72h to the Board) - a breach can trigger **both**; build a dual-track notification runbook.
