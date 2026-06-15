@@ -3,7 +3,7 @@ description: Check whether the DPDP Act/Rules/templates sources changed since th
 argument-hint: ""
 ---
 
-Run the dpdp-india update checker to detect upstream legal changes:
+Run the dpdpa-india update checker to detect upstream legal changes:
 
 ```
 python "${CLAUDE_PLUGIN_ROOT}/scripts/check-updates.py"

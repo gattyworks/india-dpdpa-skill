@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.png">
-    <img src="assets/banner-dark.png" alt="DPDP India - Digital Personal Data Protection Act 2023 + Rules 2025 - compliance audit skill" width="100%">
+    <img src="assets/banner-dark.png" alt="DPDPA India - Digital Personal Data Protection Act 2023 + Rules 2025 - compliance audit skill" width="100%">
   </picture>
 </p>
 
@@ -21,6 +21,11 @@ A self-contained **skill** that audits an application, codebase, product, or dat
 checklist, codebase detection patterns, a GDPR↔DPDP map, and ready-reference policy templates -
 so the agent cites real sections and points every gap at the fix.
 
+**DPDP Act or "DPDPA"?** Same law. Its short title is the **Digital Personal Data Protection Act,
+2023** (the "DPDP Act"); appending the "A" for "Act" gives the widely used acronym **DPDPA**, which
+is why this project is named `india-dpdpa-skill`. The legal references keep the precise statutory
+forms ("DPDP Act", "DPDP Rules"). Background: [Digital Personal Data Protection Act, 2023 (Wikipedia)](https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023).
+
 > 🇮🇳 The first in a planned family of country-by-country compliance skills. **This repo is India.**
 
 ## What it checks
@@ -34,18 +39,47 @@ coverage · published privacy artifacts.
 Each finding comes back with a **status**, **severity mapped to penalty exposure**, real
 `file:line` **evidence**, a **remediation**, and the **template** that closes it.
 
+## Example audit report
+
+Every audit returns the **same structure, fields, severity levels, and issue IDs**, so results are
+consistent and comparable from one run to the next. The full output contract and a complete worked
+example live in [`report-format.md`](plugins/dpdpa-india/skills/dpdpa-india/references/report-format.md).
+
+- **Severity levels:** `Critical` (the ₹250 crore security band, or children), `High`, `Medium`, `Low`.
+- **Statuses:** ✅ Compliant, ⚠️ Gap, ❓ Needs review, ➖ N/A.
+- **Finding fields:** ID, Requirement (section/rule cite), Status, Severity, Evidence (`file:line`), Fix.
+- **Issue IDs:** every finding maps to a fixed catalog ID (`A1` ... `J5`) from the checklist, so two audits of the same system line up exactly.
+
+A trimmed sample:
+
+```
+DPDPA Audit - Acme Shop (Next.js + Postgres)     Verdict: Gaps found
+Scope: Fiduciary | Children: unknown | SDF: no | Cross-border: yes
+
+| ID | Requirement (cite)                  | Status       | Severity | Evidence          | Fix |
+|----|-------------------------------------|--------------|----------|-------------------|-----|
+| C1 | Security safeguards (§8(5), Rule 6) | ⚠️ Gap       | Critical | api/db.ts:14      | Enforce TLS, vault secrets, encrypt at rest |
+| E3 | No tracking of children (§9(3))     | ⚠️ Gap       | Critical | app/layout.tsx:22 | Gate analytics/ads off for under-18 |
+| F1 | Right to access (§11)               | ⚠️ Gap       | High     | not found         | Add a data-export endpoint |
+| A1 | Lawful basis (§4)                   | ✅ Compliant | High     | server/auth.ts:30 | - |
+| G1 | India-based DPO (§10(2))            | ➖ N/A       | -        | -                 | Below SDF threshold; revisit at scale |
+```
+
+The report then lists a risk summary, per-gap details, the top 3 risks, what to confirm with
+counsel or ops, and the disclaimer.
+
 ## Install (Claude Code)
 
 ```bash
-/plugin marketplace add gattyworks/dpdp-india
-/plugin install dpdp-india@gattyworks-compliance
+/plugin marketplace add gattyworks/india-dpdpa-skill
+/plugin install dpdpa-india@gattyworks-compliance
 ```
 
 Then run a scan:
 
 ```bash
-/dpdp-audit .            # audit the current repo
-/dpdp-audit ./api        # audit a subtree
+/dpdpa-audit .            # audit the current repo
+/dpdpa-audit ./api        # audit a subtree
 ```
 
 …or just say *"audit this app for DPDP / Indian data-protection compliance."*
@@ -54,8 +88,8 @@ Then run a scan:
 
 Once installed, point the agent at your code with prompts like:
 
-- *"Use the dpdp-india skill to audit this repo for DPDP compliance and list the top risks."*
-- *"Run /dpdp-audit on ./api and return findings as a table with section, status, and severity."*
+- *"Use the dpdpa-india skill to audit this repo for DPDP compliance and list the top risks."*
+- *"Run /dpdpa-audit on ./api and return findings as a table with section, status, and severity."*
 - *"Check our signup and analytics flow against India's DPDP Act. Are we handling children's data correctly?"*
 - *"Are we a Significant Data Fiduciary, and what would that require of us?"*
 - *"Which privacy policies and templates do we need for Indian users, and which are missing here?"*
@@ -63,7 +97,7 @@ Once installed, point the agent at your code with prompts like:
 ### Use it in any AI harness
 
 The skill is a plain, portable **`SKILL.md` + references** bundle - no runtime, no secrets. Drop
-[`plugins/dpdp-india/skills/dpdp-india/`](plugins/dpdp-india/skills/dpdp-india/) into any
+[`plugins/dpdpa-india/skills/dpdpa-india/`](plugins/dpdpa-india/skills/dpdpa-india/) into any
 agent that reads skills/markdown context (Cursor, Windsurf, the Claude Agent SDK, your own RAG),
 or simply tell the model: *"read SKILL.md and audit this codebase against it."* Everything it needs
 is in the folder.
@@ -74,11 +108,11 @@ The law commences in phases, so sources move. A zero-dependency checker re-fetch
 source and flags drift:
 
 ```bash
-python plugins/dpdp-india/scripts/check-updates.py      # also: check-updates.ps1 / .sh
-/dpdp-update-check                                       # the same, from Claude Code
+python plugins/dpdpa-india/scripts/check-updates.py      # also: check-updates.ps1 / .sh
+/dpdpa-update-check                                       # the same, from Claude Code
 ```
 
-It hashes the [pinned sources](plugins/dpdp-india/scripts/sources.lock.json) (MeitY Act PDF,
+It hashes the [pinned sources](plugins/dpdpa-india/scripts/sources.lock.json) (MeitY Act PDF,
 DPDP Rules, dpdpa.com, dpdpa.in, the GDPR-comparison PDF) and tells you which reference files to
 re-verify. Run with `--update` to re-pin after you've refreshed the references.
 
@@ -88,11 +122,11 @@ re-verify. Run with `--update` to re-pin after you've refreshed the references.
 .
 ├── .claude-plugin/marketplace.json        # marketplace (gattyworks-compliance)
 ├── assets/                                 # banner + logo (Ashoka Chakra · GattyWorks teal · tricolor)
-└── plugins/dpdp-india/
+└── plugins/dpdpa-india/
     ├── .claude-plugin/plugin.json
-    ├── commands/                           # /dpdp-audit, /dpdp-update-check
+    ├── commands/                           # /dpdpa-audit, /dpdpa-update-check
     ├── scripts/                            # check-updates.{py,ps1,sh} + sources.lock.json
-    └── skills/dpdp-india/
+    └── skills/dpdpa-india/
         ├── SKILL.md                        # the audit playbook (start here)
         └── references/
             ├── audit-checklist.md          # the section-by-section engine
@@ -105,7 +139,7 @@ re-verify. Run with `--update` to re-pin after you've refreshed the references.
 
 ## A family, not a one-off
 
-The vision is one focused skill per jurisdiction - `dpdp-india` here, with room for GDPR, CCPA,
+The vision is one focused skill per jurisdiction - `dpdpa-india` here, with room for GDPR, CCPA,
 and others as sibling repos under the same `gattyworks-compliance` marketplace. India first
 because the DPDP regime is new, fast-moving, and under-tooled.
 
@@ -141,5 +175,5 @@ We work in short-lived branches and ship through review; never push straight to 
   <sub>This skill is an engineering aid for spotting likely gaps - <b>not legal advice</b>, and no
   lawyer-client relationship is created. The law changes; references reflect the verified date above.
   Always run your own audit and have a qualified Indian data-protection practitioner review before you
-  rely on any result. Provided "as is"; see <a href="plugins/dpdp-india/skills/dpdp-india/references/disclaimer.md">disclaimer</a>.</sub>
+  rely on any result. Provided "as is"; see <a href="plugins/dpdpa-india/skills/dpdpa-india/references/disclaimer.md">disclaimer</a>.</sub>
 </p>

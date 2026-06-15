@@ -1,6 +1,6 @@
 # Disclaimer
 
-The **dpdp-india** skill is an **engineering aid** to help teams find *likely* gaps against
+The **dpdpa-india** skill is an **engineering aid** to help teams find *likely* gaps against
 India's Digital Personal Data Protection Act, 2023 and the DPDP Rules, 2025. It is **not legal
 advice**, is not a substitute for professional counsel, and using it does not create any
 lawyer-client relationship.

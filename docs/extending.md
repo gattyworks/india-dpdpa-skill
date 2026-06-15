@@ -1,6 +1,6 @@
 # Extending the skill
 
-`dpdp-india` is the first jurisdiction in the `gattyworks-compliance` family. The whole design is meant to be cloned: a country's law lives in versioned reference files, an audit playbook turns them into findings, and an update checker tells you when the law has drifted. This page covers the five ways the skill grows - a new jurisdiction, a corrected legal reference, a template note, a release, and the direction of the family.
+`dpdpa-india` is the first jurisdiction in the `gattyworks-compliance` family. The whole design is meant to be cloned: a country's law lives in versioned reference files, an audit playbook turns them into findings, and an update checker tells you when the law has drifted. This page covers the five ways the skill grows - a new jurisdiction, a corrected legal reference, a template note, a release, and the direction of the family.
 
 This is an engineering aid, not legal advice. Everything here is about packaging and provenance; the legal substance still gets re-verified by a human (see [Legal and provenance](legal-and-provenance.md)).
 
@@ -8,7 +8,7 @@ Before contributing, read [`CONTRIBUTING.md`](../CONTRIBUTING.md) - it carries t
 
 ## 1. Add a new jurisdiction
 
-A sibling jurisdiction (say `gdpr-eu` or `ccpa-us`) is a new plugin in the same marketplace that mirrors `dpdp-india`'s structure one-for-one. Clone the shape, then refill the law.
+A sibling jurisdiction (say `gdpr-eu` or `ccpa-us`) is a new plugin in the same marketplace that mirrors `dpdpa-india`'s structure one-for-one. Clone the shape, then refill the law.
 
 ### The structure to clone
 
@@ -26,23 +26,23 @@ plugins/<name>/
 
 The live example, top to bottom:
 
-| Layer | File in `dpdp-india` |
+| Layer | File in `dpdpa-india` |
 |---|---|
 | Marketplace entry | [`.claude-plugin/marketplace.json`](../.claude-plugin/marketplace.json) |
-| Plugin manifest | [`plugins/dpdp-india/.claude-plugin/plugin.json`](../plugins/dpdp-india/.claude-plugin/plugin.json) |
-| Audit playbook | [`plugins/dpdp-india/skills/dpdp-india/SKILL.md`](../plugins/dpdp-india/skills/dpdp-india/SKILL.md) |
-| References | [`plugins/dpdp-india/skills/dpdp-india/references/`](../plugins/dpdp-india/skills/dpdp-india/references/) |
-| Templates | [`plugins/dpdp-india/skills/dpdp-india/references/templates/`](../plugins/dpdp-india/skills/dpdp-india/references/templates/) |
-| Update checker | [`plugins/dpdp-india/scripts/`](../plugins/dpdp-india/scripts/) |
+| Plugin manifest | [`plugins/dpdpa-india/.claude-plugin/plugin.json`](../plugins/dpdpa-india/.claude-plugin/plugin.json) |
+| Audit playbook | [`plugins/dpdpa-india/skills/dpdpa-india/SKILL.md`](../plugins/dpdpa-india/skills/dpdpa-india/SKILL.md) |
+| References | [`plugins/dpdpa-india/skills/dpdpa-india/references/`](../plugins/dpdpa-india/skills/dpdpa-india/references/) |
+| Templates | [`plugins/dpdpa-india/skills/dpdpa-india/references/templates/`](../plugins/dpdpa-india/skills/dpdpa-india/references/templates/) |
+| Update checker | [`plugins/dpdpa-india/scripts/`](../plugins/dpdpa-india/scripts/) |
 
 ### Steps
 
 1. **Register the plugin.** Add an entry to the `plugins` array in `marketplace.json` - `name`, `source` (`./plugins/<name>`), `description`, `version` (`1.0.0` for a first release), and `keywords`. The marketplace `name` stays `gattyworks-compliance`; its `metadata.description` already promises "India (DPDP) first; more jurisdictions to follow."
 2. **Write the plugin manifest.** `plugins/<name>/.claude-plugin/plugin.json` carries `name`, `description`, `version`, `author` (gattyworks), `homepage`/`repository`, `license` (MIT), and `keywords`. End the description with the same framing line: **Engineering aid, not legal advice.**
-3. **Write `SKILL.md`.** Keep `dpdp-india`'s shape: YAML front matter (`name`, trigger-rich `description`), a four-pass audit method (scope → checklist → evidence → report), a fixed output format (verdict + risk table + findings by severity), a reference map table, a "Staying current" section that invokes the checker, and the disclaimer footer.
+3. **Write `SKILL.md`.** Keep `dpdpa-india`'s shape: YAML front matter (`name`, trigger-rich `description`), a four-pass audit method (scope → checklist → evidence → report), a fixed output format (verdict + risk table + findings by severity), a reference map table, a "Staying current" section that invokes the checker, and the disclaimer footer.
 4. **Fill the references.** One file per topic, each with a dated source header and a primary-source citation. Carry the same backbone: a checklist engine, codebase detection patterns, the statutory index, the penalty schedule, rights, and a jurisdiction-to-jurisdiction comparison.
 5. **Add the templates.** Paraphrased, attributed policy artifacts under `references/templates/`, with a `README.md` index - see rule 3 below.
-6. **Add the commands.** Mirror [`dpdp-audit.md`](../plugins/dpdp-india/commands/dpdp-audit.md) and [`dpdp-update-check.md`](../plugins/dpdp-india/commands/dpdp-update-check.md), renamed to `/<name>-audit` and `/<name>-update-check`.
+6. **Add the commands.** Mirror [`dpdpa-audit.md`](../plugins/dpdpa-india/commands/dpdpa-audit.md) and [`dpdpa-update-check.md`](../plugins/dpdpa-india/commands/dpdpa-update-check.md), renamed to `/<name>-audit` and `/<name>-update-check`.
 7. **Reuse the update checker.** Copy `scripts/check-updates.{py,ps1,sh}` verbatim - the logic is jurisdiction-agnostic. Only `sources.lock.json` changes: re-pin it to the new country's gazette, regulator, and secondary sources. See [Staying current](staying-current.md).
 
 ### Reuse branding and the update-checker
@@ -71,7 +71,7 @@ Open the PR against `main` with the sources you used. A maintainer re-verifies b
 
 ## 3. Add or change a template note
 
-Templates are paraphrased reference artifacts, not legal documents. There are 13 today under `references/templates/`, indexed by [`templates/README.md`](../plugins/dpdp-india/skills/dpdp-india/references/templates/README.md).
+Templates are paraphrased reference artifacts, not legal documents. There are 13 today under `references/templates/`, indexed by [`templates/README.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/templates/README.md).
 
 The line that governs them:
 
@@ -79,7 +79,7 @@ The line that governs them:
 - **Statutory text is quotable.** The Act, the Rules, and the Schedule are government work and may be quoted directly with a citation.
 - **Cite like any reference.** A template that asserts a legal requirement carries the same section/rule + primary-source citation as a reference file, and the same `(verify)` flag when unsure.
 
-When adding a template, register it in the templates `README.md` index and point at it from `SKILL.md`'s reference map and report step, so a gap the audit finds resolves to a concrete artifact (a missing privacy notice points at [`privacy-policy.md`](../plugins/dpdp-india/skills/dpdp-india/references/templates/privacy-policy.md)).
+When adding a template, register it in the templates `README.md` index and point at it from `SKILL.md`'s reference map and report step, so a gap the audit finds resolves to a concrete artifact (a missing privacy notice points at [`privacy-policy.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/templates/privacy-policy.md)).
 
 ## 4. Versioning and release
 

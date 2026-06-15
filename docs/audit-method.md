@@ -14,7 +14,7 @@ Establish the facts the rest of the audit hangs on. Skipping this produces findi
 
 | Question | Why it matters | Where to confirm |
 |---|---|---|
-| What **personal data** is collected/processed, and for what **purpose(s)**? | Builds the data inventory that drives dimension A and the evidence pass. | [../plugins/dpdp-india/skills/dpdp-india/references/code-patterns.md](../plugins/dpdp-india/skills/dpdp-india/references/code-patterns.md) §1 |
+| What **personal data** is collected/processed, and for what **purpose(s)**? | Builds the data inventory that drives dimension A and the evidence pass. | [../plugins/dpdpa-india/skills/dpdpa-india/references/code-patterns.md](../plugins/dpdpa-india/skills/dpdpa-india/references/code-patterns.md) §1 |
 | Is the org a **Data Fiduciary** (decides purpose & means) or a **Data Processor** (acts for a fiduciary)? | Determines which §8 duties land on you vs. your customer. | Act §2 |
 | Are **children (under 18)** in scope? | §9 is strict - verifiable parental consent, no behavioural tracking, no targeted ads. | Act §9 |
 | Could it be a **Significant Data Fiduciary** (high volume / sensitivity)? | Triggers the §10 extras (India-based DPO, independent audit, DPIA). | Act §10 + Rules |
@@ -28,7 +28,7 @@ The output of this pass is a quick data inventory - **category → where stored 
 
 ## Pass 2 - Run the checklist
 
-The checklist in [../plugins/dpdp-india/skills/dpdp-india/references/audit-checklist.md](../plugins/dpdp-india/skills/dpdp-india/references/audit-checklist.md) is the core engine. It is organised into ten dimensions, A through J. Each item carries a check, a description of what compliant looks like, the DPDP section/rule it cites, and a default severity.
+The checklist in [../plugins/dpdpa-india/skills/dpdpa-india/references/audit-checklist.md](../plugins/dpdpa-india/skills/dpdpa-india/references/audit-checklist.md) is the core engine. It is organised into ten dimensions, A through J. Each item carries a check, a description of what compliant looks like, the DPDP section/rule it cites, and a default severity.
 
 | Dim | Area | Anchored in |
 |---|---|---|
@@ -56,7 +56,7 @@ For each item, decide a status (next section), cite evidence, and carry the seve
 
 ## Pass 3 - Find the evidence
 
-For a codebase, gather real `file:line` evidence using [../plugins/dpdp-india/skills/dpdp-india/references/code-patterns.md](../plugins/dpdp-india/skills/dpdp-india/references/code-patterns.md). It gives `ripgrep` patterns per dimension - PII fields, consent flows, retention jobs, breach handlers, third-party SDKs, cross-border endpoints, and PII in logs.
+For a codebase, gather real `file:line` evidence using [../plugins/dpdpa-india/skills/dpdpa-india/references/code-patterns.md](../plugins/dpdpa-india/skills/dpdpa-india/references/code-patterns.md). It gives `ripgrep` patterns per dimension - PII fields, consent flows, retention jobs, breach handlers, third-party SDKs, cross-border endpoints, and PII in logs.
 
 Two rules govern this pass:
 
@@ -101,7 +101,7 @@ Verdict: <Materially compliant | Gaps found | Not assessed>
 | ❓ | Needs review (can't tell from code alone) |
 | ➖ | N/A |
 
-**Severity scale** - `C`ritical, `H`igh, `M`edium, `L`ow - maps to penalty exposure via [../plugins/dpdp-india/skills/dpdp-india/references/penalties-schedule.md](../plugins/dpdp-india/skills/dpdp-india/references/penalties-schedule.md). Security-safeguard failures (§8(5)) and children's-data breaches are always **Critical**.
+**Severity scale** - `C`ritical, `H`igh, `M`edium, `L`ow - maps to penalty exposure via [../plugins/dpdpa-india/skills/dpdpa-india/references/penalties-schedule.md](../plugins/dpdpa-india/skills/dpdpa-india/references/penalties-schedule.md). Security-safeguard failures (§8(5)) and children's-data breaches are always **Critical**.
 
 ### Severity → penalty exposure
 

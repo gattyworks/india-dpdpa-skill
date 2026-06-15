@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check whether the dpdp-india skill's upstream legal sources have changed.
+"""Check whether the dpdpa-india skill's upstream legal sources have changed.
 
 Re-fetches every source pinned in sources.lock.json, hashes it, and diffs against
 the stored hash. India's DPDP regime commences in phases, so sources do move; this
@@ -36,7 +36,7 @@ def fetch_hash(url: str) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Check dpdp-india legal sources for changes.")
+    ap = argparse.ArgumentParser(description="Check dpdpa-india legal sources for changes.")
     ap.add_argument("--update", action="store_true", help="re-pin current hashes into the lock file")
     ap.add_argument("--json", action="store_true", help="emit JSON instead of a table")
     args = ap.parse_args()

@@ -3,7 +3,7 @@ description: Audit this app/codebase for India DPDP Act 2023 + Rules 2025 compli
 argument-hint: "[path or scope - e.g. . | ./api | \"the signup + analytics flow\"]"
 ---
 
-Use the **dpdp-india** skill to run a Digital Personal Data Protection (India) compliance audit.
+Use the **dpdpa-india** skill to run a Digital Personal Data Protection (India) compliance audit.
 
 Target: **$ARGUMENTS** (if empty, audit the current repository / working directory).
 

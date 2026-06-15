@@ -12,7 +12,7 @@ The DPDP Act 2023 (Act 22 of 2023) commences in phases, and the DPDP Rules 2025 
 
 ## How the checker works
 
-Each variant performs the same loop over the sources pinned in [`sources.lock.json`](../plugins/dpdp-india/scripts/sources.lock.json):
+Each variant performs the same loop over the sources pinned in [`sources.lock.json`](../plugins/dpdpa-india/scripts/sources.lock.json):
 
 1. Issue a single HTTP GET to the pinned `url` (browser User-Agent, 45s timeout).
 2. Compute the SHA-256 of the response body.
@@ -35,7 +35,7 @@ The checker only issues GET requests to the public URLs in the lock file. It sen
 
 ## The lock file
 
-[`sources.lock.json`](../plugins/dpdp-india/scripts/sources.lock.json) is the single source of truth. It has a top-level `verified` date (the day the hashes were last confirmed against re-verified reference files) and a `sources` array. Each source carries:
+[`sources.lock.json`](../plugins/dpdpa-india/scripts/sources.lock.json) is the single source of truth. It has a top-level `verified` date (the day the hashes were last confirmed against re-verified reference files) and a `sources` array. Each source carries:
 
 | Field | Purpose |
 |---|---|
@@ -66,11 +66,11 @@ All three are functionally identical and share the lock file. Pick by what is al
 
 | Script | Runtime | Use when |
 |---|---|---|
-| [`check-updates.py`](../plugins/dpdp-india/scripts/check-updates.py) | Python 3, stdlib only | Canonical. Default; works anywhere Python 3 is present. |
-| [`check-updates.ps1`](../plugins/dpdp-india/scripts/check-updates.ps1) | Windows PowerShell | Native Windows, no Python needed. |
-| [`check-updates.sh`](../plugins/dpdp-india/scripts/check-updates.sh) | bash + `curl` + `jq` | Native macOS/Linux. Falls back to `python3` if `jq` is absent; errors only if neither is present. |
+| [`check-updates.py`](../plugins/dpdpa-india/scripts/check-updates.py) | Python 3, stdlib only | Canonical. Default; works anywhere Python 3 is present. |
+| [`check-updates.ps1`](../plugins/dpdpa-india/scripts/check-updates.ps1) | Windows PowerShell | Native Windows, no Python needed. |
+| [`check-updates.sh`](../plugins/dpdpa-india/scripts/check-updates.sh) | bash + `curl` + `jq` | Native macOS/Linux. Falls back to `python3` if `jq` is absent; errors only if neither is present. |
 
-The `/dpdp-update-check` command ([`dpdp-update-check.md`](../plugins/dpdp-india/commands/dpdp-update-check.md)) runs the Python variant via `${CLAUDE_PLUGIN_ROOT}` and points to the platform variants when `python` is unavailable.
+The `/dpdpa-update-check` command ([`dpdpa-update-check.md`](../plugins/dpdpa-india/commands/dpdpa-update-check.md)) runs the Python variant via `${CLAUDE_PLUGIN_ROOT}` and points to the platform variants when `python` is unavailable.
 
 All variants accept the same flags:
 
@@ -116,7 +116,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python plugins/dpdp-india/scripts/check-updates.py
+      - run: python plugins/dpdpa-india/scripts/check-updates.py
 ```
 
 A failed run is the prompt to walk the runbook above. Sources verified 2026-06-15.

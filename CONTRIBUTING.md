@@ -1,4 +1,4 @@
-# Contributing to dpdp-india
+# Contributing to dpdpa-india
 
 Thanks for your interest in contributing. This repo is part of the [GattyWorks](https://github.com/gattyworks)
 `gattyworks-compliance` skill family. By participating, you agree to our [Code of Conduct](CODE_OF_CONDUCT.md).

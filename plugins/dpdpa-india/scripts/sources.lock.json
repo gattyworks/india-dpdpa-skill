@@ -1,5 +1,5 @@
 {
-  "_comment": "Pinned upstream legal sources for the dpdp-india skill. The DPDP regime commences in phases, so these move. Run check-updates.py to diff live content against these hashes; run with --update to re-pin after you have re-verified the reference files. HTML pages can show benign changes (ads/markup); the two PDFs are the authoritative, stable anchors.",
+  "_comment": "Pinned upstream legal sources for the dpdpa-india skill. The DPDP regime commences in phases, so these move. Run check-updates.py to diff live content against these hashes; run with --update to re-pin after you have re-verified the reference files. HTML pages can show benign changes (ads/markup); the two PDFs are the authoritative, stable anchors.",
   "verified": "2026-06-15",
   "sources": [
     {

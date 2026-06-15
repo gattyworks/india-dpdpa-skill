@@ -1,5 +1,5 @@
 ---
-name: dpdp-india
+name: dpdpa-india
 description: >-
   Audit an application, codebase, product, or data flow for compliance with India's Digital
   Personal Data Protection Act, 2023 (DPDP Act) and the DPDP Rules, 2025. Use this skill
@@ -54,30 +54,33 @@ logs). Cite real `file:line` evidence for every finding; never assert a gap you 
 
 ## Output format
 
-Lead with a one-line verdict and a risk summary table, then findings ordered by severity.
+Report **exactly** per **[references/report-format.md](references/report-format.md)** - the output
+contract that fixes the structure, severity levels, statuses, finding fields, and the canonical
+issue IDs, so every audit returns the same fields and the same issues. In brief:
 
 ```
-DPDP Audit - <system> (against DPDP Act 2023 + Rules 2025, verified 2026-06-15)
+DPDPA Audit - <system> (DPDP Act 2023 + Rules 2025, sources verified 2026-06-15)
 Verdict: <Materially compliant | Gaps found | Not assessed>
 
-| # | Requirement (DPDP cite) | Status | Severity | Evidence | Fix |
-|---|------------------------|--------|----------|----------|-----|
+| ID | Requirement (cite) | Status | Severity | Evidence | Fix |
+|----|--------------------|--------|----------|----------|-----|
 ```
 
-- **Status:** ✅ Compliant · ⚠️ Gap · ❓ Needs review (can't tell from code alone) · ➖ N/A.
-- **Severity:** map to penalty exposure via [penalties-schedule.md](references/penalties-schedule.md).
-  Security-safeguard failures (§8(5), up to **₹250 crore**) and children's-data breaches are **Critical**.
-- **Evidence:** `path/to/file:line` or "not found in repo".
-- **Fix:** the concrete change + the template/reference that specifies it.
+- **ID:** the catalog ID from [audit-checklist.md](references/audit-checklist.md) (A1 ... J5), never invented.
+- **Status:** ✅ Compliant / ⚠️ Gap / ❓ Needs review (can't tell from code alone) / ➖ N/A.
+- **Severity:** Critical / High / Medium / Low, mapped to penalty exposure via [penalties-schedule.md](references/penalties-schedule.md). Security-safeguard failures (§8(5), up to **₹250 crore**) and children's-data gaps are **Critical**.
+- **Evidence:** `path/to/file:line`, or "not found".
+- **Fix:** the concrete change + the template/reference that closes it.
 
-Close with: top 3 risks, what to verify with counsel/ops (things not visible in code), and the
-one-line disclaimer below.
+Close with the risk-summary counts, gap details, top 3 risks, what to confirm with counsel/ops
+(things not visible in code), and the one-line disclaimer below.
 
 ## Reference map
 
 | Need | Read |
 |------|------|
 | Section-by-section audit engine | [references/audit-checklist.md](references/audit-checklist.md) |
+| The report format (fields, levels, issue IDs) | [references/report-format.md](references/report-format.md) |
 | What to grep for in a codebase | [references/code-patterns.md](references/code-patterns.md) |
 | Full Act index + definitions | [references/act-2023.md](references/act-2023.md) |
 | Consent & notice rules (§4-7) | [references/consent-notice.md](references/consent-notice.md) |

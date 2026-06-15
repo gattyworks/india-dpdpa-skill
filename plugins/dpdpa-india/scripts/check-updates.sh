@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Check whether the dpdp-india skill's upstream legal sources have changed.
+# Check whether the dpdpa-india skill's upstream legal sources have changed.
 # Native bash (uses curl + sha256sum/shasum + jq). Falls back to check-updates.py if jq is absent.
 #
 #   ./check-updates.sh            # check and report (exit 1 if any changed)

@@ -9,8 +9,8 @@
   },
   "plugins": [
     {
-      "name": "dpdp-india",
-      "source": "./plugins/dpdp-india",
+      "name": "dpdpa-india",
+      "source": "./plugins/dpdpa-india",
       "description": "Audit an app, codebase, or data flow against India's Digital Personal Data Protection Act 2023 + DPDP Rules 2025. Section-by-section checklist, codebase detection patterns, penalty schedule, GDPR mapping, and policy templates.",
       "version": "1.0.0",
       "keywords": ["dpdp", "dpdpa", "india", "privacy", "compliance", "data-protection", "audit", "gdpr", "legal"]

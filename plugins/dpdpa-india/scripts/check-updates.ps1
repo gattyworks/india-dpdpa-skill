@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Check whether the dpdp-india skill's upstream legal sources have changed (native PowerShell, no Python needed).
+  Check whether the dpdpa-india skill's upstream legal sources have changed (native PowerShell, no Python needed).
 .DESCRIPTION
   Re-fetches every source pinned in sources.lock.json, hashes it, and diffs against the stored hash.
 .PARAMETER Update

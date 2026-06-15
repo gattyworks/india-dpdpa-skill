@@ -1,13 +1,13 @@
 {
-  "name": "dpdp-india",
+  "name": "dpdpa-india",
   "description": "Audit an application, codebase, product, or data flow for compliance with India's Digital Personal Data Protection Act 2023 and the DPDP Rules 2025. Ships the statutory text, penalty schedule, a section-by-section audit checklist, codebase detection patterns, GDPR↔DPDP mapping, and ready-reference policy templates. Engineering aid, not legal advice.",
   "version": "1.0.0",
   "author": {
     "name": "gattyworks",
     "url": "https://github.com/gattyworks"
   },
-  "homepage": "https://github.com/gattyworks/dpdp-india",
-  "repository": "https://github.com/gattyworks/dpdp-india",
+  "homepage": "https://github.com/gattyworks/india-dpdpa-skill",
+  "repository": "https://github.com/gattyworks/india-dpdpa-skill",
   "license": "MIT",
   "keywords": ["dpdp", "dpdpa", "india", "privacy", "compliance", "data-protection", "audit", "gdpr", "consent", "legal"]
 }

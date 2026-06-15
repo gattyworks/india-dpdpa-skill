@@ -1,16 +1,16 @@
 # FAQ & troubleshooting
 
-Short answers to the questions that come up when running the **dpdp-india** skill. For how to run an audit see [Usage](usage.md); for keeping the legal references current see [Staying current](staying-current.md).
+Short answers to the questions that come up when running the **dpdpa-india** skill. For how to run an audit see [Usage](usage.md); for keeping the legal references current see [Staying current](staying-current.md).
 
 ## Is this legal advice?
 
-No. The skill is an **engineering aid** that helps you find *likely* gaps against India's Digital Personal Data Protection Act, 2023 (Act 22 of 2023) and the DPDP Rules, 2025. It is not legal advice, not a substitute for counsel, and using it creates no lawyer-client relationship. Always have a qualified Indian data-protection practitioner review your situation before you rely on any result. See the full [disclaimer](../plugins/dpdp-india/skills/dpdp-india/references/disclaimer.md).
+No. The skill is an **engineering aid** that helps you find *likely* gaps against India's Digital Personal Data Protection Act, 2023 (Act 22 of 2023) and the DPDP Rules, 2025. It is not legal advice, not a substitute for counsel, and using it creates no lawyer-client relationship. Always have a qualified Indian data-protection practitioner review your situation before you rely on any result. See the full [disclaimer](../plugins/dpdpa-india/skills/dpdpa-india/references/disclaimer.md).
 
 ## Does it send my code or data anywhere?
 
 No. The audit runs **locally in your agent** - it reads your files and reasons over the bundled references; nothing about your codebase leaves the machine.
 
-The only component that touches the network is the update checker, [`check-updates.py`](../plugins/dpdp-india/scripts/check-updates.py). It issues **GET requests to public legal-source URLs**, hashes each response, and diffs the hash against `sources.lock.json`. It transmits no part of your code, data, or audit - it sends a request and reads back the public page.
+The only component that touches the network is the update checker, [`check-updates.py`](../plugins/dpdpa-india/scripts/check-updates.py). It issues **GET requests to public legal-source URLs**, hashes each response, and diffs the hash against `sources.lock.json`. It transmits no part of your code, data, or audit - it sends a request and reads back the public page.
 
 ## "DPDP" vs "DPDPA" - which is right?
 
@@ -36,7 +36,7 @@ It re-fetches each pinned source and flags any that changed, telling you which r
 
 You don't self-declare. Under §10(1), the Central Government **designates** a fiduciary or class as an SDF, weighing factors such as volume and sensitivity of data processed, risk to Data Principals' rights, and impact on India's sovereignty/integrity, electoral democracy, State security, and public order.
 
-If designated, §10(2) adds obligations: appoint a **Data Protection Officer based in India** (reporting to the board, named grievance contact), engage an **independent data auditor** for periodic data audits, and run **periodic DPIAs** for high-risk processing. See [fiduciary-obligations.md](../plugins/dpdp-india/skills/dpdp-india/references/fiduciary-obligations.md). The skill flags when you *could* fall in scope; designation itself is a government act.
+If designated, §10(2) adds obligations: appoint a **Data Protection Officer based in India** (reporting to the board, named grievance contact), engage an **independent data auditor** for periodic data audits, and run **periodic DPIAs** for high-risk processing. See [fiduciary-obligations.md](../plugins/dpdpa-india/skills/dpdpa-india/references/fiduciary-obligations.md). The skill flags when you *could* fall in scope; designation itself is a government act.
 
 ## Does the skill modify my code?
 
@@ -56,7 +56,7 @@ powershell -ExecutionPolicy Bypass -File check-updates.ps1
 
 ## Does it work outside Claude Code?
 
-Yes. The skill is a portable **`SKILL.md` + references** bundle with no runtime and no secrets. Drop [`plugins/dpdp-india/skills/dpdp-india/`](../plugins/dpdp-india/skills/dpdp-india/) into any agent that reads markdown context (Cursor, Windsurf, the Claude Agent SDK, your own RAG), or just tell the model to read `SKILL.md` and audit against it. The update checker is plain stdlib Python and runs anywhere.
+Yes. The skill is a portable **`SKILL.md` + references** bundle with no runtime and no secrets. Drop [`plugins/dpdpa-india/skills/dpdpa-india/`](../plugins/dpdpa-india/skills/dpdpa-india/) into any agent that reads markdown context (Cursor, Windsurf, the Claude Agent SDK, your own RAG), or just tell the model to read `SKILL.md` and audit against it. The update checker is plain stdlib Python and runs anywhere.
 
 ## How are penalties "estimated"?
 
