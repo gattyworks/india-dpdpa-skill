@@ -35,9 +35,8 @@
   .cfig{position:absolute;left:26px;top:118px;color:#0f766e;font-size:30px;font-weight:800}
   .csub{position:absolute;left:26px;top:166px;color:#475569;font-size:15px}
   .cmono{position:absolute;right:26px;top:166px;color:#94a3b8;font-size:13px;font-family:ui-monospace,monospace}
-  .corner{position:absolute;right:52px;bottom:14px;display:flex;align-items:center;gap:8px}
-  .corner span{color:var(--co);font-size:16px;font-weight:700}
-  .corner svg{height:20px;width:auto;display:block}
+  .corner{position:absolute;right:40px;bottom:21px;display:flex;align-items:center;gap:8px}
+  .corner span{color:var(--co);font-size:16px;font-weight:normal}
 </style>
 </head>
 <body>
@@ -71,7 +70,7 @@ function build(t){const c=TH[t];return `
     <div class="csub">Max penalty - Section 8(5)</div>
     <div class="cmono">#C1</div>
   </div>
-  <div class="corner"><svg class="gw" viewBox="60 165 390 185"><g fill="${c.co}">${GW}</g></svg><span>Project by GattyWorks.com</span></div>`}
+  <div class="corner"><span>Project by GattyWorks.com</span></div>`}
 document.getElementById('dark').innerHTML=build('dark');
 document.getElementById('light').innerHTML=build('light');
 function fit(){document.querySelectorAll('.frame').forEach(f=>{const b=f.querySelector('.banner'),s=f.clientWidth/1200;b.style.transform='scale('+s+')';f.style.height=(420*s)+'px'})}
