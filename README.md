@@ -13,6 +13,8 @@
   <img src="https://img.shields.io/badge/Sources_verified-2026--06--15-0A0A0A?style=for-the-badge" alt="Sources verified">
 </p>
 
+<p align="center"><i>A <a href="https://github.com/gattyworks">GattyWorks</a> project.</i></p>
+
 <h3 align="center">Point an AI agent at your build and ask: <i>"are we breaking any Indian data-protection rules?"</i></h3>
 
 A self-contained **skill** that audits an application, codebase, product, or data flow against
@@ -38,6 +40,24 @@ coverage · published privacy artifacts.
 
 Each finding comes back with a **status**, **severity mapped to penalty exposure**, real
 `file:line` **evidence**, a **remediation**, and the **template** that closes it.
+
+## How it works
+
+```mermaid
+flowchart LR
+  A["Your app or codebase"] -->|"/dpdpa-audit"| S["1. Scope<br/>data, role, children, SDF, cross-border"]
+  S --> C["2. Checklist<br/>dimensions A-J vs DPDP sections"]
+  C --> E["3. Evidence<br/>grep code, cite file:line"]
+  E --> R["4. Report<br/>fixed fields, severity, IDs A1-J5"]
+  REF[("references<br/>Act, Rules, checklist, templates")] -. read .-> C
+  REF -. read .-> E
+  R --> FIX["Each gap points to the template that fixes it"]
+```
+
+- **Scope** the personal-data surface and whether the org is a Data Fiduciary or Processor.
+- **Run the checklist** dimension by dimension, each item mapped to a DPDP section or rule.
+- **Gather evidence** from the code (`file:line`); never assert a gap you have not looked for.
+- **Report** to the fixed [contract](plugins/dpdpa-india/skills/dpdpa-india/references/report-format.md) so every run returns the same fields, severities, and issue IDs.
 
 ## Example audit report
 
@@ -150,20 +170,16 @@ the DPDP Rules 2025, the knowledge hub at [dpdpa.com](https://www.dpdpa.com/) /
 [dpdpa.in](https://www.dpdpa.in/), and Latham & Watkins' DPDP-vs-GDPR comparison. Statutory text
 is government work; third-party template structures are paraphrased and attributed, not mirrored.
 
-## Contributing & community
+## License & community
 
-<p align="center">
-  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributing-guide-00ADB5?style=for-the-badge" alt="Contributing"></a>
-  <a href="CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code_of_Conduct-Contributor_Covenant-0A0A0A?style=for-the-badge" alt="Code of Conduct"></a>
-  <a href="SECURITY.md"><img src="https://img.shields.io/badge/Security-policy-0A0A0A?style=for-the-badge" alt="Security"></a>
-</p>
+- **License:** [MIT](LICENSE) © 2026 GattyWorks.
+- **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md) - corrections to the legal references are especially welcome; cite the section or rule and a primary source.
+- **Code of conduct:** [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+- **Security:** report privately per [SECURITY.md](SECURITY.md), never via a public issue.
 
-Corrections to the legal references are especially welcome - cite the section/rule and the source.
 We work in short-lived branches and ship through review; never push straight to `main`.
 
-## License
-
-[MIT](LICENSE) © 2026 GattyWorks.
+A [GattyWorks](https://github.com/gattyworks) project.
 
 ---
 
