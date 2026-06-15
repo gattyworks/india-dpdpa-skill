@@ -19,7 +19,7 @@ Please include as much of the following as you can:
 
 ## Scope note
 
-This repository ships **no runtime service and no secrets** — it is a documentation/skill bundle plus a
+This repository ships **no runtime service and no secrets** - it is a documentation/skill bundle plus a
 read-only update-check script that fetches public URLs and hashes them. The most relevant concerns are
 therefore the scripts in `plugins/dpdp-india/scripts/` and the integrity of the pinned sources.
 

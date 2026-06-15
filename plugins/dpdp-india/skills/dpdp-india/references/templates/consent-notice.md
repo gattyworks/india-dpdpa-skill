@@ -12,7 +12,7 @@ Whenever consent is the lawful basis for processing (i.e., not a "legitimate use
 - Data Principal rights summary: withdraw consent (as easy as giving it), access, correction, erasure, grievance, nomination.
 - How to withdraw consent and the consequence of withdrawal.
 - Contact for the Data Protection Officer / grievance channel and the Data Protection Board complaint route.
-- Affirmative opt-in mechanism (unticked box / explicit action) — no pre-checked boxes or implied consent.
+- Affirmative opt-in mechanism (unticked box / explicit action) - no pre-checked boxes or implied consent.
 - Reference to availability of the notice in the principal's chosen language (English + Eighth Schedule languages).
 - Consent declaration / signature or timestamped acceptance block.
 

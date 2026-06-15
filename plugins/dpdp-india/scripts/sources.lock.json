@@ -4,7 +4,7 @@
   "sources": [
     {
       "id": "act-2023-pdf",
-      "label": "DPDP Act 2023 — MeitY gazette PDF (authoritative)",
+      "label": "DPDP Act 2023 - MeitY gazette PDF (authoritative)",
       "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
       "type": "pdf",
       "sha256": "4deb23981d3010c8225a2ff6149e7243dc2268455b299e283afebdd7b72a7d15",
@@ -12,7 +12,7 @@
     },
     {
       "id": "lw-gdpr-comparison-pdf",
-      "label": "Latham & Watkins — DPDP vs GDPR comparison PDF",
+      "label": "Latham & Watkins - DPDP vs GDPR comparison PDF",
       "url": "https://www.lw.com/admin/upload/SiteAttachments/Indias-Digital-Personal-Data-Protection-Act-2023-vs-the-GDPR-A-Comparison.pdf",
       "type": "pdf",
       "sha256": "67bc22566c8924919cf13b38d97e4e3fbffc05368bb132ae5366d39a77bf3f63",
@@ -20,7 +20,7 @@
     },
     {
       "id": "dpdpa-com-home",
-      "label": "dpdpa.com — home / Act section index",
+      "label": "dpdpa.com - home / Act section index",
       "url": "https://www.dpdpa.com/",
       "type": "html",
       "sha256": "d38853eb57b476048533902586b8082518bf926c4d30cc5376f8bfab69659d54",
@@ -28,7 +28,7 @@
     },
     {
       "id": "dpdpa-com-templates",
-      "label": "dpdpa.com — templates & policies index",
+      "label": "dpdpa.com - templates & policies index",
       "url": "https://www.dpdpa.com/dpdpatemplatesandpolicies.html",
       "type": "html",
       "sha256": "648587239f64fcbfbf63fde15996b4e5b2822ea4332af4ff88990730978db700",
@@ -36,7 +36,7 @@
     },
     {
       "id": "dpdpa-com-rules",
-      "label": "dpdpa.com — DPDP Rules landing",
+      "label": "dpdpa.com - DPDP Rules landing",
       "url": "https://dpdpa.com/dpdparules.html",
       "type": "html",
       "sha256": "80a7583345f4e6f942ab8f4ad6fb6a18e67728401fac946bb68d539d5c4a4a3a",
@@ -44,7 +44,7 @@
     },
     {
       "id": "dpdpa-com-mapping",
-      "label": "dpdpa.com — Section→Rule mapping",
+      "label": "dpdpa.com - Section→Rule mapping",
       "url": "https://www.dpdpa.com/mappingofdpdpatodpdprules.html",
       "type": "html",
       "sha256": "9398a7a453ac9493efe731d458db2cf7b1add865c4a73cec06ae63cb2ad26620",
@@ -52,7 +52,7 @@
     },
     {
       "id": "dpdpa-in-home",
-      "label": "dpdpa.in — cross-verification source",
+      "label": "dpdpa.in - cross-verification source",
       "url": "https://www.dpdpa.in/",
       "type": "html",
       "sha256": "27912bb36cdb2df9f0f41888fa50c9c544861749c1c1000e97f14804006a8ea7",

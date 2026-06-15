@@ -1,9 +1,9 @@
 # Website Privacy Policy
 
-_Purpose: public-facing disclosure of how personal data is collected, used, shared, retained, and protected. DPDP mapping: S.5 (Notice), S.11–14 (Data Principal rights). Source: https://www.dpdpa.com/templates/websiteprivacypolicytemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: public-facing disclosure of how personal data is collected, used, shared, retained, and protected. DPDP mapping: S.5 (Notice), S.11-14 (Data Principal rights). Source: https://www.dpdpa.com/templates/websiteprivacypolicytemplate.html. Paraphrased structure. Last verified: 2026-06-15._
 
 **When required**
-Any Data Fiduciary operating a website or app that collects personal data of individuals in India. The Notice obligation under S.5 requires informing the principal — at or before collection — of what data is collected and the purpose; a published privacy policy is the standard artifact satisfying this.
+Any Data Fiduciary operating a website or app that collects personal data of individuals in India. The Notice obligation under S.5 requires informing the principal - at or before collection - of what data is collected and the purpose; a published privacy policy is the standard artifact satisfying this.
 
 **Required clauses checklist** (paraphrased)
 - Introduction + scope (which sites/apps/services the policy governs).
@@ -13,8 +13,8 @@ Any Data Fiduciary operating a website or app that collects personal data of ind
 - Sharing/disclosure: who data is shared with (processors, third parties) and why.
 - Data security measures (reasonable safeguards under S.8(5)).
 - Retention period and erasure approach (link to retention policy).
-- Children's data handling (verifiable parental consent; no tracking/targeted ads — S.9).
-- Data Principal rights: access, correction, completion, erasure, grievance redressal, nomination, and consent withdrawal — and how to exercise them.
+- Children's data handling (verifiable parental consent; no tracking/targeted ads - S.9).
+- Data Principal rights: access, correction, completion, erasure, grievance redressal, nomination, and consent withdrawal - and how to exercise them.
 - Cross-border transfer disclosure if data leaves India (S.16).
 - Contact details of the Data Protection Officer / grievance officer.
 - Policy change/versioning and last-updated date.

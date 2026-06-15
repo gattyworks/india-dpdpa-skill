@@ -3,7 +3,7 @@
 The **dpdp-india** skill is an **engineering aid** to help teams find *likely* gaps against
 India's Digital Personal Data Protection Act, 2023 and the DPDP Rules, 2025. It is **not legal
 advice**, is not a substitute for professional counsel, and using it does not create any
-lawyer–client relationship.
+lawyer-client relationship.
 
 The law is new and commences in phases; statutory text, notified rules, country lists, and
 designations change over time. References in this skill reflect sources verified on the date

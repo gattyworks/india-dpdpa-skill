@@ -3,7 +3,7 @@
 _Purpose: the master internal governance document setting principles, roles, and accountability for all personal data processing. DPDP mapping: S.8 (general obligations of the Data Fiduciary), S.10 (Significant Data Fiduciary obligations). Source: https://www.dpdpa.com/templates/dataprotectionpolicytemplate.html. Paraphrased structure. Last verified: 2026-06-15._
 
 **When required**
-All Data Fiduciaries should maintain one; effectively mandatory-grade for Significant Data Fiduciaries (SDFs) who must demonstrate accountability and appoint a DPO (S.10). Distinct from the public privacy policy — this is the internal operating standard.
+All Data Fiduciaries should maintain one; effectively mandatory-grade for Significant Data Fiduciaries (SDFs) who must demonstrate accountability and appoint a DPO (S.10). Distinct from the public privacy policy - this is the internal operating standard.
 
 **Required clauses checklist** (paraphrased)
 - Introduction and definitions.

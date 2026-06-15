@@ -86,10 +86,10 @@ def main() -> int:
         if args.update:
             print(c(GREEN, "Lock file re-pinned to current hashes."))
         elif changed:
-            print(c(RED, f"{len(changed)} source(s) CHANGED — re-verify the affected reference files:"))
+            print(c(RED, f"{len(changed)} source(s) CHANGED - re-verify the affected reference files:"))
             for r in changed:
                 feeds = next((s.get("feeds", "") for s in sources if s["id"] == r["id"]), "")
-                print(f"    - {r['id']}  →  {feeds}")
+                print(f"    - {r['id']}  ->  {feeds}")
             print("  Re-verify against the source, update the .md files, then run with --update.")
         elif errored and not changed:
             print(c(YELLOW, f"All reachable sources current; {len(errored)} could not be fetched (retry / check network)."))

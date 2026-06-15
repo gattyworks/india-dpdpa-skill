@@ -1,4 +1,4 @@
-# This repo is a skill/plugin bundle — it ships NO secrets and no build artifacts.
+# This repo is a skill/plugin bundle - it ships NO secrets and no build artifacts.
 
 # Source downloads + local asset-build scratch (regenerate via assets/ generator)
 sources/

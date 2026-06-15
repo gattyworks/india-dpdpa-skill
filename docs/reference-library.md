@@ -1,0 +1,73 @@
+# Reference Library
+
+The `dpdp-india` skill ships its legal knowledge as a set of Markdown reference files under [`references/`](../plugins/dpdp-india/skills/dpdp-india/references/). These are not loaded all at once. The skill reads them on demand - pulling a statutory file when it needs a section cite, the checklist when it runs the audit, the code patterns when it greps a repo, and a template note when it checks for an expected artifact.
+
+This page is a guided tour of every file: what is inside it, when the skill reads it, and where the content comes from. It is an engineering aid, not legal advice - see [disclaimer](../plugins/dpdp-india/skills/dpdp-india/references/disclaimer.md) and [Legal and provenance](legal-and-provenance.md).
+
+Every reference file carries a dated **Source / Last verified** header (all `Last verified: 2026-06-15`) naming the underlying source - the Act, the Rules gazette, or a cited secondary analysis. When you cite the skill's output, trace it back through that header.
+
+## Master table
+
+| File | What's inside | When the skill reads it | Source |
+|---|---|---|---|
+| [`act-2023.md`](../plugins/dpdp-india/skills/dpdp-india/references/act-2023.md) | Chapter/section index of all 44 sections; scope (§3); verbatim §2 definitions; "most audit-relevant sections" map | To cite a section or confirm scope/definitions | DPDP Act 2023 (Act 22 of 2023), MeitY |
+| [`consent-notice.md`](../plugins/dpdp-india/skills/dpdp-india/references/consent-notice.md) | §§4-7 grounds for processing, notice contents, consent standard, the full §7 legitimate-uses list, Consent Manager role; compliant-flow checklist | Auditing notice/consent flows and lawful basis | DPDP Act 2023, MeitY |
+| [`fiduciary-obligations.md`](../plugins/dpdp-india/skills/dpdp-india/references/fiduciary-obligations.md) | §8 general duties, §9 children, §10 SDF duties, §16 cross-border; per-section actionable checklist | Auditing security, breach, erasure, children, SDF, transfer | DPDP Act 2023, MeitY |
+| [`data-principal-rights.md`](../plugins/dpdp-india/skills/dpdp-india/references/data-principal-rights.md) | §§11-15 rights and duties; "right → technical capability" mapping | Checking whether rights (access/correct/erase/grievance/nominate) are technically supported | DPDP Act 2023, MeitY |
+| [`penalties-schedule.md`](../plugins/dpdp-india/skills/dpdp-india/references/penalties-schedule.md) | The Schedule penalty table, §33 adjudication factors, §34, §42 cap-on-increase | To attach a penalty band / severity to a gap | DPDP Act 2023, MeitY |
+| [`rules-2025.md`](../plugins/dpdp-india/skills/dpdp-india/references/rules-2025.md) | Operational detail from the DPDP Rules 2025: phased commencement, notice format, Consent Manager, Rule 6 safeguards, Rule 7 breach timeline, Rule 8 retention/Third Schedule, children, SDF, transfer, Board procedure | Auditing operational specifics (timelines, retention caps, security measures) | DPDP Rules 2025, G.S.R. 846(E) (13 Nov 2025) + cited secondary analyses |
+| [`audit-checklist.md`](../plugins/dpdp-india/skills/dpdp-india/references/audit-checklist.md) | The audit engine: dimensions A-J, each a table of checks with "compliant looks like" and a severity; scoring scheme; time-boxed triage order | Every audit run - this is the engine | DPDP Act 2023 + DPDP Rules 2025 |
+| [`code-patterns.md`](../plugins/dpdp-india/skills/dpdp-india/references/code-patterns.md) | `ripgrep` patterns to find evidence for each checklist dimension in a real repo; stack hints | While gathering evidence from a codebase | Engineering aid (skill-authored) |
+| [`gdpr-comparison.md`](../plugins/dpdp-india/skills/dpdp-india/references/gdpr-comparison.md) | Side-by-side GDPR vs DPDP table; "if you're already GDPR-compliant, what's still missing" list | When the team is GDPR-anchored or asks how DPDP differs | Latham & Watkins (Apr 2026) + Act/Rules; PDF at `references/sources/` |
+| [`legal-context.md`](../plugins/dpdp-india/skills/dpdp-india/references/legal-context.md) | Surrounding Indian regime: Puttaswamy, IT Act §43A/SPDI, CERT-In 6-hour rule, RBI/sectoral localisation, case-law maturity | When overlapping laws (CERT-In, SPDI, sectoral) bear on a finding | SC judgments, IT Act/SPDI, CERT-In, RBI + L&W endnotes |
+| [`templates/`](../plugins/dpdp-india/skills/dpdp-india/references/templates/) | 13 paraphrased policy-artifact specs + an [index](../plugins/dpdp-india/skills/dpdp-india/references/templates/README.md) + a [`_site-map`](../plugins/dpdp-india/skills/dpdp-india/references/templates/_site-map.md) | When checking whether an expected compliance artifact exists and is complete | Structure from dpdpa.com (paraphrased) |
+| [`disclaimer.md`](../plugins/dpdp-india/skills/dpdp-india/references/disclaimer.md) | The "engineering aid, not legal advice" notice; no-warranty / MIT terms | Surfaced with results so users do not mistake output for counsel | Skill-authored (GattyWorks) |
+
+> `references/sources/` also holds the raw source material the secondary analyses draw on - `lw-dpdp-vs-gdpr.pdf` and its extracted `.txt`. These are evidence, not files the skill reads at audit time.
+
+## Statutory core
+
+Five files paraphrase and index the **DPDP Act 2023 (Act 22 of 2023)** itself. They are the citation backbone: every finding the skill emits should resolve to a section here.
+
+- **[`act-2023.md`](../plugins/dpdp-india/skills/dpdp-india/references/act-2023.md)** - the spine. Indexes all 9 chapters and 44 sections in short tables, states the §3 scope (in-India digital data plus extraterritorial reach for goods/services offered to principals in India), reproduces the key §2 definitions near-verbatim (including child = under 18, §2(f)), and closes with a "most audit-relevant sections" map. Read this to confirm a section number or a definition before relying on it.
+- **[`consent-notice.md`](../plugins/dpdp-india/skills/dpdp-india/references/consent-notice.md)** - §§4-7. Lawful basis is **consent (§6) or a closed list of legitimate uses (§7)** - there is no GDPR-style legitimate-interests balancing. Covers required notice contents (§5), the consent standard (§6: free, specific, informed, unconditional, unambiguous, withdrawable as easily as given), the full §7 list, and the Consent Manager role. Ends with a compliant notice/consent flow checklist.
+- **[`fiduciary-obligations.md`](../plugins/dpdp-india/skills/dpdp-india/references/fiduciary-obligations.md)** - §8 (accountability, processor contracts, accuracy, **security safeguards under §8(5) - the ₹250 crore band**, breach intimation, erasure/retention, DPO contact, grievance), §9 (children: verifiable parental consent, no tracking/behavioural monitoring/targeted ads), §10 (SDF: India-based DPO, independent auditor, periodic DPIA), and §16 (cross-border blacklist model). Per-section actionable checklists.
+- **[`data-principal-rights.md`](../plugins/dpdp-india/skills/dpdp-india/references/data-principal-rights.md)** - §§11-15: access, correction/erasure, grievance redressal, nomination, and principal duties. Each right is paired with the technical capability a system must build to honour it (export endpoint, deletion pipeline, SLA-tracked grievance ticketing, nominee designation).
+- **[`penalties-schedule.md`](../plugins/dpdp-india/skills/dpdp-india/references/penalties-schedule.md)** - the Schedule penalty table (verbatim), with the max penalty **up to ₹250 crore for failure of reasonable security safeguards (§8(5))**, the §33 factors the Board weighs, §34 (penalties to the Consolidated Fund), and the §42 rule that an amendment cannot more than double an enacted penalty. The skill reads this to attach a penalty band - and thus a severity - to each gap.
+
+## Operational
+
+- **[`rules-2025.md`](../plugins/dpdp-india/skills/dpdp-india/references/rules-2025.md)** - the **DPDP Rules 2025**, notified 13 Nov 2025 via gazette **G.S.R. 846(E)** (final, not the superseded 3 Jan 2025 draft). This is where the Act's "as may be prescribed" placeholders get concrete: phased commencement (Board operational from notification; substantive fiduciary obligations phasing in ~13 May 2027), notice format, Consent Manager registration, the Rule 6 outcome-based security measures, the Rule 7 breach timeline (**without delay to principals; without delay + a detailed report within 72 hours to the Board, every breach reportable**), Rule 8 retention (3-year inactivity erasure for large e-commerce/gaming/social-media classes, 48-hour pre-erasure notice, ≥1-year log floor), children's age-verification, SDF duties, and cross-border rules. It also flags provisions **not yet notified** (SDF list, restricted-country list) so the skill does not over-assert. Sources are the gazette plus cross-verified secondary analyses; this file's status header and "still uncertain" section are why the skill keeps a "verify against the gazette" posture.
+
+## Audit engine
+
+These two files are how the skill actually conducts an audit. See [Audit method](audit-method.md) for the full procedure.
+
+- **[`audit-checklist.md`](../plugins/dpdp-india/skills/dpdp-india/references/audit-checklist.md)** - the engine. Ten dimensions (**A** lawful basis · **B** notice & consent · **C** security & duties · **D** breach · **E** children · **F** rights · **G** SDF · **H** cross-border · **I** retention · **J** governance). Each dimension is a table of checks with a "compliant looks like" column and a severity (Critical / High / Medium / Low keyed to the penalty bands). For each item the skill records a verdict (Compliant / Gap / Needs review / N/A), cites `file:line` evidence, and maps severity via the penalties schedule. A "quick triage" block orders the highest-exposure failures (C1 security → E children → D breach notice → consent quality → erasure → rights) for time-boxed runs.
+- **[`code-patterns.md`](../plugins/dpdp-india/skills/dpdp-india/references/code-patterns.md)** - the evidence layer. `ripgrep` recipes for each checklist dimension: mapping the PII surface, finding consent capture and pre-ticked-box smells, security/encryption and hardcoded-secret detection, PII-in-logs, breach handling, children's-data and tracking SDKs, rights endpoints, retention/TTL jobs, cross-border sinks, and governance artifacts. Stack hints for Next.js, Django, Rails, Spring, and mobile. A match is a lead, not a verdict - the file is explicit that absence of an expected control is itself a finding, and that every code finding must be paired with its checklist item and an Act section cite.
+
+## Context
+
+Background the skill pulls in when a finding depends on more than the DPDP statute alone.
+
+- **[`gdpr-comparison.md`](../plugins/dpdp-india/skills/dpdp-india/references/gdpr-comparison.md)** - a side-by-side table across scope, lawful bases, consent, rights, DPO, breach timelines, transfer model, penalties, regulator, special categories, ROPA, and children, plus a prioritised "already GDPR-compliant - what's still missing for DPDP" list (re-paper lawful bases, report every breach, India DPO, under-18 verifiable parental consent, Consent Manager, localisation, multi-language, Third-Schedule retention, ≤90-day grievance, nomination). Useful when a team is GDPR-anchored. Drawn from Latham & Watkins (Apr 2026), with the PDF kept locally in `references/sources/`.
+- **[`legal-context.md`](../plugins/dpdp-india/skills/dpdp-india/references/legal-context.md)** - the surrounding Indian regime: the Puttaswamy privacy-as-fundamental-right foundation; the still-operative IT Act §43A / SPDI Rules 2011 (which DPDP eventually displaces and which, unlike DPDP, recognises a special-category concept); the **CERT-In 6-hour incident-reporting clock** that runs alongside and tighter than DPDP's breach timeline; RBI payment-data localisation and other sectoral overlays; and a note that formal DPDP case law is still minimal. The skill reads this so a finding accounts for laws that stack on top of DPDP.
+
+## Templates
+
+[`references/templates/`](../plugins/dpdp-india/skills/dpdp-india/references/templates/) holds **13 paraphrased policy-artifact specs**, plus an [index (`README.md`)](../plugins/dpdp-india/skills/dpdp-india/references/templates/README.md) and a [`_site-map.md`](../plugins/dpdp-india/skills/dpdp-india/references/templates/_site-map.md).
+
+Each note is the **expected-artifact spec** for a compliant build, not a fill-in-the-blank document. Every file follows the same shape: a **Purpose + DPDP mapping + Source + Last verified** header, a **When required** paragraph, a **paraphrased required-clauses checklist**, and a list of **audit signals** (the route, table, cron job, or document the skill looks for). The text is paraphrased structure only - no verbatim template content is mirrored.
+
+The 13 artifacts: privacy policy, consent notice/form, data retention policy, data protection policy, data processing agreement, third-party vendor agreement, cross-border transfer agreement, data breach response/notice, DSAR / rights-request form, grievance redressal, cookie policy, employee privacy policy, and DPIA. The [`README.md`](../plugins/dpdp-india/skills/dpdp-india/references/templates/README.md) is the master mapping (template → what it safeguards → DPDP section/rule → when required → source URL) and explains how the audit treats each file: confirm the artifact exists and contains the required clauses, otherwise flag a gap mapped to its DPDP section. The [`_site-map.md`](../plugins/dpdp-india/skills/dpdp-india/references/templates/_site-map.md) records the dpdpa.com URL structure these notes derive from and feeds the update-checker (re-fetch and diff against the paraphrased notes).
+
+> The site-map and the source site list **12** template pages because the DSAR rights-request page and the grievance-redressal note share one underlying dpdpa.com URL; the skill splits them into two separate spec files, giving **13** artifact notes.
+
+## Meta
+
+- **[`disclaimer.md`](../plugins/dpdp-india/skills/dpdp-india/references/disclaimer.md)** - the standing notice that the skill is an engineering aid to find *likely* gaps, **not legal advice**, creates no lawyer-client relationship, carries no warranty, and is provided "as is" under the MIT License. It also notes the law is phasing in and that references reflect the dated header in each file. Surfaced alongside audit output so results are never mistaken for counsel.
+
+## See also
+
+- [Audit method](audit-method.md) - how the checklist and code patterns drive an actual audit run.
+- [Legal and provenance](legal-and-provenance.md) - the sourcing, verification dates, and "not legal advice" framing behind these files.

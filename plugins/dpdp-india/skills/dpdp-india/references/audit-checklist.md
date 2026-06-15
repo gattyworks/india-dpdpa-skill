@@ -1,6 +1,6 @@
 _Source: DPDP Act 2023 + DPDP Rules 2025. Last verified: 2026-06-15. Engineering aid, not legal advice._
 
-# DPDP Audit Checklist — the engine
+# DPDP Audit Checklist - the engine
 
 Run each dimension. For every item: decide **✅ Compliant / ⚠️ Gap / ❓ Needs review / ➖ N/A**, cite
 `file:line` evidence, and map severity via [penalties-schedule.md](penalties-schedule.md). Severity
@@ -10,7 +10,7 @@ shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **
 
 | # | Check | Compliant looks like | Sev |
 |---|-------|----------------------|-----|
-| A1 | Every processing activity has a lawful basis | Each data use maps to **consent (§6)** or a **listed legitimate use (§7)** — nothing else is permitted | H |
+| A1 | Every processing activity has a lawful basis | Each data use maps to **consent (§6)** or a **listed legitimate use (§7)** - nothing else is permitted | H |
 | A2 | Purpose is specific & lawful | No "general/blanket" purposes; purpose recorded per data category | M |
 | A3 | Data minimisation | Only data **necessary** for the stated purpose is collected (§6(1)) | M |
 | A4 | No function creep | Data isn't reused for new purposes without fresh consent | H |
@@ -23,7 +23,7 @@ shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **
 | B2 | Notice is standalone & plain-language | Available in English + the 8th-Schedule languages on request; not buried in T&Cs | M |
 | B3 | Consent is free/specific/informed/unconditional/unambiguous | Clear **affirmative action** (unticked box, explicit tap); no pre-ticked, no bundled consent (§6(1)) | C |
 | B4 | Itemised consent | Separate consent per purpose; granular, not all-or-nothing | H |
-| B5 | Withdrawal as easy as giving | A visible, equally simple "withdraw consent" path; consequences stated; processing stops on withdrawal (§6(4)–(6)) | H |
+| B5 | Withdrawal as easy as giving | A visible, equally simple "withdraw consent" path; consequences stated; processing stops on withdrawal (§6(4)-(6)) | H |
 | B6 | Consent records / audit trail | Timestamped log of what was consented to, when, and the notice version shown | H |
 | B7 | Consent Manager interoperability | If using/required, supports a Board-registered Consent Manager (§2(g), Rules) | M |
 | B8 | Pre-Act data | Consent obtained before the Act still requires a fresh notice "as soon as reasonably practicable" (§5(2)) | M |
@@ -32,7 +32,7 @@ shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **
 
 | # | Check | Compliant looks like | Sev |
 |---|-------|----------------------|-----|
-| C1 | **Reasonable security safeguards** | Encryption (at rest + in transit), access control, logging & monitoring, backups, secure config — the Rule-6 measures. Failure here is the **₹250 cr** band (§8(5)) | **C** |
+| C1 | **Reasonable security safeguards** | Encryption (at rest + in transit), access control, logging & monitoring, backups, secure config - the Rule-6 measures. Failure here is the **₹250 cr** band (§8(5)) | **C** |
 | C2 | Processor contracts | Every Data Processor is engaged under a **valid contract** (§8(2)); DPA in place | H |
 | C3 | Data accuracy & completeness | Mechanisms to keep data accurate/complete/up-to-date, esp. where used for decisions/sharing (§8(3)) | M |
 | C4 | Erasure on withdrawal/purpose-end | Data (and processor copies) erased when consent withdrawn or purpose served, unless law requires retention (§8(7)) | H |
@@ -47,7 +47,7 @@ shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **
 | D1 | Breach detection | Monitoring/alerting can detect a "personal data breach" as defined in §2(u) | H |
 | D2 | Notify affected Data Principals | **Without delay**, in plain language: nature, likely consequences, mitigation, and safety steps for the principal (Rule 7) | C |
 | D3 | Notify the Data Protection Board | **Initial intimation without delay**, **detailed report within 72 hours** of becoming aware (Rule 7) | C |
-| D4 | No risk threshold | **Every** breach is reportable — there is no "low risk → no report" exception under DPDP | H |
+| D4 | No risk threshold | **Every** breach is reportable - there is no "low risk → no report" exception under DPDP | H |
 | D5 | Breach runbook | Documented response plan exists ([templates/data-breach-response.md](templates/data-breach-response.md)) | M |
 
 ## E. Children's data (§9)
@@ -59,7 +59,7 @@ shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **
 | E3 | No behavioural tracking of children | **No** tracking, behavioural monitoring, or **targeted advertising** directed at children (§9(3)) | C |
 | E4 | No detrimental processing | Nothing likely to cause detrimental effect on a child's wellbeing (§9(2)) | C |
 
-## F. Data Principal rights (§11–14)
+## F. Data Principal rights (§11-14)
 
 | # | Check | Compliant looks like | Sev |
 |---|-------|----------------------|-----|
@@ -86,14 +86,14 @@ Applies only if notified/designated as an **SDF** (high volume or sensitivity). 
 |---|-------|----------------------|-----|
 | H1 | Restricted-country check | Transfers honour the Central Government's **notified restriction list** (blacklist model, §16) | H |
 | H2 | Sub-processor geography known | You know where data physically goes (cloud regions, CDNs, analytics) | M |
-| H3 | Sectoral localisation | Sector rules still apply (e.g. RBI payment-data localisation) — see [legal-context.md](legal-context.md) | M |
+| H3 | Sectoral localisation | Sector rules still apply (e.g. RBI payment-data localisation) - see [legal-context.md](legal-context.md) | M |
 
-## I. Retention & erasure (§8(7)–(8) + Rule 8 / Third Schedule)
+## I. Retention & erasure (§8(7)-(8) + Rule 8 / Third Schedule)
 
 | # | Check | Compliant looks like | Sev |
 |---|-------|----------------------|-----|
 | I1 | Defined retention periods | Each data category has a documented retention period tied to purpose ([templates/data-retention-policy.md](templates/data-retention-policy.md)) | M |
-| I2 | Automated erasure | A job/process erases data when purpose ends or consent is withdrawn — not "keep forever" | H |
+| I2 | Automated erasure | A job/process erases data when purpose ends or consent is withdrawn - not "keep forever" | H |
 | I3 | 3-year inactivity erasure (specified classes) | **E-commerce ≥2 cr users, online gaming ≥50 lakh, social media ≥2 cr**: erase if the principal hasn't engaged for **3 years** (purpose deemed served), with **48-hour pre-erasure notice** (Rule 8 / Third Schedule) | H |
 | I4 | Log retention floor | Required logs/data kept for **≥1 year** where the Rules mandate (Rule 8(3)) | L |
 
@@ -109,6 +109,6 @@ Applies only if notified/designated as an **SDF** (high volume or sensitivity). 
 
 ## Quick triage (start here if time-boxed)
 
-The highest-exposure failures, in order: **C1** (security safeguards, ₹250 cr) → **E1–E4**
-(children) → **D2–D3** (breach notice) → **B3/B5** (consent quality & withdrawal) → **C4/I2**
-(erasure) → **F1–F3** (rights). Clear these before the rest.
+The highest-exposure failures, in order: **C1** (security safeguards, ₹250 cr) → **E1-E4**
+(children) → **D2-D3** (breach notice) → **B3/B5** (consent quality & withdrawal) → **C4/I2**
+(erasure) → **F1-F3** (rights). Clear these before the rest.

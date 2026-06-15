@@ -3,7 +3,7 @@ _Engineering aid for evidence-gathering during a DPDP audit. Last verified: 2026
 # Codebase detection patterns
 
 How to find **evidence** for each checklist dimension in a real repository. Patterns are
-`ripgrep` (`rg`); adapt to the stack. A match is a *lead*, not a verdict — read the surrounding
+`ripgrep` (`rg`); adapt to the stack. A match is a *lead*, not a verdict - read the surrounding
 code before scoring. Absence of a match for an *expected* control is itself a finding.
 
 ## 1. Map the personal-data surface (do this first)
@@ -27,14 +27,14 @@ Output: a data inventory (category → where stored → purpose → shared with)
 rg -i -n "consent|opt[-_]?in|opt[-_]?out|gdpr|privacy_?(accepted|agreed)|terms_?accepted"
 # Pre-ticked / bundled consent smell (⚠️ §6 violation)
 rg -i -n "checked\s*=\s*[\"']?true|defaultChecked|isChecked\s*=\s*true"
-# Withdrawal path (must exist and be easy — B5)
+# Withdrawal path (must exist and be easy - B5)
 rg -i -n "withdraw|revoke|unsubscribe|delete_?consent|opt_?out"
 # Consent audit trail / versioned notice (B6)
 rg -i -n "consent_?(log|history|record|version|timestamp)|notice_?version"
 ```
 No consent table + no withdrawal route ⇒ **B3/B5/B6 gaps**. Pre-ticked boxes ⇒ **B3 Critical**.
 
-## 3. Security safeguards (dimension C1 — the ₹250 cr band)
+## 3. Security safeguards (dimension C1 - the ₹250 cr band)
 
 ```bash
 # Encryption in transit / at rest
@@ -50,13 +50,13 @@ rg -i -n "audit_?log|access_?log|logger\.(info|audit)|winston|pino|log4j"
 ```
 Hardcoded secrets, MD5/SHA1 password hashing, no TLS enforcement, no authz layer ⇒ **C1 Critical**.
 
-## 4. PII in logs (silent breach risk — D/C1)
+## 4. PII in logs (silent breach risk - D/C1)
 
 ```bash
 # Logging that may leak PII
 rg -i -n "(log|console\.(log|info)|print|printf|logger)\s*\(.*\b(email|phone|password|token|aadhaar|user)\b"
 ```
-PII written to logs/analytics in plaintext is a confidentiality compromise — flag it.
+PII written to logs/analytics in plaintext is a confidentiality compromise - flag it.
 
 ## 5. Breach handling (dimension D)
 

@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.png">
-    <img src="assets/banner-dark.png" alt="DPDP India — Digital Personal Data Protection Act 2023 + Rules 2025 — compliance audit skill" width="100%">
+    <img src="assets/banner-dark.png" alt="DPDP India - Digital Personal Data Protection Act 2023 + Rules 2025 - compliance audit skill" width="100%">
   </picture>
 </p>
 
@@ -18,16 +18,16 @@
 A self-contained **skill** that audits an application, codebase, product, or data flow against
 **India's Digital Personal Data Protection Act, 2023** and the **DPDP Rules, 2025** (notified
 13 Nov 2025). It ships the statutory text, the penalty schedule, a section-by-section audit
-checklist, codebase detection patterns, a GDPR↔DPDP map, and ready-reference policy templates —
+checklist, codebase detection patterns, a GDPR↔DPDP map, and ready-reference policy templates -
 so the agent cites real sections and points every gap at the fix.
 
 > 🇮🇳 The first in a planned family of country-by-country compliance skills. **This repo is India.**
 
 ## What it checks
 
-Lawful basis & consent (§4–7) · notice quality · **reasonable security safeguards** (§8(5) — the
+Lawful basis & consent (§4-7) · notice quality · **reasonable security safeguards** (§8(5) - the
 ₹250 crore band) · breach notification (Board within 72h, principals without delay) · **children's
-data** (§9, under-18) · Data Principal rights (§11–14) · retention & erasure (3-year inactivity
+data** (§9, under-18) · Data Principal rights (§11-14) · retention & erasure (3-year inactivity
 class) · cross-border transfer (§16) · Significant Data Fiduciary duties (§10) · processor/DPA
 coverage · published privacy artifacts.
 
@@ -50,9 +50,19 @@ Then run a scan:
 
 …or just say *"audit this app for DPDP / Indian data-protection compliance."*
 
+### Example prompts (after install)
+
+Once installed, point the agent at your code with prompts like:
+
+- *"Use the dpdp-india skill to audit this repo for DPDP compliance and list the top risks."*
+- *"Run /dpdp-audit on ./api and return findings as a table with section, status, and severity."*
+- *"Check our signup and analytics flow against India's DPDP Act. Are we handling children's data correctly?"*
+- *"Are we a Significant Data Fiduciary, and what would that require of us?"*
+- *"Which privacy policies and templates do we need for Indian users, and which are missing here?"*
+
 ### Use it in any AI harness
 
-The skill is a plain, portable **`SKILL.md` + references** bundle — no runtime, no secrets. Drop
+The skill is a plain, portable **`SKILL.md` + references** bundle - no runtime, no secrets. Drop
 [`plugins/dpdp-india/skills/dpdp-india/`](plugins/dpdp-india/skills/dpdp-india/) into any
 agent that reads skills/markdown context (Cursor, Windsurf, the Claude Agent SDK, your own RAG),
 or simply tell the model: *"read SKILL.md and audit this codebase against it."* Everything it needs
@@ -95,7 +105,7 @@ re-verify. Run with `--update` to re-pin after you've refreshed the references.
 
 ## A family, not a one-off
 
-The vision is one focused skill per jurisdiction — `dpdp-india` here, with room for GDPR, CCPA,
+The vision is one focused skill per jurisdiction - `dpdp-india` here, with room for GDPR, CCPA,
 and others as sibling repos under the same `gattyworks-compliance` marketplace. India first
 because the DPDP regime is new, fast-moving, and under-tooled.
 
@@ -114,7 +124,7 @@ is government work; third-party template structures are paraphrased and attribut
   <a href="SECURITY.md"><img src="https://img.shields.io/badge/Security-policy-0A0A0A?style=for-the-badge" alt="Security"></a>
 </p>
 
-Corrections to the legal references are especially welcome — cite the section/rule and the source.
+Corrections to the legal references are especially welcome - cite the section/rule and the source.
 We work in short-lived branches and ship through review; never push straight to `main`.
 
 ## License
@@ -128,8 +138,8 @@ We work in short-lived branches and ship through review; never push straight to 
 </p>
 
 <p align="center">
-  <sub>This skill is an engineering aid for spotting likely gaps — <b>not legal advice</b>, and no
-  lawyer–client relationship is created. The law changes; references reflect the verified date above.
+  <sub>This skill is an engineering aid for spotting likely gaps - <b>not legal advice</b>, and no
+  lawyer-client relationship is created. The law changes; references reflect the verified date above.
   Always run your own audit and have a qualified Indian data-protection practitioner review before you
   rely on any result. Provided "as is"; see <a href="plugins/dpdp-india/skills/dpdp-india/references/disclaimer.md">disclaimer</a>.</sub>
 </p>

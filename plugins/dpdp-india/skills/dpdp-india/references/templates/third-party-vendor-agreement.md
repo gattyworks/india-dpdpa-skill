@@ -3,7 +3,7 @@
 _Purpose: commercial contract layer (broader than a pure DPA) governing any vendor that receives or touches personal data, with data-protection obligations embedded. DPDP mapping: S.8(2) (processing via contract), S.8(5) (reasonable security safeguards). Source: https://www.dpdpa.com/templates/thirdpartyvendoragreementtemplate.html. Paraphrased structure. Last verified: 2026-06-15._
 
 **When required**
-When sharing personal data with any third-party vendor (resellers, integrators, support providers) — used where a full DPA is paired with or folded into a master services agreement. The Fiduciary stays accountable for the vendor's processing.
+When sharing personal data with any third-party vendor (resellers, integrators, support providers) - used where a full DPA is paired with or folded into a master services agreement. The Fiduciary stays accountable for the vendor's processing.
 
 **Required clauses checklist** (paraphrased)
 - Definitions and scope of services.

@@ -1,6 +1,6 @@
 # DSAR / Data Principal Rights Request Form
 
-_Purpose: a structured intake form letting a Data Principal exercise statutory rights, with identity verification and tracking. DPDP mapping: S.11 (right to access info), S.12 (right to correction/completion/erasure), S.13 (right to grievance redressal), S.14 (right to nominate); Rule 13–14 (rights mechanism). Source: https://www.dpdpa.com/templates/datasubjectrightsrequestformtemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: a structured intake form letting a Data Principal exercise statutory rights, with identity verification and tracking. DPDP mapping: S.11 (right to access info), S.12 (right to correction/completion/erasure), S.13 (right to grievance redressal), S.14 (right to nominate); Rule 13-14 (rights mechanism). Source: https://www.dpdpa.com/templates/datasubjectrightsrequestformtemplate.html. Paraphrased structure. Last verified: 2026-06-15._
 
 **When required**
 All Data Fiduciaries must publish a readily available means for principals to make rights requests. The same form typically also serves the consent-withdrawal and grievance routes.
@@ -18,7 +18,7 @@ All Data Fiduciaries must publish a readily available means for principals to ma
 
 **Audit signals**
 - A discoverable rights-request route/form (`/data-request`, `/privacy/requests`, or clearly stated email).
-- Covers the full S.11–14 set including nomination — not just GDPR access/erasure.
+- Covers the full S.11-14 set including nomination - not just GDPR access/erasure.
 - A request-tracking system (ticket queue or DB table) with reference IDs, timestamps, and SLA/due dates.
 - Identity-verification step that is proportionate.
 - Evidence requests are actually fulfilled within a reasonable/period (logs of completed requests).

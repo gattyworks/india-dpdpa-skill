@@ -16,7 +16,7 @@ Thanks for your interest in contributing. This repo is part of the [GattyWorks](
 - Cite the **section/rule number** and the **source** for every legal claim. Never paraphrase the law
   from memory.
 - Mark anything you can't fully verify as `(verify)` rather than asserting it.
-- Keep third-party template content **paraphrased and attributed** — do not mirror commercial templates
+- Keep third-party template content **paraphrased and attributed** - do not mirror commercial templates
   verbatim. Statutory text (Act/Rules/Schedule) is government work and may be quoted.
 - When you change a reference, run `scripts/check-updates.py --update` only after you've re-verified
   against the upstream source, and note the source date in the file header.

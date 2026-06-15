@@ -1,6 +1,6 @@
 # Data Breach Response / Notice
 
-_Purpose: standardized process and notice for intimating a personal data breach to the Data Protection Board of India and to affected Data Principals. DPDP mapping: S.8(6) (duty to give intimation of breach); Rule 7 (intimation of personal data breach — content and timelines). Source: https://www.dpdpa.com/templates/noticeofdatabreachtemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: standardized process and notice for intimating a personal data breach to the Data Protection Board of India and to affected Data Principals. DPDP mapping: S.8(6) (duty to give intimation of breach); Rule 7 (intimation of personal data breach - content and timelines). Source: https://www.dpdpa.com/templates/noticeofdatabreachtemplate.html. Paraphrased structure. Last verified: 2026-06-15._
 
 **When required**
 On any personal data breach (unauthorized processing, disclosure, loss, or alteration). S.8(6) requires the Fiduciary to notify the Board and each affected principal. Under Rule 7, the Fiduciary must intimate affected principals without delay and report to the Board promptly, with a detailed follow-up report within 72 hours (or such longer period as the Board allows).

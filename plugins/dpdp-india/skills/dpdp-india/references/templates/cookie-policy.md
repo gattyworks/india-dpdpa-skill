@@ -1,9 +1,9 @@
 # Cookie Policy
 
-_Purpose: disclose cookies and similar trackers used on a site/app, their purposes, and how users can control or withdraw consent. DPDP mapping: S.5 (Notice), S.6 (Consent) — where cookies process personal data. Source: https://www.dpdpa.com/templates/cookiepolicytemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: disclose cookies and similar trackers used on a site/app, their purposes, and how users can control or withdraw consent. DPDP mapping: S.5 (Notice), S.6 (Consent) - where cookies process personal data. Source: https://www.dpdpa.com/templates/cookiepolicytemplate.html. Paraphrased structure. Last verified: 2026-06-15._
 
 **When required**
-Any website or app using cookies, pixels, SDKs, or similar trackers that collect or process personal data. The DPDP Act does not have a standalone "cookie law," but where trackers process personal data, the Notice (S.5) and Consent (S.6) obligations apply — so non-essential trackers need informed, affirmative consent.
+Any website or app using cookies, pixels, SDKs, or similar trackers that collect or process personal data. The DPDP Act does not have a standalone "cookie law," but where trackers process personal data, the Notice (S.5) and Consent (S.6) obligations apply - so non-essential trackers need informed, affirmative consent.
 
 **Required clauses checklist** (paraphrased)
 - Introduction and reference to the broader privacy notice.
