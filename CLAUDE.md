@@ -20,3 +20,7 @@ House rules for working in this repository. These override default behavior.
 
 - Cite the section or rule and a primary source for every legal claim; never paraphrase the law from memory. Mark anything unverified as "(verify)" and keep the dated "Last verified" headers current.
 - This project is an engineering aid, not legal advice.
+
+## Clarifying questions
+
+When a request is ambiguous or underspecified, don't guess — ask a clarifying question, and with it propose 2–4 concrete candidate answers you generate yourself (distinct options covering the likely intent) so I can pick or redirect. Before asking, double-check the question and its options **twice**: confirm the question is the real blocker and that each option is accurate, distinct, and plausible. If a sensible default clearly exists, state your assumption and proceed instead of asking.
