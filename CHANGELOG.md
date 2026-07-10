@@ -8,11 +8,19 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 - README banner replaced with the org-wide pixel mascot banner (Kavach, a
-  tricolor shield), swapped light/dark via `.github/banner-*.svg`. Removed
-  the old `assets/banner-dark.png`, `banner-light.png`, `banner-dark.svg`,
-  `banner-light.svg`, and the now-purposeless `assets/banner.html` proofing
-  page. `assets/logo.*` and `assets/social-preview.*` are untouched. See
-  `DESIGN.md` for the rationale.
+  tricolor shield). Removed the old `assets/banner-dark.png`,
+  `banner-light.png`, `banner-dark.svg`, `banner-light.svg`, and the
+  now-purposeless `assets/banner.html` proofing page. `assets/logo.*` and
+  `assets/social-preview.*` are untouched. See `DESIGN.md` for the
+  rationale.
+
+### Fixed
+- The mascot banner initially used a light/dark `picture`/`source` block
+  with absolute raw.githubusercontent.com URLs, which return 404 for this
+  repo because it is private and that CDN requires authentication. Switched
+  to a single static `.github/banner-dark.svg` referenced by a plain
+  relative `img src`, the pattern GitHub actually resolves for private-repo
+  images. Light/dark switching is dropped as a result.
 
 ## [1.0.0] - 2026-06-15
 

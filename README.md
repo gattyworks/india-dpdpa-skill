@@ -1,8 +1,4 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gattyworks/india-dpdpa-skill/main/.github/banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gattyworks/india-dpdpa-skill/main/.github/banner-light.svg">
-  <img alt="India DPDPA Skill banner" src="https://raw.githubusercontent.com/gattyworks/india-dpdpa-skill/main/.github/banner-light.svg" width="100%">
-</picture>
+<img alt="India DPDPA Skill banner" src=".github/banner-dark.svg" width="100%">
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-00ADB5?style=for-the-badge" alt="MIT License"></a>

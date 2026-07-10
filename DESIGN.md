@@ -19,9 +19,15 @@ to regenerate or reshape this one.
 Palette: navy `#1B3A6B` (face and shading), saffron `#FF9933`, flag green
 `#138808`, white `#FFFFFF`.
 
-Files: `.github/banner-dark.svg` and `.github/banner-light.svg`, swapped
-automatically in `README.md` via `prefers-color-scheme`. Both are static
-(no animation) so they render identically wherever GitHub displays them.
+Files: `.github/banner-dark.svg` is shown as a single static image in
+README.md, with no light/dark switching. This repo is private, and GitHub's
+raw content CDN (raw.githubusercontent.com) requires authentication for
+private repos, so the absolute URLs a picture/source block needs return 404
+to anyone without a session; GitHub also does not rewrite relative paths
+inside a source srcset. A plain relative img src is the one pattern GitHub
+reliably resolves for private-repo images, so that is what is used here, at
+the cost of theme-adaptive switching. `.github/banner-light.svg` still
+exists (generated alongside the dark one) but is not referenced.
 
 ## Replaced the old banner
 
