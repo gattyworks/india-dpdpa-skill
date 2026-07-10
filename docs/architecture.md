@@ -56,7 +56,7 @@ dpdpa-india/                                  # repo root
 │                       ├── grievance-redressal.md
 │                       └── third-party-vendor-agreement.md
 ├── docs/                                     # this developer documentation
-├── assets/                                   # banners, logo, social preview
+├── assets/                                   # logo, social preview (README banner is now .github/banner-*.svg)
 ├── README.md  CHANGELOG.md  CONTRIBUTING.md  CODE_OF_CONDUCT.md  SECURITY.md  LICENSE
 └── .gitignore
 ```
