@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/), and the project uses
 [semantic versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+- README banner replaced with the org-wide pixel mascot banner (Kavach, a
+  tricolor shield), swapped light/dark via `.github/banner-*.svg`. Removed
+  the old `assets/banner-dark.png`, `banner-light.png`, `banner-dark.svg`,
+  `banner-light.svg`, and the now-purposeless `assets/banner.html` proofing
+  page. `assets/logo.*` and `assets/social-preview.*` are untouched. See
+  `DESIGN.md` for the rationale.
+
 ## [1.0.0] - 2026-06-15
 
 First release. India (`india-dpdpa-skill`) is the first jurisdiction in the

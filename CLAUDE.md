@@ -2,6 +2,14 @@
 
 House rules for working in this repository. These override default behavior.
 
+## Mascot and banner
+
+This repo has a pixel mascot banner at the top of README.md (mascot: Kavach,
+a tricolor shield). See DESIGN.md for the rationale. Do not regenerate or
+redesign it without checking there first: it is part of a matched 12-repo
+set across the GattyWorks org, and a one-off restyle here would break that
+consistency.
+
 ## Responses
 
 - Be brief. Lead with the answer; cut preamble and recap.

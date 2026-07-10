@@ -1,10 +1,8 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.png">
-    <img src="assets/banner-dark.png" alt="DPDPA India - Digital Personal Data Protection Act 2023 + Rules 2025 - compliance audit skill" width="100%">
-  </picture>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gattyworks/india-dpdpa-skill/main/.github/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gattyworks/india-dpdpa-skill/main/.github/banner-light.svg">
+  <img alt="India DPDPA Skill banner" src="https://raw.githubusercontent.com/gattyworks/india-dpdpa-skill/main/.github/banner-light.svg" width="100%">
+</picture>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-00ADB5?style=for-the-badge" alt="MIT License"></a>
