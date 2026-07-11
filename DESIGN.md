@@ -29,6 +29,11 @@ repo is private: raw.githubusercontent.com URLs 404 without auth, and
 GitHub only rewrites relative img paths). The old mascot-only
 `.github/banner-*.svg` files are removed.
 
+The standalone mascot sprites live alongside it: `design/mascot.svg`
+(static) and `design/mascot-animated.svg` (blinking eyes, CSS inside the
+SVG, honors prefers-reduced-motion). `design/README.md` showcases all of
+these assets.
+
 ## Replaced the old banner
 
 This repo previously had its own banner (`assets/banner-dark.png` /
