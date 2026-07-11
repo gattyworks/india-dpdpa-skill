@@ -5,8 +5,9 @@ House rules for working in this repository. These override default behavior.
 ## Mascot and banner
 
 This repo has a pixel mascot banner at the top of README.md (mascot: Kavach,
-a tricolor shield), shown as a single static .github/banner-dark.svg (no
-light/dark switching: private repo, see DESIGN.md for why). Do not
+a tricolor shield), shown as a single static
+design/banner.svg: project-themed, with the mascot as one element; a
+design/banner.html reference page sits next to it (see DESIGN.md). Do not
 regenerate or redesign it without checking there first: it is part of a
 matched 12-repo set across the GattyWorks org, and a one-off restyle here
 would break that consistency.

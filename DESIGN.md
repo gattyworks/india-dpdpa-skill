@@ -19,15 +19,15 @@ to regenerate or reshape this one.
 Palette: navy `#1B3A6B` (face and shading), saffron `#FF9933`, flag green
 `#138808`, white `#FFFFFF`.
 
-Files: `.github/banner-dark.svg` is shown as a single static image in
-README.md, with no light/dark switching. This repo is private, and GitHub's
-raw content CDN (raw.githubusercontent.com) requires authentication for
-private repos, so the absolute URLs a picture/source block needs return 404
-to anyone without a session; GitHub also does not rewrite relative paths
-inside a source srcset. A plain relative img src is the one pattern GitHub
-reliably resolves for private-repo images, so that is what is used here, at
-the cost of theme-adaptive switching. `.github/banner-light.svg` still
-exists (generated alongside the dark one) but is not referenced.
+Files: `design/banner.svg` is the README banner. It is project-themed:
+the ink background, teal accent, and tricolor rule bar plus the facts on it
+come from this repo itself, not from a shared org template, and the mascot
+is one element of it, not the whole banner. `design/banner.html` is a
+self-contained reference page showing the banner plus the theme tokens it
+was built from. Referenced from README.md by a plain relative img src (this
+repo is private: raw.githubusercontent.com URLs 404 without auth, and
+GitHub only rewrites relative img paths). The old mascot-only
+`.github/banner-*.svg` files are removed.
 
 ## Replaced the old banner
 
