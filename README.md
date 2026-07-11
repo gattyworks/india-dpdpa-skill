@@ -1,4 +1,4 @@
-<img alt="India DPDPA Skill banner" src=".github/banner-dark.svg" width="100%">
+<img alt="India DPDPA Skill banner" src="design/banner.svg" width="100%">
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-00ADB5?style=for-the-badge" alt="MIT License"></a>

@@ -7,6 +7,11 @@ All notable changes to this project are documented here. The format follows
 ## [Unreleased]
 
 ### Changed
+- README banner redesigned: now project-themed (ink background, teal accent,
+  tricolor rule bar) and carries repo facts (what the skill does, checklist
+  and penalty-schedule chips), with the Kavach mascot as one element rather
+  than the whole banner. Lives at design/banner.svg with a design/banner.html
+  reference page; the mascot-only .github/banner-*.svg files are removed.
 - README banner replaced with the org-wide pixel mascot banner (Kavach, a
   tricolor shield). Removed the old `assets/banner-dark.png`,
   `banner-light.png`, `banner-dark.svg`, `banner-light.svg`, and the
