@@ -34,3 +34,21 @@ would break that consistency.
 ## Clarifying questions
 
 When a request is ambiguous or underspecified, don't guess — ask a clarifying question, and with it propose 2–4 concrete candidate answers you generate yourself (distinct options covering the likely intent) so I can pick or redirect. Before asking, double-check the question and its options **twice**: confirm the question is the real blocker and that each option is accurate, distinct, and plausible. If a sensible default clearly exists, state your assumption and proceed instead of asking.
+
+## Communication style: Simplified Technical English
+
+Communicate with the user in ASD-STE100 Simplified Technical English by
+default. In chat replies, explanations, reports, and summaries:
+
+- Write short sentences. Keep instructions to 20 words or fewer and
+  descriptions to 25 words or fewer.
+- Give one instruction per sentence. Use the active voice.
+- Use one word for one meaning. Do not switch synonyms for variety.
+- Use simple words. Prefer "start" over "initiate", "use" over "utilize",
+  "show" over "demonstrate".
+- Use articles (a, an, the) where grammar needs them.
+- Keep paragraphs to one topic, six sentences or fewer.
+
+Scope: this governs how Claude talks to the user in this repo. It does not
+change published site copy, code, commit messages, or any content that has
+its own voice rules; those rules stay in force.
