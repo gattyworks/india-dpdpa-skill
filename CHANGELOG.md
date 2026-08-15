@@ -18,6 +18,8 @@ All notable changes to this project are documented here. The format follows
 - A readiness status and audit mode for notified duties that are not yet in force.
 
 ### Changed
+- Replaced the Kavach shield with Saakshi, a pixel evidence-sheet mascot, across the README
+  banner and standalone design assets.
 - The repository documentation now describes the public source, install path, and project-audit boundary.
 - The audit contract now separates current compliance gaps from readiness gaps.
 - The Rules reference now uses exact rule numbers and primary MeitY sources.
