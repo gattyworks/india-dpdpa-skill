@@ -1,9 +1,9 @@
 # This repo is a skill/plugin bundle - it ships NO secrets and no build artifacts.
 
-# Source downloads + local asset-build scratch (regenerate via assets/ generator)
+# Local source downloads used during legal review
 sources/
 
-# Node (only used transiently to render assets)
+# Node scratch, if a maintainer renders design proofs locally
 node_modules/
 package-lock.json
 

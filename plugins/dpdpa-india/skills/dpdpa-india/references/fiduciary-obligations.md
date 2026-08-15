@@ -1,4 +1,4 @@
-_Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
+_Primary sources: DPDP Act 2023 and final DPDP Rules 2025 pinned in `scripts/sources.lock.json`. Last reviewed: 2026-08-15._
 
 # Data Fiduciary Obligations (8, 9, 10, 16)
 
@@ -8,9 +8,9 @@ _Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
 - **8(3) - Accuracy/completeness:** where data will be used to **make a decision affecting** the Principal, or **disclosed to another fiduciary**, ensure its **completeness, accuracy and consistency**.
 - **8(4) - Organisational measures:** implement appropriate **technical and organisational measures** for effective compliance.
 - **8(5) - Security safeguards:** protect personal data in its possession/control by taking **reasonable security safeguards to prevent a personal data breach** (applies to processors acting on its behalf too). *(Breach of 8(5) carries the highest penalty - up to ₹250 crore.)*
-- **8(6) - Breach intimation:** on a personal data breach, give the **Board and each affected Data Principal** intimation in the prescribed form and manner. *(No fixed timeline in the Act - "as may be prescribed"; verify the Rules' breach-notification window.)*
+- **8(6) - Breach intimation:** on a personal data breach, give the **Board and each affected Data Principal** intimation in the prescribed form and manner. Rule 7 requires notice to affected Principals without delay, plus initial Board notice without delay and listed details within 72 hours.
 - **8(7) - Erasure:** unless retention is required by law, **erase** personal data when the Principal **withdraws consent** or when the **specified purpose is no longer served** (whichever is earlier), and **cause processors to erase** it too.
-- **8(8) - Purpose-no-longer-served test:** purpose is deemed no longer served if the Principal neither approaches the fiduciary for the specified purpose **nor** exercises any right within a **prescribed time period** (different periods may be prescribed per class/purpose - verify).
+- **8(8) - Purpose-no-longer-served test:** purpose is deemed no longer served if the Principal neither approaches the fiduciary for the specified purpose **nor** exercises any right within a prescribed period. Rule 8 and the Third Schedule set three years only for listed classes and purposes.
 - **8(9) - DPO/contact publication:** publish business contact info of the DPO (if applicable) or a person who can answer the Principal's questions about processing.
 - **8(10) - Grievance redressal:** establish an **effective grievance redressal mechanism**.
 
@@ -19,7 +19,7 @@ _Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
 - **Age threshold:** a "child" is **an individual who has not completed the age of eighteen years** (2(f)) - i.e. **under 18**.
 - **9(2) - No detrimental processing:** must not undertake processing **likely to cause any detrimental effect on the well-being of a child**.
 - **9(3) - Prohibited practices:** must **not** undertake **tracking or behavioural monitoring of children or targeted advertising directed at children**.
-- **9(4) - Carve-outs:** 9(1) and 9(3) may be relaxed for notified classes of fiduciaries / purposes / conditions (to be prescribed - verify).
+- **9(4) - Carve-outs:** Rule 12 and the Fourth Schedule specify limited classes and purposes for which 9(1) and 9(3) do not apply, subject to listed conditions.
 - **9(5) - Age-down exemption:** the Central Government may notify a **lower age** above which a specific fiduciary is exempt from 9(1)/(3) if it processes children's data in a **verifiably safe** manner.
 
 ## 10 - Additional obligations of Significant Data Fiduciary (SDF)
@@ -29,9 +29,13 @@ _Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
   - **(b) appoint an independent data auditor** to carry out a **data audit** evaluating Act compliance.
   - **(c) undertake:** **(i) periodic Data Protection Impact Assessment (DPIA)** - describing Principals' rights, the purpose, and risk assessment/management; **(ii) periodic audit;** and **(iii)** other prescribed measures.
 
+Rule 13 requires a DPIA and audit once in each twelve-month period after designation, reporting of significant observations to the Board, checks on technical measures including algorithmic software, and in-India processing for any category later specified under Rule 13(4).
+
 ## 16 - Processing of personal data outside India (cross-border transfer)
-- **16(1) - Blacklist model:** the Central Government may, **by notification, restrict transfer** of personal data by a fiduciary for processing **to such country or territory outside India as may be so notified**. Transfer is otherwise permitted unless a country is notified/restricted. *(This is a negative-list / blacklist approach - not a GDPR-style adequacy whitelist.)*
+- **16(1) - Country or territory restrictions:** the Central Government may, **by notification, restrict transfer** of personal data by a fiduciary for processing to a notified country or territory outside India.
 - **16(2) - Higher-protection laws preserved:** nothing in 16 relaxes any other in-force Indian law that imposes a **higher degree of protection or stricter transfer restriction** (e.g. sectoral RBI/SEBI data-localisation rules still apply).
+
+Rule 15 separately lets the Central Government set requirements for making personal data available to a foreign State, or a person or entity under its control.
 
 ---
 
@@ -41,13 +45,13 @@ _Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
 - [ ] Written **DPA / processor contract** in place for every processor; flow-down of erasure & security duties.
 - [ ] Data feeding decisions about, or shared with, other fiduciaries is **accurate, complete, consistent**.
 - [ ] **Security safeguards** implemented (encryption, access control, logging, etc.) - documented as "reasonable".
-- [ ] **Breach response runbook**: notify Board + each affected Principal in prescribed form (confirm Rules' timeline - verify).
+- [ ] **Breach response runbook**: notify affected Principals without delay; notify the Board without delay and provide listed details within 72 hours under Rule 7.
 - [ ] **Automated erasure** on consent withdrawal / purpose completion, propagated to processors.
 - [ ] **Retention policy** keyed to prescribed inactivity period (verify) and lawful-retention exceptions.
 - [ ] **DPO / contact** published; **grievance mechanism** live (ties to 13).
 
 **9 - Children**
-- [ ] **Age-gating** to detect under-18 users.
+- [ ] A proportionate child-scope control where children are plausibly in scope, before child-data processing starts.
 - [ ] **Verifiable parental/guardian consent** flow before processing children's data.
 - [ ] **No tracking, behavioural monitoring, or targeted advertising** to children - verify ad SDKs/analytics disabled for minors.
 - [ ] No processing likely to harm a child's well-being.
@@ -56,8 +60,10 @@ _Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
 - [ ] **DPO appointed and based in India**, reporting to the board, named as grievance contact.
 - [ ] **Independent data auditor** engaged; periodic data audits scheduled.
 - [ ] **Periodic DPIA** documented for high-risk processing.
+- [ ] Rule 13 annual DPIA/audit reporting, algorithmic-risk checks, and any notified localisation category handled.
 
 **16 - Cross-border transfer**
 - [ ] Maintain a map of **where personal data is transferred/stored** (cloud regions, sub-processors).
 - [ ] Check transfers against any **government-notified restricted countries** (verify current notified list).
+- [ ] Check any current Rule 15 order about access by a foreign State or controlled entity.
 - [ ] Comply with stricter **sectoral localisation** rules where applicable (16(2)).

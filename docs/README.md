@@ -1,6 +1,6 @@
 # dpdpa-india docs
 
-`dpdpa-india` is a Claude Code plugin and portable AI skill that audits an app, codebase, or data flow against India's **DPDP Act 2023** (Act 22 of 2023) and the **DPDP Rules 2025** (G.S.R. 846(E)). It surfaces *likely* compliance gaps with `file:line` evidence, a section/rule cite, and the fix that closes each one. It is an engineering aid, not legal advice.
+`dpdpa-india` is an open-source GattyWorks skill for Claude Code, Codex, and other harnesses. It audits an app, codebase, or data flow against India's **DPDP Act 2023** and **DPDP Rules 2025**. It separates current gaps from readiness gaps, cites exact source locations, and uses fixed issue IDs. It is an engineering aid, not legal advice.
 
 These pages are the developer documentation. For installing and invoking the skill, start with [Usage](usage.md).
 
@@ -9,19 +9,20 @@ These pages are the developer documentation. For installing and invoking the ski
 Read in this order:
 
 1. [Architecture](architecture.md) - what the repo is and how the plugin, skill, commands, and scripts fit together.
-2. [Usage](usage.md) - install it, run `/dpdpa-audit`, trigger it from natural language, or run it in another harness.
+2. [Usage](usage.md) - access it, run `/dpdpa-audit`, trigger it from natural language, or use the Codex entry point.
 3. [Audit method](audit-method.md) - how the audit actually works: the four passes from scope to report.
 
 ## All pages
 
 | Page | What's in it |
 |---|---|
-| [Architecture](architecture.md) | Directory tree, the three nested layers, how Claude Code discovers and loads it, progressive disclosure, and why the skill folder is portable on its own. |
+| [Architecture](architecture.md) | Directory tree, Claude and Codex entry points, progressive disclosure, and the canonical playbook. |
 | [Audit method](audit-method.md) | The four-pass method - scope, run the checklist, find the evidence, report - plus the output format and severity-to-penalty mapping. |
 | [Reference library](reference-library.md) | A guided tour of every reference file: what's inside, when the skill reads it, and where the content comes from. |
-| [Usage](usage.md) | Install, the `/dpdpa-audit` and `/dpdpa-update-check` commands, natural-language triggers, running it outside Claude Code, and a worked session. |
+| [Usage](usage.md) | Install commands, natural-language triggers, Codex use, and a worked session. |
 | [Staying current](staying-current.md) | The `check-updates` drift checker, `sources.lock.json`, the three script variants, and the re-pinning runbook. |
-| [Extending the skill](extending.md) | Adding a jurisdiction, correcting a legal reference, template rules, versioning/release, and the `gattyworks-compliance` family vision. |
+| [v2.0.0 release plan](release-plan-v2.md) | Versioned release gates, migration, public-content boundaries, and target sequence. |
+| [Extending the skill](extending.md) | Correcting a legal reference, changing a template, packaging, and release rules. |
 | [Legal and provenance](legal-and-provenance.md) | Source-to-file provenance, copyright posture, the verification model, and the disclaimer rationale. |
 | [FAQ & troubleshooting](faq.md) | Quick answers - is it legal advice, does it send data anywhere, SDF designation, Windows/PowerShell troubleshooting, how penalties are mapped. |
 

@@ -1,9 +1,12 @@
 # DPIA / Privacy Impact Assessment
 
-_Purpose: systematically identify and mitigate privacy risks of a processing activity before/while it runs. DPDP mapping: S.10 (Significant Data Fiduciary must conduct periodic Data Protection Impact Assessments + audits and appoint a DPO and independent auditor); Rule 13 (additional obligations of SDFs). Source: https://www.dpdpa.com/templates/privacyimpactassessmenttemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: systematically identify and mitigate privacy risks of a processing activity before or while it runs. DPDP mapping: S.10 (Significant Data Fiduciary duties); Rule 13 (additional obligations of SDFs). Source: https://www.dpdpa.com/templates/privacyimpactassessmenttemplate.html. Paraphrased structure. Third-party structure and statutory mapping reviewed 2026-08-15._
 
 **When required**
-Mandatory for Significant Data Fiduciaries (organizations notified by the government based on volume/sensitivity of data, risk to rights, sovereignty, etc.) under S.10. Strongly recommended for any high-risk processing (large-scale, sensitive, children's, novel tech) as a Privacy-by-Design practice even for non-SDFs.
+Future-phase readiness artifact as of 2026-08-15. Once the relevant provisions commence, an
+entity notified as a Significant Data Fiduciary must complete the DPIA and audit duties in S.10
+and Rule 13. A DPIA remains a useful voluntary risk control for other high-impact processing, but
+do not describe that voluntary use as a statutory DPDPA requirement.
 
 **Required clauses checklist** (paraphrased)
 - Project overview: context, owner, stakeholders.

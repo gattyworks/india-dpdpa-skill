@@ -1,9 +1,12 @@
 # Website Privacy Policy
 
-_Purpose: public-facing disclosure of how personal data is collected, used, shared, retained, and protected. DPDP mapping: S.5 (Notice), S.11-14 (Data Principal rights). Source: https://www.dpdpa.com/templates/websiteprivacypolicytemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: public-facing disclosure of how personal data is collected, used, shared, retained, and protected. DPDP mapping: S.5 (Notice), S.11-14 (Data Principal rights). Source: https://www.dpdpa.com/templates/websiteprivacypolicytemplate.html. Paraphrased structure. Third-party structure and statutory mapping reviewed 2026-08-15._
 
 **When required**
-Any Data Fiduciary operating a website or app that collects personal data of individuals in India. The Notice obligation under S.5 requires informing the principal - at or before collection - of what data is collected and the purpose; a published privacy policy is the standard artifact satisfying this.
+Future-phase readiness artifact as of 2026-08-15. A public privacy policy is useful for any Data
+Fiduciary operating a site or app that collects digital personal data in scope. Once S.5 and Rule 3
+commence, the collection flow must provide the required itemized notice. A generic policy page by
+itself may not satisfy a point-of-collection notice requirement.
 
 **Required clauses checklist** (paraphrased)
 - Introduction + scope (which sites/apps/services the policy governs).
@@ -22,6 +25,6 @@ Any Data Fiduciary operating a website or app that collects personal data of ind
 **Audit signals**
 - A reachable `/privacy` or `/privacy-policy` route (or linked PDF) in the app.
 - Policy linked from signup, footer, and consent flows.
-- Content covers all the clauses above (not a generic GDPR copy missing S.9 children rules and an Indian grievance officer).
+- Content covers the applicable clauses above rather than copying GDPR concepts that DPDPA does not contain.
 - A "last updated" date and version history.
 - Rights-exercise mechanism actually wired (link to DSAR form / email that resolves).

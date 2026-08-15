@@ -1,51 +1,58 @@
 # dpdpa.com - Useful URL Map
 
-Source: third-party knowledge hub for India's DPDP Act 2023. Captured 2026-06-15 via WebFetch (site returned full content - no automated-access blocking observed). Feeds the update-checker: re-fetch these and diff against the paraphrased template notes.
+Source: third-party knowledge hub for India's DPDP Act 2023. Structure rechecked 2026-08-15 by
+the pinned-source checker. The checker monitors selected hub pages, not every URL listed below.
+Use the official MeitY documents as the legal authority.
 
-> Copyright: dpdpa.com is a commercial site. We capture structure/purpose only; do not mirror template text. Statutory text (Act/Rules/Schedule) is government work and may be quoted.
+> Copyright: dpdpa.com is a commercial site. We capture structure and purpose only; do not mirror
+> template text.
 
-## Navigation / hub pages
-- https://www.dpdpa.com/ - home; DPDPA section explainer index (Act chapters 1-9).
+## Navigation and hub pages
+
+- https://www.dpdpa.com/ - home and Act section index.
 - https://dpdpa.com/dpdparules.html - DPDP Rules landing.
-- https://dpdpa.com/dpdpatemplatesandpolicies.html - templates & policies index (12 templates).
-- https://dpdpa.com/blog.html - blog/articles.
+- https://dpdpa.com/dpdpatemplatesandpolicies.html - templates and policies index.
+- https://dpdpa.com/blog.html - articles.
 - https://dpdpa.com/cases.html - case-law landing.
 - https://dpdpa.com/postersofdpdpa.html - posters.
 - https://dpdpa.com/dpdpa-certificate-course.html - certificate course.
 - https://dpdpa.com/dpdpa-faq.html - FAQs.
 - https://dpdpa.com/dpdpa-quiz.html - quiz.
 
-## Templates (/templates/) - 12 total
+## Templates
+
 - https://www.dpdpa.com/templates/websiteprivacypolicytemplate.html - Website Privacy Policy.
 - https://www.dpdpa.com/templates/consentformfordataprocessingtemplate.html - Consent Form for Data Processing.
 - https://www.dpdpa.com/templates/dataretentionpolicytemplate.html - Data Retention Policy.
-- https://www.dpdpa.com/templates/dataprotectionpolicytemplate.html - Data Protection Policy (org-wide).
+- https://www.dpdpa.com/templates/dataprotectionpolicytemplate.html - Data Protection Policy.
 - https://www.dpdpa.com/templates/dataprocessingtemplate.html - Data Processing Agreement.
 - https://www.dpdpa.com/templates/thirdpartyvendoragreementtemplate.html - Third-Party Vendor Agreement.
 - https://www.dpdpa.com/templates/crossborderdatatransferagreementtemplate.html - Cross-Border Data Transfer Agreement.
 - https://www.dpdpa.com/templates/noticeofdatabreachtemplate.html - Notice of Data Breach.
-- https://www.dpdpa.com/templates/datasubjectrightsrequestformtemplate.html - Data Principal Rights Request Form (also serves DSAR + grievance).
+- https://www.dpdpa.com/templates/datasubjectrightsrequestformtemplate.html - Data Principal Rights Request Form.
 - https://www.dpdpa.com/templates/cookiepolicytemplate.html - Cookie Policy.
 - https://www.dpdpa.com/templates/employeedataprotectionpolicytemplate.html - Employee Data Protection Policy.
-- https://www.dpdpa.com/templates/privacyimpactassessmenttemplate.html - Privacy Impact Assessment (PIA/DPIA).
+- https://www.dpdpa.com/templates/privacyimpactassessmenttemplate.html - Privacy Impact Assessment.
 
-## Statutory explainers (Act / Rules / Schedule)
-- https://dpdpa.com/dpdpa2023/chapter-1/chapter1.html - Act chapter pages (9 chapters, individual section pages under /dpdpa2023/).
-- https://dpdpa.com/dpdparules.html + /dpdparules/rule1.html … rule23.html - 23 individual Rule pages.
-- https://dpdpa.com/mappingofdpdpatodpdprules.html - Section-to-Rules mapping (key cross-reference page).
-- https://dpdpa.com/theschedule.html + /schedule/schedule1.html … schedule7.html + /schedule/explanatorynote.html - Schedules.
-- https://dpdpa.com/dpdpa_enforcement_timeline.html - enforcement timelines.
+## Statutory explainers
 
-## Case law (/dpdpacases/)
-- https://dpdpa.com/cases.html - index.
-- /dpdpacases/case1/case-a.html … case-g.html (and case2/, case3/) - individual case notes (~15 cases).
+- https://dpdpa.com/dpdpa2023/chapter-1/chapter1.html - Act chapter pages.
+- https://dpdpa.com/dpdparules.html and `/dpdparules/rule1.html` through `rule23.html` - Rule pages.
+- https://dpdpa.com/mappingofdpdpatodpdprules.html - section-to-rule mapping.
+- https://dpdpa.com/theschedule.html and `/schedule/schedule1.html` through `schedule7.html` - schedules.
+- https://dpdpa.com/dpdpa_enforcement_timeline.html - enforcement timeline explainer.
 
-## Tools (interactive; structure only, not artifacts)
+## Tools
+
 - https://dpdpa.com/tools/privacy-notice-generator.html - privacy notice generator.
 - https://dpdpa.com/tools/legitimate-interest-tool/ - legitimate-interest assessment tool.
 
-## Site policies (the site's own, for reference)
-- https://dpdpa.com/privacypolicy.html, https://dpdpa.com/cookiepolicy.html, https://dpdpa.com/disclaimer.html
+## Key Act-to-Rule mapping
 
-## Key Act->Rule mapping (from mappingofdpdpatodpdprules.html)
-- Notice: S.5 -> Rule 3, Consent: S.6 -> Rule 4 (Consent Manager), Breach intimation: S.8(6) -> Rule 7, Retention/erasure: S.8(7-8) -> Rule 8, SDF/DPIA/audit: S.10 -> Rule 13, Rights & grievance: S.11-13 -> Rule 14, Cross-border: S.16 -> Rule 15.
+- Notice: S.5 to Rule 3.
+- Consent Managers: S.6 to Rule 4.
+- Breach intimation: S.8(6) to Rule 7.
+- Retention and erasure: S.8(7)-(8) to Rule 8.
+- SDF DPIA and audit: S.10 to Rule 13.
+- Rights and grievance: S.11-13 to Rule 14.
+- Cross-border transfer: S.16 to Rule 15.

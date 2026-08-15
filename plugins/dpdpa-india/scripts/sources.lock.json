@@ -1,6 +1,6 @@
 {
-  "_comment": "Pinned upstream legal sources for the dpdpa-india skill. The DPDP regime commences in phases, so these move. Run check-updates.py to diff live content against these hashes; run with --update to re-pin after you have re-verified the reference files. HTML pages can show benign changes (ads/markup); the two PDFs are the authoritative, stable anchors.",
-  "verified": "2026-06-15",
+  "_comment": "Pinned upstream sources for the dpdpa-india skill. Stable files use SHA-256. Four secondary HTML pages sit behind a nondeterministic JavaScript challenge, so automation checks only reachability and maintainers manually review the rendered pages. The checker cannot discover a new notification at a new URL, so maintainers must also review the official MeitY DPDP Rules page. Re-pin only after the dependent references have been reviewed.",
+  "verified": "2026-08-15",
   "sources": [
     {
       "id": "act-2023-pdf",
@@ -9,6 +9,54 @@
       "type": "pdf",
       "sha256": "4deb23981d3010c8225a2ff6149e7243dc2268455b299e283afebdd7b72a7d15",
       "feeds": "act-2023.md, consent-notice.md, fiduciary-obligations.md, data-principal-rights.md, penalties-schedule.md"
+    },
+    {
+      "id": "rules-2025-pdf",
+      "label": "DPDP Rules 2025 - MeitY gazette PDF (authoritative)",
+      "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+      "type": "pdf",
+      "sha256": "eabc7d05e013144615d78ddc0e8b9c9aac1920e814f4fad38ce6560951f5aa08",
+      "feeds": "rules-2025.md, audit-checklist.md, consent-notice.md, fiduciary-obligations.md, data-principal-rights.md, templates/*.md"
+    },
+    {
+      "id": "rules-2025-corrigendum-pdf",
+      "label": "DPDP Rules 2025 corrigendum - MeitY gazette PDF (authoritative)",
+      "url": "https://www.meity.gov.in/static/uploads/2025/12/3c7ebbae0e5456f493f486e6845df86b.pdf",
+      "type": "pdf",
+      "sha256": "8f8d9526b511801889f8ae022b6d7c5db449283e90fe32792e5896314b32f994",
+      "feeds": "rules-2025.md, audit-checklist.md"
+    },
+    {
+      "id": "act-commencement-pdf",
+      "label": "DPDP Act commencement notification G.S.R. 843(E) - MeitY (authoritative)",
+      "url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+      "type": "pdf",
+      "sha256": "6df25cd8c76ac8eb18cae81835d51d51128ffbf2ed13262843395efddf0998e5",
+      "feeds": "act-2023.md, rules-2025.md, audit-checklist.md, report-format.md"
+    },
+    {
+      "id": "board-establishment-pdf",
+      "label": "Data Protection Board establishment G.S.R. 844(E) - MeitY (authoritative)",
+      "url": "https://www.meity.gov.in/static/uploads/2025/11/cc217843dc3bcb37b2b05bcc3b4e031f.pdf",
+      "type": "pdf",
+      "sha256": "5cc76d1fedf9f93655ef92a297dd7e590a78a145ba0d25a40fe2190faecae65b",
+      "feeds": "act-2023.md, rules-2025.md, legal-context.md"
+    },
+    {
+      "id": "board-members-pdf",
+      "label": "Data Protection Board member-count notification G.S.R. 845(E) - MeitY (authoritative)",
+      "url": "https://www.meity.gov.in/static/uploads/2025/11/f6c0837972422cf79d890bfe84cc04d6.pdf",
+      "type": "pdf",
+      "sha256": "812fe0ce802fe78f0bcbb0c032f74a5110ce23417e9b78889d21a6b7b77ba6a7",
+      "feeds": "rules-2025.md, legal-context.md"
+    },
+    {
+      "id": "board-recruitment-2026-pdf",
+      "label": "Data Protection Board chairperson and member recruitment notice - MeitY",
+      "url": "https://www.meity.gov.in/static/uploads/2026/05/53b1bcf01cab9a0adde463e73fbc3417.pdf",
+      "type": "pdf",
+      "sha256": "b8be7aa23c5186890bcb04eb90dc1109ca640e1beaae60eceda15af60194879a",
+      "feeds": "rules-2025.md, legal-context.md"
     },
     {
       "id": "lw-gdpr-comparison-pdf",
@@ -23,7 +71,7 @@
       "label": "dpdpa.com - home / Act section index",
       "url": "https://www.dpdpa.com/",
       "type": "html",
-      "sha256": "d38853eb57b476048533902586b8082518bf926c4d30cc5376f8bfab69659d54",
+      "check": "reachable",
       "feeds": "templates/_site-map.md"
     },
     {
@@ -31,7 +79,7 @@
       "label": "dpdpa.com - templates & policies index",
       "url": "https://www.dpdpa.com/dpdpatemplatesandpolicies.html",
       "type": "html",
-      "sha256": "648587239f64fcbfbf63fde15996b4e5b2822ea4332af4ff88990730978db700",
+      "check": "reachable",
       "feeds": "templates/*.md"
     },
     {
@@ -39,7 +87,7 @@
       "label": "dpdpa.com - DPDP Rules landing",
       "url": "https://dpdpa.com/dpdparules.html",
       "type": "html",
-      "sha256": "80a7583345f4e6f942ab8f4ad6fb6a18e67728401fac946bb68d539d5c4a4a3a",
+      "check": "reachable",
       "feeds": "rules-2025.md"
     },
     {
@@ -47,7 +95,7 @@
       "label": "dpdpa.com - Section->Rule mapping",
       "url": "https://www.dpdpa.com/mappingofdpdpatodpdprules.html",
       "type": "html",
-      "sha256": "9398a7a453ac9493efe731d458db2cf7b1add865c4a73cec06ae63cb2ad26620",
+      "check": "reachable",
       "feeds": "audit-checklist.md, rules-2025.md"
     },
     {

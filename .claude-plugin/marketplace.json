@@ -5,13 +5,13 @@
     "url": "https://github.com/gattyworks"
   },
   "metadata": {
-    "description": "Country-by-country data-protection & privacy compliance audit skills by gattyworks. India (DPDP) first; more jurisdictions to follow."
+    "description": "Open-source GattyWorks data-protection audit skills. The India DPDPA skill is the current product."
   },
   "plugins": [
     {
       "name": "dpdpa-india",
       "source": "./plugins/dpdpa-india",
-      "description": "Audit an app, codebase, or data flow against India's Digital Personal Data Protection Act 2023 + DPDP Rules 2025. Section-by-section checklist, codebase detection patterns, penalty schedule, GDPR mapping, and policy templates.",
+      "description": "Open-source GattyWorks audit for India's DPDP Act 2023 and DPDP Rules 2025. Includes 49 checks, code evidence patterns, a fixed report contract, penalty mapping, and 13 policy-artifact specifications.",
       "version": "1.0.0",
       "keywords": ["dpdp", "dpdpa", "india", "privacy", "compliance", "data-protection", "audit", "gdpr", "legal"]
     }

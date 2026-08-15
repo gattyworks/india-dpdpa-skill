@@ -4,7 +4,11 @@ The skill runs every audit in four passes: **Scope -> Run the checklist -> Find 
 
 This is an engineering aid for finding likely compliance gaps. It is not legal advice. Have a qualified Indian data-protection practitioner review anything before you rely on it.
 
-Sources verified 2026-06-15, against the **DPDP Act 2023** (Act 22 of 2023) and the **DPDP Rules 2025** (notified 13 Nov 2025, G.S.R. 846(E)).
+Legal-source baseline checked 2026-08-15 against the **DPDP Act 2023**, final **DPDP Rules 2025**, the December 2025 corrigendum, and the Act commencement notification.
+
+## Preflight - choose the audit mode
+
+Read the phase table in [`rules-2025.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/rules-2025.md). Use `Current compliance` for in-force duties. Use `Readiness` for notified duties whose phase has not started. As of 2026-08-15, most product-facing checks are readiness checks.
 
 ---
 
@@ -22,7 +26,7 @@ Establish the facts the rest of the audit hangs on. Skipping this produces findi
 
 DPDP reaches a system if it processes digital personal data and either operates **in India** or offers goods/services to **Data Principals in India** from anywhere (extraterritorial, 3). If the app touches Indian users' personal data, it is in scope.
 
-The output of this pass is a quick data inventory - **category -> where stored -> purpose -> shared with** - assembled from the 1 grep patterns in code-patterns.md.
+The output of this pass is a quick data inventory: **category, storage, purpose, and recipients**. Build it from the section 1 searches in `code-patterns.md`.
 
 ---
 
@@ -45,7 +49,7 @@ The checklist in [../plugins/dpdpa-india/skills/dpdpa-india/references/audit-che
 
 Every item maps to a section or rule, so a finding is never a vibe - it points at the specific obligation. Examples from the checklist:
 
-- **B3** (free/specific/informed/unconditional/unambiguous consent - affirmative action, no pre-ticked or bundled boxes) -> 6(1), rated **Critical**.
+- **B3** (free, specific, informed, unconditional, and unambiguous consent with an affirmative action) maps to 6(1) and is rated **High**.
 - **C1** (reasonable security safeguards) -> 8(5), the **₹250 crore** band, **Critical**.
 - **D3** (notify the Board - initial intimation without delay, detailed report within **72 hours**) -> Rule 7, **Critical**.
 - **I3** (3-year inactivity erasure for specified classes - e-commerce ≥2 cr users, online gaming ≥50 lakh, social media ≥2 cr - with **48-hour pre-erasure notice**) -> Rule 8 / Third Schedule.
@@ -61,7 +65,7 @@ For a codebase, gather real `file:line` evidence using [../plugins/dpdpa-india/s
 Two rules govern this pass:
 
 1. **A match is a lead, not a verdict.** Read the surrounding code before scoring an item. A hit on `consent` proves the word exists, not that consent is captured correctly.
-2. **Absence of an expected control is itself a finding.** If a system plausibly needs a control and the grep returns nothing, that silence is the evidence. No consent table and no withdrawal route ⇒ B3/B5/B6 gaps. Hardcoded secrets, MD5/SHA1 password hashing, no TLS enforcement, or no authz layer ⇒ C1 Critical. No data-export and no account-deletion path ⇒ F1/F2 High.
+2. **Absence is evidence only after a scoped search.** If a required repository control is not found after checking the relevant paths, record `not found`. If the control can live in operations, contracts, or another system, use `Needs review` until a person confirms it.
 
 Never assert a gap you have not looked for. Every code finding is paired with the checklist item it satisfies or violates and the section cite behind it. Evidence is recorded as `path/to/file:line` - or literally **"not found in repo"** when the control is absent.
 
@@ -72,10 +76,12 @@ Never assert a gap you have not looked for. Every code finding is paired with th
 Lead with a one-line verdict and a risk summary table, then findings ordered by severity. The exact format:
 
 ```
-DPDP Audit - <system> (against DPDP Act 2023 + Rules 2025, verified 2026-06-15)
-Verdict: <Materially compliant | Gaps found | Not assessed>
+DPDPA Audit - <system>
+Audit date: <YYYY-MM-DD> | Legal-source baseline: <YYYY-MM-DD>
+Mode: <Current compliance | Readiness>
+Verdict: <Materially compliant | Gaps found | Readiness gaps found | Not assessed>
 
-| # | Requirement (DPDP cite) | Status | Severity | Evidence | Fix |
+| ID | Requirement (DPDP cite) | Status | Severity | Evidence | Fix |
 |---|------------------------|--------|----------|----------|-----|
 ```
 
@@ -85,7 +91,7 @@ Verdict: <Materially compliant | Gaps found | Not assessed>
 
 | Column | Holds |
 |---|---|
-| `#` | The checklist item id (e.g. C1, B3, I3). |
+| `ID` | The checklist item id (e.g. C1, B3, I3). |
 | Requirement (DPDP cite) | The check plus its section/rule. |
 | Status | One of the four icons below. |
 | Severity | C / H / M / L, mapped to penalty exposure. |
@@ -98,6 +104,7 @@ Verdict: <Materially compliant | Gaps found | Not assessed>
 |---|---|
 | ✅ | Compliant |
 | ⚠️ | Gap |
+| ~ | Readiness gap (not yet in force on the audit date) |
 | ❓ | Needs review (can't tell from code alone) |
 | ➖ | N/A |
 
@@ -123,14 +130,16 @@ Close the report with the **top 3 risks**, **what to verify with counsel/ops** (
 The fragment below is **illustrative only** - it shows the rendered table format, not a real audit.
 
 ```
-DPDP Audit - acme-shop (against DPDP Act 2023 + Rules 2025, verified 2026-06-15)
-Verdict: Gaps found
+DPDPA Audit - acme-shop
+Audit date: 2026-08-15 | Legal-source baseline: 2026-08-15
+Mode: Readiness
+Verdict: Readiness gaps found
 ```
 
-| # | Requirement (DPDP cite) | Status | Severity | Evidence | Fix |
+| ID | Requirement (DPDP cite) | Status | Severity | Evidence | Fix |
 |---|---|---|---|---|---|
-| C1 | Reasonable security safeguards (8(5)) | ⚠️ | C | `src/auth/user.js:42` (MD5 password hashing) | Move to argon2/bcrypt; encrypt at rest + in transit per Rule 6 |
-| B3 | Consent by affirmative action (6(1)) | ⚠️ | C | `web/signup.tsx:88` (`defaultChecked` consent box) | Remove pre-tick; unticked, per-purpose consent |
+| C1 | Reasonable security safeguards (8(5)) | ~ | C | `src/auth/user.js:42` (MD5 password hashing) | Move to argon2/bcrypt; encrypt at rest + in transit per Rule 6 |
+| B3 | Consent by affirmative action (6(1)) | ~ | H | `web/signup.tsx:88` (`defaultChecked` consent box) | Remove pre-tick; use an unticked consent action |
 | D3 | Notify Board within 72h (Rule 7) | ❓ | C | not found in repo | Add breach handler + runbook; confirm process with ops |
 | F2 | Right to correction/erasure (12) | ✅ | H | `api/account/delete.ts:15` | - |
 | I3 | 3-year inactivity erasure (Rule 8 / Third Sch.) | ➖ | H | below scale thresholds | N/A unless user counts cross the Third-Schedule thresholds |

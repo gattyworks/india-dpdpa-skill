@@ -1,9 +1,11 @@
 # Data Processing Agreement (DPA)
 
-_Purpose: bind a Data Processor to handle personal data only on the Fiduciary's documented instructions and under contract. DPDP mapping: S.8(2) - a Fiduciary may engage a processor only under a valid contract. Source: https://www.dpdpa.com/templates/dataprocessingtemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: bind a Data Processor to handle personal data only on the Fiduciary's documented instructions and under contract. DPDP mapping: S.8(2), processing through a processor under a valid contract. Source: https://www.dpdpa.com/templates/dataprocessingtemplate.html. Paraphrased structure. Third-party structure and statutory mapping reviewed 2026-08-15._
 
 **When required**
-Whenever a Data Fiduciary engages a Data Processor (cloud host, analytics, payment, SaaS sub-processor) to process personal data on its behalf. S.8(2) makes the contract a precondition for such engagement; the Fiduciary remains liable for compliance.
+Future-phase readiness artifact as of 2026-08-15. Once S.8(2) commences, processing by a Data
+Processor on behalf of a Data Fiduciary must be under a valid contract. The Fiduciary remains
+responsible for compliance.
 
 **Required clauses checklist** (paraphrased)
 - Definitions (personal data, processing, sub-processor, controller/processor roles).

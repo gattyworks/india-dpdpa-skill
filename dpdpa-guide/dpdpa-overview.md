@@ -1,57 +1,24 @@
-# The Digital Personal Data Protection Act (DPDPA), 2023: Overview and Regulations
+# DPDPA overview
 
-Welcome to the learning resources for India's Digital Personal Data Protection Act (DPDPA), 2023. This guide outlines the key concepts, rules, and regulations introduced by the Act to protect the privacy of Indian citizens while enabling the processing of personal data for lawful purposes.
+**Primary sources:** [DPDP Act 2023](https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf), [DPDP Rules 2025](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf), [corrigendum](https://www.meity.gov.in/static/uploads/2025/12/3c7ebbae0e5456f493f486e6845df86b.pdf), and [commencement notification](https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf). Last reviewed 2026-08-15.
 
-## 1. Key Definitions
+The Digital Personal Data Protection Act, 2023 covers digital personal data processed in India. It also has extraterritorial scope for processing tied to offering goods or services to Data Principals in India (3).
 
-- **Data Principal:** The individual to whom the personal data relates. For children (under 18) and persons with disabilities, it includes their parents or lawful guardians.
-- **Data Fiduciary:** Any person or entity that determines the purpose and means of processing personal data.
-- **Data Processor:** Any person or entity that processes personal data on behalf of a Data Fiduciary.
-- **Significant Data Fiduciary (SDF):** A Data Fiduciary notified by the Central Government based on factors like volume/sensitivity of data processed, risk to electoral democracy, risk to national security, etc.
+The Act uses these roles:
 
-## 2. Applicability
+- A Data Principal is the individual to whom the personal data relates (2(j)).
+- A Data Fiduciary decides the purpose and means of processing (2(i)).
+- A Data Processor processes personal data for a Data Fiduciary (2(k)).
+- A Significant Data Fiduciary is a notified Fiduciary or class (2(z), 10).
 
-The DPDPA applies to the processing of digital personal data:
-- Within India, whether collected online or offline and digitized later.
-- Outside India, if the processing is in connection with any activity related to offering goods or services to Data Principals located within India.
+Processing must be for a lawful purpose based on consent or a listed legitimate use (4). Consent must meet the standard in 6(1). The Act does not contain the GDPR's contract or legitimate-interests bases.
 
-*It does not apply to personal data processed for personal or domestic purposes, or personal data made publicly available by the Data Principal or under a legal obligation.*
+The main product duties cover notice and consent (5 to 6), Fiduciary obligations (8), children (9), SDFs (10), Data Principal rights (11 to 14), and transfers (16).
 
-## 3. Grounds for Processing Personal Data
+The rights are access, correction and erasure, grievance redressal, and nomination. DPDPA does not create a general data-portability right.
 
-Personal data can only be processed for a lawful purpose based on:
-1. **Consent:** Must be free, specific, informed, unconditional, and unambiguous, given through a clear affirmative action.
-2. **Certain Legitimate Uses:** Such as medical emergencies, employment purposes, responding to public health crises, or for the state to provide subsidies/benefits/services.
+The Board was established in November 2025. Most product-facing Act duties and Rules are in the eighteen-month phase and are not yet in force as of 2026-08-15. See the exact phase table in [`rules-2025.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/rules-2025.md).
 
-## 4. Key Obligations of Data Fiduciaries
+The Schedule sets maximum penalties by breach category. The highest listed cap is ₹250 crore for failure to take reasonable security safeguards. The Schedule also includes a ₹10,000 cap for a Data Principal's breach of 15.
 
-- **Purpose Limitation & Data Minimization:** Process data only for the purpose it was collected and delete it once the purpose is served.
-- **Notice:** Provide clear notice to the Data Principal before or at the time of seeking consent, detailing the data collected and the purpose.
-- **Security Safeguards:** Implement reasonable security safeguards to prevent personal data breaches.
-- **Breach Notification:** Intimate the Data Protection Board of India and the affected Data Principals in the event of a personal data breach.
-- **Accuracy:** Ensure the accuracy and completeness of personal data when used to make a decision affecting the Data Principal or when disclosed to another entity.
-
-## 5. Rights of Data Principals
-
-- **Right to Access:** Obtain information about personal data processed and a summary of the data.
-- **Right to Correction & Erasure:** Request the correction of inaccurate/incomplete data, updating of data, and erasure when the purpose is fulfilled.
-- **Right to Grievance Redressal:** Have readily available means of registering grievances with the Data Fiduciary.
-- **Right to Nominate:** Nominate another individual to exercise their rights in the event of death or incapacity.
-
-## 6. The Data Protection Board of India
-
-The Act establishes the Data Protection Board of India (DPBI) to:
-- Direct urgent remedial or mitigation measures in case of a personal data breach.
-- Inquire into breaches and impose penalties.
-- Hear grievances from Data Principals.
-
-## 7. Penalties
-
-The Act prescribes significant financial penalties for non-compliance, but notably does not contain criminal penalties.
-- Failure to take reasonable security safeguards to prevent a breach: Up to ₹250 crore.
-- Failure to notify the Board and affected Data Principals of a breach: Up to ₹200 crore.
-- Non-compliance by children's data or Significant Data Fiduciaries: Significant fines.
-
----
-
-**⚠️ FAIR WARNING: This document was generated by an AI assistant. While it aims to provide an accurate summary of the Digital Personal Data Protection Act (DPDPA), 2023 based on publicly available information, it does not constitute legal advice and may contain inaccuracies. Please consult the official text of the Act and legal professionals for authoritative guidance and compliance.**
+This overview is an engineering aid, not legal advice. Use the canonical references and get qualified legal review before relying on it.

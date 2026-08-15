@@ -1,10 +1,14 @@
-_Source: DPDP Act 2023 + DPDP Rules 2025. Last verified: 2026-06-15. Engineering aid, not legal advice._
+_Primary sources: DPDP Act 2023, DPDP Rules 2025, the December 2025 corrigendum, and the Act commencement notification pinned in [sources.lock.json](../../../scripts/sources.lock.json). Last reviewed: 2026-08-15. Engineering aid, not legal advice._
 
 # DPDP Audit Checklist - the engine
 
-Run each dimension. For every item: decide **✅ Compliant / ⚠️ Gap / ❓ Needs review / ➖ N/A**, cite
+Run each dimension. For every item: decide **✅ Compliant / ⚠️ Gap / ~ Readiness gap / ❓ Needs review / ➖ N/A**, cite
 `file:line` evidence, and map severity via [penalties-schedule.md](penalties-schedule.md). Severity
-shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **M**edium, **L**ow.
+shorthand below: **C**ritical (up to ₹200 crore or more, or comparable harm), **H**igh, **M**edium, **L**ow.
+
+## Effective-date rule
+
+Check [rules-2025.md](rules-2025.md) before scoring. As of 2026-08-15, most checks below are notified readiness requirements in the eighteen-month phase. Use **Readiness gap** when the requirement is not yet in force on the audit date. Use **Gap** only when an applicable requirement is in force. The Consent Manager regime in B7 follows the one-year phase.
 
 ## A. Lawful basis & purpose (4, 7)
 
@@ -12,8 +16,8 @@ shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **
 |---|-------|----------------------|-----|
 | A1 | Every processing activity has a lawful basis | Each data use maps to **consent (6)** or a **listed legitimate use (7)** - nothing else is permitted | H |
 | A2 | Purpose is specific & lawful | No "general/blanket" purposes; purpose recorded per data category | M |
-| A3 | Data minimisation | Only data **necessary** for the stated purpose is collected (6(1)) | M |
-| A4 | No function creep | Data isn't reused for new purposes without fresh consent | H |
+| A3 | Consent-basis data minimisation | For consent processing, only data necessary for the specified purpose is requested (6(1)); do not present this as a general Act-wide principle | M |
+| A4 | No purpose change under consent | Consent-basis data is not reused for a new specified purpose without valid consent for that purpose (6(1)) | H |
 
 ## B. Notice & consent (5, 6 + Rules)
 
@@ -21,11 +25,11 @@ shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **
 |---|-------|----------------------|-----|
 | B1 | Notice present before/at consent | Itemised notice lists data collected, purpose, how to exercise rights, how to complain to the **Board** (5) | H |
 | B2 | Notice is standalone & plain-language | Available in English + the 8th-Schedule languages on request; not buried in T&Cs | M |
-| B3 | Consent is free/specific/informed/unconditional/unambiguous | Clear **affirmative action** (unticked box, explicit tap); no pre-ticked, no bundled consent (6(1)) | C |
-| B4 | Itemised consent | Separate consent per purpose; granular, not all-or-nothing | H |
+| B3 | Consent is free/specific/informed/unconditional/unambiguous | Clear **affirmative action** (unticked box, explicit tap); no pre-ticked consent (6(1)) | H |
+| B4 | Consent is limited to specified purpose and necessary data | The request does not make unnecessary data processing a condition of the service (6(1)); each purpose is clear | H |
 | B5 | Withdrawal as easy as giving | A visible, equally simple "withdraw consent" path; consequences stated; processing stops on withdrawal (6(4)-(6)) | H |
-| B6 | Consent records / audit trail | Timestamped log of what was consented to, when, and the notice version shown | H |
-| B7 | Consent Manager interoperability | If using/required, supports a Board-registered Consent Manager (2(g), Rules) | M |
+| B6 | Evidence of consent | Records can prove notice version, affirmative action, purpose, data, and withdrawal; the Fiduciary bears the burden of proving notice and consent (6(10)) | H |
+| B7 | Consent Manager integration | If the product uses a Consent Manager, it uses a Board-registered service and supports the required consent flow (2(g), 6(9), Rule 4) | M |
 | B8 | Pre-Act data | Consent obtained before the Act still requires a fresh notice "as soon as reasonably practicable" (5(2)) | M |
 
 ## C. Data Fiduciary security & duties (8 + Rules 6)
@@ -54,7 +58,7 @@ shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **
 
 | # | Check | Compliant looks like | Sev |
 |---|-------|----------------------|-----|
-| E1 | Age detection | System can identify users **under 18** where children are plausibly in the audience | C |
+| E1 | Child-scope control | Where children are plausibly in scope, the system can prevent child-data processing until the Rule 10 consent checks are complete | C |
 | E2 | Verifiable parental consent | Children's data processed only with verifiable consent of parent/guardian (9(1), Rules) | C |
 | E3 | No behavioural tracking of children | **No** tracking, behavioural monitoring, or **targeted advertising** directed at children (9(3)) | C |
 | E4 | No detrimental processing | Nothing likely to cause detrimental effect on a child's wellbeing (9(2)) | C |
@@ -67,7 +71,7 @@ shorthand below: **C**ritical (≤₹250 cr exposure, or children), **H**igh, **
 | F2 | Right to correction/erasure (12) | User can correct, complete, update, and erase their data; propagates to processors | H |
 | F3 | Right to grievance redressal (13) | In-product grievance route; responses within prescribed time | H |
 | F4 | Right to nominate (14) | User can nominate someone to act on death/incapacity | L |
-| F5 | Rights are self-serve & free | No fee/dark-pattern friction to exercise rights; identity verification is proportionate | M |
+| F5 | Rights mechanism is published and usable | Website/app publishes the request method and required identifier; verification is proportionate (Rule 14) | M |
 
 ## G. Significant Data Fiduciary extras (10 + Rules)
 
@@ -78,14 +82,14 @@ Applies only if notified/designated as an **SDF** (high volume or sensitivity). 
 | G1 | India-based DPO | A **Data Protection Officer based in India**, reporting to the board/governance, is appointed and published (10(2)) | H |
 | G2 | Independent data audit | Periodic **independent data audit** conducted (10(2)(c)) | M |
 | G3 | DPIA | Periodic **Data Protection Impact Assessment** ([templates/dpia.md](templates/dpia.md)) | M |
-| G4 | Additional Rule measures | Any extra localisation/transfer measures notified for SDFs (verify against current notification) | M |
+| G4 | Rule 13 technical and localisation measures | Annual DPIA/audit reporting, algorithmic-risk checks, and any notified in-India processing category are handled (Rule 13) | H |
 
 ## H. Cross-border transfer (16 + Rules)
 
 | # | Check | Compliant looks like | Sev |
 |---|-------|----------------------|-----|
-| H1 | Restricted-country check | Transfers honour the Central Government's **notified restriction list** (blacklist model, 16) | H |
-| H2 | Sub-processor geography known | You know where data physically goes (cloud regions, CDNs, analytics) | M |
+| H1 | Transfer restrictions and orders | Transfers honour any country/territory restriction under 16 and any foreign-State access requirement under Rule 15 | H |
+| H2 | Sub-processor geography known | Data locations and foreign-government access paths are documented (cloud regions, CDNs, analytics) | M |
 | H3 | Sectoral localisation | Sector rules still apply (e.g. RBI payment-data localisation) - see [legal-context.md](legal-context.md) | M |
 
 ## I. Retention & erasure (8(7)-(8) + Rule 8 / Third Schedule)
@@ -103,9 +107,9 @@ Applies only if notified/designated as an **SDF** (high volume or sensitivity). 
 |---|-------|----------------------|-----|
 | J1 | Privacy policy / notice published | Live, current, DPDP-aligned ([templates/privacy-policy.md](templates/privacy-policy.md)) | M |
 | J2 | Internal data-protection policy | ([templates/data-protection-policy.md](templates/data-protection-policy.md)) | L |
-| J3 | Records of processing | An inventory of data, purposes, recipients, retention exists | M |
+| J3 | Processing inventory | An inventory of data, purposes, recipients, and retention supports the statutory controls; this is an engineering control, not a named DPDPA ROPA duty | M |
 | J4 | Vendor/DPA coverage | Third-party vendors covered by a DPA / vendor agreement ([templates/data-processing-agreement.md](templates/data-processing-agreement.md)) | H |
-| J5 | Cookie/tracker consent | If using cookies/trackers/analytics on Indian users ([templates/cookie-policy.md](templates/cookie-policy.md)) | M |
+| J5 | Cookie/tracker lawful basis | Personal-data cookies, trackers, and analytics map to consent or a listed legitimate use; there is no standalone DPDPA cookie rule ([templates/cookie-policy.md](templates/cookie-policy.md)) | M |
 
 ## Quick triage (start here if time-boxed)
 
