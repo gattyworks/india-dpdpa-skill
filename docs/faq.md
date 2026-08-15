@@ -64,13 +64,13 @@ sources cannot be checked. A fetch error means currentness is unknown, not curre
 On Windows:
 
 ```powershell
-python plugins/dpdpa-india/scripts/check-updates.py
+python plugins/dpdpa-india/skills/dpdpa-india/scripts/check-updates.py
 ```
 
 If Python is unavailable:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File plugins/dpdpa-india/scripts/check-updates.ps1
+powershell -ExecutionPolicy Bypass -File plugins/dpdpa-india/skills/dpdpa-india/scripts/check-updates.ps1
 ```
 
 ## Are penalty values predictions?

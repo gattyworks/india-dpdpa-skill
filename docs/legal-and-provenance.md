@@ -19,7 +19,7 @@ Last legal-source baseline check: 2026-08-15. Engineering aid, not legal advice.
 | [May 2026 recruitment notice](https://www.meity.gov.in/static/uploads/2026/05/53b1bcf01cab9a0adde463e73fbc3417.pdf) | Current Board staffing evidence |
 
 The exact URLs, hashes, and secondary-page reachability checks are in
-[`sources.lock.json`](../plugins/dpdpa-india/scripts/sources.lock.json).
+[`sources.lock.json`](../plugins/dpdpa-india/skills/dpdpa-india/scripts/sources.lock.json).
 
 ## Reference ownership
 

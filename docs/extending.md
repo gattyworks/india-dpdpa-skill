@@ -50,6 +50,7 @@ The current host paths are:
 
 - Claude Code: `plugins/dpdpa-india/`
 - Codex: `.agents/skills/dpdpa-india/SKILL.md`
+- Codex, ChatGPT, and Hermes installs: `plugins/dpdpa-india/skills/dpdpa-india/`
 
 ## Versioning
 
@@ -67,7 +68,7 @@ Before a release:
 1. Complete the legal-source runbook.
 2. Keep plugin and marketplace versions identical.
 3. Update `CHANGELOG.md` from actual commits.
-4. Test Claude and Codex entry points.
+4. Test Claude, Codex, ChatGPT, and Hermes installation paths.
 5. Confirm the repository and install links are public and accurate.
 6. Confirm no customer data, credentials, or private audit reports are included.
 7. Create the tag and release only after approval.

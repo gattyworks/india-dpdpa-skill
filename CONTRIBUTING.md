@@ -13,7 +13,7 @@ and documentation changes. The [Code of Conduct](CODE_OF_CONDUCT.md) applies.
 - Update a `Last reviewed` header only for files you actually checked.
 
 The official MeitY Act, Rules, corrigendum, commencement, and Board sources are pinned in
-[`plugins/dpdpa-india/scripts/sources.lock.json`](plugins/dpdpa-india/scripts/sources.lock.json).
+[`plugins/dpdpa-india/skills/dpdpa-india/scripts/sources.lock.json`](plugins/dpdpa-india/skills/dpdpa-india/scripts/sources.lock.json).
 The checker detects changes at known URLs. It does not discover new notifications at new URLs.
 
 ## Workflow
@@ -30,7 +30,7 @@ The checker detects changes at known URLs. It does not discover new notification
 Run the canonical checker from the repository root:
 
 ```bash
-python plugins/dpdpa-india/scripts/check-updates.py
+python plugins/dpdpa-india/skills/dpdpa-india/scripts/check-updates.py
 ```
 
 Use `--update` only after you review every changed source. The checker refuses a partial update if
