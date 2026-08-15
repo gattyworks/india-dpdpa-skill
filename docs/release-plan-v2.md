@@ -2,13 +2,26 @@
 
 **Public launch target:** 2026-08-15
 **Public repository:** Approved 2026-08-15
-**v2 tag:** After package and legal review
+**v2 tag:** Approved for publication on 2026-08-15
 **Distribution:** Public GitHub repository under the MIT license
 **Public launch:** GattyWorks tool page, engineering story, Instagram carousel, LinkedIn post
 
-**Status:** The public repository, landing page, tool listing, and engineering story are approved for
-publication. The v2 tag still requires sample audits, package review, and legal/license approval. No
-v2 tag or GitHub release has been created.
+**Status:** Release gates passed on 2026-08-15. The owner approved the public MIT release, the legal
+source and claim review passed, and both audit modes completed their smoke tests. Publish v2.0.0
+through the reviewed branch, tag, GitHub release, and clean-install sequence below.
+
+## Release evidence
+
+- All 13 pinned sources matched in the Python, PowerShell, and shell checker variants.
+- The official MeitY Rules hub and the current Board record were reviewed manually.
+- The bundle validator passed: versions, 49 fixed IDs, report coverage, host boundaries, local
+  links, and text policy.
+- Controlled checker fixtures returned the documented exit codes 0, 1, and 2.
+- A Readiness-mode smoke audit used `Needs review` for host controls and did not invent current
+  violations.
+- A Current-compliance smoke audit reported no current product-duty gaps and did not score
+  future-phase duties as present violations.
+- The MIT license remains unchanged with the owner's approval.
 
 ## Why this is v2
 

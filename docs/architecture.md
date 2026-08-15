@@ -1,6 +1,8 @@
 # Architecture
 
-`dpdpa-india` has one canonical audit playbook and two host entry points. Claude Code loads it as a plugin. Codex discovers it as a repository skill. Both paths use the same references and report contract.
+`dpdpa-india` has one canonical Agent Skills bundle. Claude Code loads it as a plugin. Codex and
+ChatGPT load it as a skill. Hermes Agent installs the same folder from GitHub. Every path uses the
+same references and report contract.
 
 This is an engineering aid, not legal advice.
 
@@ -17,13 +19,11 @@ dpdp-india/
 |   |-- commands/
 |   |   |-- dpdpa-audit.md
 |   |   `-- dpdpa-update-check.md
-|   |-- scripts/
-|   |   |-- check-updates.py
-|   |   |-- check-updates.ps1
-|   |   |-- check-updates.sh
-|   |   `-- sources.lock.json
 |   `-- skills/dpdpa-india/
 |       |-- SKILL.md                    # canonical playbook
+|       |-- agents/openai.yaml          # Codex and ChatGPT metadata
+|       |-- assets/saakshi.svg          # skill icon
+|       |-- scripts/                    # source checker and source lock
 |       `-- references/
 |           |-- audit-checklist.md      # 49 checks, IDs A1 to J5
 |           |-- report-format.md        # fixed output contract
@@ -61,6 +61,9 @@ thin entry points:
 - `/dpdpa-audit` selects a target and runs the four passes.
 - `/dpdpa-update-check` runs the source checker.
 
+Hermes installs the canonical folder directly. Its `/dpdpa-india` command loads the same
+`SKILL.md`, references, and scripts. No Hermes-specific legal copy exists.
+
 ## Audit flow
 
 ```mermaid
@@ -68,8 +71,12 @@ flowchart LR
     U["Audit request"] --> H{"Host"}
     H -->|"Claude Code"| CP["Claude plugin entry"]
     H -->|"Codex"| CX[".agents skill entry"]
+    H -->|"ChatGPT"| OAI["Installed Agent Skill"]
+    H -->|"Hermes"| HE["GitHub skill install"]
     CP --> SK["Canonical SKILL.md"]
     CX --> SK
+    OAI --> SK
+    HE --> SK
     SK --> PH["Check commencement phase"]
     PH --> CL["Run IDs A1 to J5"]
     CL --> EV["Collect file:line evidence"]
@@ -109,8 +116,8 @@ official MeitY DPDP Rules page.
 
 The repository, install steps, method, and audit references are public under the MIT license.
 
-The canonical skill is plain Markdown plus references. Another harness can read it
-without the Claude manifests. The host still controls where code and prompts are processed. Do not
+The canonical skill is a self-contained Agent Skills folder. It includes its references, scripts,
+Codex metadata, and icon. The host still controls where code and prompts are processed. Do not
 claim an audit stays on-device unless the host guarantees that behavior.
 
 ## See also

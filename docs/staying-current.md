@@ -10,7 +10,7 @@ Last baseline check: 2026-08-15. Engineering aid, not legal advice.
 From the repository root:
 
 ```bash
-python plugins/dpdpa-india/scripts/check-updates.py
+python plugins/dpdpa-india/skills/dpdpa-india/scripts/check-updates.py
 ```
 
 Platform variants:
@@ -22,7 +22,7 @@ Platform variants:
 | `check-updates.sh` | Bash, curl, jq; `--json` uses Python 3 |
 
 All variants use
-[`sources.lock.json`](../plugins/dpdpa-india/scripts/sources.lock.json).
+[`sources.lock.json`](../plugins/dpdpa-india/skills/dpdpa-india/scripts/sources.lock.json).
 
 ## Status and exit codes
 
@@ -77,7 +77,7 @@ securities, or another regulated activity.
 8. Review the resulting diff before commit.
 
 ```bash
-python plugins/dpdpa-india/scripts/check-updates.py --update
+python plugins/dpdpa-india/skills/dpdpa-india/scripts/check-updates.py --update
 ```
 
 The checker refuses a partial update if any source fails. Do not re-pin a changed source before you

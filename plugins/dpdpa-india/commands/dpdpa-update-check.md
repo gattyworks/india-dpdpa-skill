@@ -6,13 +6,14 @@ argument-hint: ""
 Run the dpdpa-india update checker to detect upstream legal changes:
 
 ```
-python "${CLAUDE_PLUGIN_ROOT}/scripts/check-updates.py"
+python "${CLAUDE_PLUGIN_ROOT}/skills/dpdpa-india/scripts/check-updates.py"
 ```
 
-If `python` is unavailable, use the platform variant in `${CLAUDE_PLUGIN_ROOT}/scripts/`
+If `python` is unavailable, use the platform variant in
+`${CLAUDE_PLUGIN_ROOT}/skills/dpdpa-india/scripts/`
 (`check-updates.ps1` on Windows, `check-updates.sh` on macOS/Linux).
 
-The script re-fetches the pinned sources in `scripts/sources.lock.json`, compares content hashes,
+The script re-fetches the pinned sources beside it in `sources.lock.json`, compares content hashes,
 and reports any that changed. Exit code `0` means every known source matched, `1` means at least
 one source changed, and `2` means the check was incomplete because one or more sources could not
 be fetched or processed. Never report an exit-code-2 run as current, and never update the lock

@@ -37,7 +37,7 @@ Examples:
 /dpdpa-audit "the signup and analytics flow"
 ```
 
-The update command uses `${CLAUDE_PLUGIN_ROOT}` to locate the bundled script.
+The update command uses `${CLAUDE_PLUGIN_ROOT}` to locate the checker inside the skill bundle.
 
 ## Codex
 
@@ -45,22 +45,34 @@ Codex discovers [`.agents/skills/dpdpa-india/SKILL.md`](../.agents/skills/dpdpa-
 from this repository. The entry point delegates to the same canonical playbook as the Claude
 plugin.
 
+For a personal Codex or ChatGPT installation, ask `$skill-installer` to install this public folder:
+
+```text
+https://github.com/gattyworks/india-dpdpa-skill/tree/main/plugins/dpdpa-india/skills/dpdpa-india
+```
+
 Ask:
 
 ```text
 Use the dpdpa-india skill to run a readiness audit of this repository.
 ```
 
-For another harness, load
-[`plugins/dpdpa-india/skills/dpdpa-india/SKILL.md`](../plugins/dpdpa-india/skills/dpdpa-india/SKILL.md)
-and follow its relative reference links. Keep the canonical playbook and source citations together.
+## Hermes Agent
+
+Install the self-contained Agent Skills bundle from GitHub:
+
+```bash
+hermes skills install gattyworks/india-dpdpa-skill/plugins/dpdpa-india/skills/dpdpa-india
+```
+
+Start a new session. Use `/dpdpa-india` or ask Hermes to audit a build for India's DPDP law.
 
 ## Source checker
 
 From the repository root:
 
 ```bash
-python plugins/dpdpa-india/scripts/check-updates.py
+python plugins/dpdpa-india/skills/dpdpa-india/scripts/check-updates.py
 ```
 
 Exit codes:

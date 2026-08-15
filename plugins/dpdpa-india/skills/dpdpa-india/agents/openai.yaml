@@ -1,0 +1,7 @@
+interface:
+  display_name: "DPDPA India Audit"
+  short_description: "Audit builds for India DPDP readiness"
+  icon_small: "./assets/saakshi.svg"
+  icon_large: "./assets/saakshi.svg"
+  brand_color: "#FF9933"
+  default_prompt: "Use $dpdpa-india to audit this repository in readiness mode."

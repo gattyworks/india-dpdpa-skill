@@ -105,11 +105,12 @@ not visible in code), and the one-line disclaimer below.
 Law changes; phased commencement is ongoing. Before relying on an audit, run the update check to
 see whether the upstream sources have moved since this skill was pinned:
 
-```
-python "${CLAUDE_PLUGIN_ROOT}/scripts/check-updates.py"
-```
+Run the bundled [source checker](scripts/check-updates.py) before relying on an audit. Resolve the
+path from this `SKILL.md` file, then run `python <skill-directory>/scripts/check-updates.py`.
 
-For a direct repository checkout, run `python plugins/dpdpa-india/scripts/check-updates.py` from the repository root. Cross-platform `.ps1` and `.sh` variants sit alongside it. See [scripts/](../../scripts/).
+For a direct repository checkout, run
+`python plugins/dpdpa-india/skills/dpdpa-india/scripts/check-updates.py` from the repository root.
+Cross-platform `.ps1` and `.sh` variants sit beside the Python checker.
 
 ---
 

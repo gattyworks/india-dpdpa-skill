@@ -1,7 +1,7 @@
 {
   "name": "dpdpa-india",
   "description": "Open-source GattyWorks audit for applications, codebases, products, and data flows under India's DPDP Act 2023 and DPDP Rules 2025. Includes 49 checks, code evidence patterns, a fixed report contract, penalty mapping, and 13 policy-artifact specifications. Engineering aid, not legal advice.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": {
     "name": "gattyworks",
     "url": "https://github.com/gattyworks"

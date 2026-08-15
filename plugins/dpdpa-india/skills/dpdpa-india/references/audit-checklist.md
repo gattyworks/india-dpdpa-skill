@@ -1,4 +1,4 @@
-_Primary sources: DPDP Act 2023, DPDP Rules 2025, the December 2025 corrigendum, and the Act commencement notification pinned in [sources.lock.json](../../../scripts/sources.lock.json). Last reviewed: 2026-08-15. Engineering aid, not legal advice._
+_Primary sources: DPDP Act 2023, DPDP Rules 2025, the December 2025 corrigendum, and the Act commencement notification pinned in [sources.lock.json](../scripts/sources.lock.json). Last reviewed: 2026-08-15. Engineering aid, not legal advice._
 
 # DPDP Audit Checklist - the engine
 

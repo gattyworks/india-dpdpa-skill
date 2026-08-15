@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-08-15
+
 ### Added
 - Renamed the plugin and skill from `dpdp-india` to `dpdpa-india`. This is a breaking path and
   command change from v1.0.0.
@@ -13,6 +15,8 @@ All notable changes to this project are documented here. The format follows
 - The full `docs/` guide, repository house rules, and current design sources.
 - A Codex repository entry point under `.agents/skills/dpdpa-india/` that delegates to the
   canonical playbook.
+- A self-contained Agent Skills bundle for Codex, ChatGPT, Hermes Agent, and compatible hosts.
+- Codex presentation metadata and the Saakshi skill icon.
 - Official source pins for the final Rules, corrigendum, commencement notification, Board
   establishment, Board member-count notice, and 2026 Board recruitment notice.
 - A readiness status and audit mode for notified duties that are not yet in force.

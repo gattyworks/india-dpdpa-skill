@@ -12,7 +12,7 @@
       "name": "dpdpa-india",
       "source": "./plugins/dpdpa-india",
       "description": "Open-source GattyWorks audit for India's DPDP Act 2023 and DPDP Rules 2025. Includes 49 checks, code evidence patterns, a fixed report contract, penalty mapping, and 13 policy-artifact specifications.",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "keywords": ["dpdp", "dpdpa", "india", "privacy", "compliance", "data-protection", "audit", "gdpr", "legal"]
     }
   ]

@@ -1,6 +1,9 @@
 # dpdpa-india docs
 
-`dpdpa-india` is an open-source GattyWorks skill for Claude Code, Codex, and other harnesses. It audits an app, codebase, or data flow against India's **DPDP Act 2023** and **DPDP Rules 2025**. It separates current gaps from readiness gaps, cites exact source locations, and uses fixed issue IDs. It is an engineering aid, not legal advice.
+`dpdpa-india` is an open-source GattyWorks skill for Claude Code, Codex, ChatGPT, Hermes Agent,
+and compatible Agent Skills hosts. It audits an app, codebase, or data flow against India's
+**DPDP Act 2023** and **DPDP Rules 2025**. It separates current gaps from readiness gaps, cites
+exact source locations, and uses fixed issue IDs. It is an engineering aid, not legal advice.
 
 These pages are the developer documentation. For installing and invoking the skill, start with [Usage](usage.md).
 

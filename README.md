@@ -91,6 +91,8 @@ The report also includes a risk summary, the top 3 risks, what to confirm with c
 
 ## Install
 
+### Claude Code
+
 Add the public Claude Code marketplace, then install the plugin:
 
 ```bash
@@ -105,7 +107,30 @@ Then run a scan:
 /dpdpa-audit ./api        # audit a subtree
 ```
 
-…or just say *"audit this app for DPDP / Indian data-protection compliance."*
+Or say *"audit this app for DPDP or Indian data-protection compliance."*
+
+### Codex and ChatGPT
+
+Ask `$skill-installer` to install the skill from this public folder:
+
+```text
+https://github.com/gattyworks/india-dpdpa-skill/tree/main/plugins/dpdpa-india/skills/dpdpa-india
+```
+
+Codex also discovers the repository entry point at
+[`/.agents/skills/dpdpa-india/SKILL.md`](.agents/skills/dpdpa-india/SKILL.md) when you clone this
+repository. The installed skill includes its Codex metadata, references, source checker, and
+Saakshi icon.
+
+### Hermes Agent
+
+Install the same Agent Skills bundle directly from GitHub:
+
+```bash
+hermes skills install gattyworks/india-dpdpa-skill/plugins/dpdpa-india/skills/dpdpa-india
+```
+
+Start a new Hermes session. Use `/dpdpa-india` or ask for an Indian data-protection audit.
 
 ### Example prompts (after install)
 
@@ -117,14 +142,12 @@ Once installed, point the agent at your code with prompts like:
 - *"Are we a Significant Data Fiduciary, and what would that require of us?"*
 - *"Which privacy policies and templates do we need for Indian users, and which are missing here?"*
 
-### Codex and other harnesses
+### One playbook for every harness
 
-Codex discovers the repository entry point at
-[`/.agents/skills/dpdpa-india/SKILL.md`](.agents/skills/dpdpa-india/SKILL.md). It delegates to the
-same canonical playbook used by the Claude plugin, so the two packages cannot drift. Other
-harnesses can read
+Claude Code, Codex, ChatGPT, and Hermes Agent load the same canonical playbook at
 [`plugins/dpdpa-india/skills/dpdpa-india/SKILL.md`](plugins/dpdpa-india/skills/dpdpa-india/SKILL.md)
-and its references directly.
+and its bundled files. Host-specific entry points only handle discovery and invocation. They do
+not copy or change the legal rules, checklist IDs, or report contract.
 
 ## Keeping current
 
@@ -132,11 +155,11 @@ The law commences in phases, so sources move. A zero-dependency checker re-fetch
 source and flags drift:
 
 ```bash
-python plugins/dpdpa-india/scripts/check-updates.py      # also: check-updates.ps1 / .sh
+python plugins/dpdpa-india/skills/dpdpa-india/scripts/check-updates.py
 /dpdpa-update-check                                       # the same, from Claude Code
 ```
 
-It checks the [pinned sources](plugins/dpdpa-india/scripts/sources.lock.json), including the Act,
+It checks the [pinned sources](plugins/dpdpa-india/skills/dpdpa-india/scripts/sources.lock.json), including the Act,
 final Rules, corrigendum, commencement notice, Board notices, and secondary reference sources.
 Stable files use SHA-256. Four secondary HTML pages sit behind a JavaScript challenge, so
 automation checks that they remain reachable and maintainers review the rendered pages.
@@ -153,9 +176,11 @@ official MeitY DPDP Rules page still needs a manual monthly check.
 └── plugins/dpdpa-india/
     ├── .claude-plugin/plugin.json
     ├── commands/                           # /dpdpa-audit, /dpdpa-update-check
-    ├── scripts/                            # check-updates.{py,ps1,sh} + sources.lock.json
     └── skills/dpdpa-india/
         ├── SKILL.md                        # the audit playbook (start here)
+        ├── agents/openai.yaml              # Codex and ChatGPT metadata
+        ├── assets/saakshi.svg              # skill icon
+        ├── scripts/                        # source checker and source lock
         └── references/
             ├── audit-checklist.md          # the section-by-section engine
             ├── code-patterns.md            # what to grep for in a codebase
