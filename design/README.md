@@ -1,8 +1,8 @@
 # design/ - India DPDPA Skill visual assets
 
-Generated assets for this repo's README banner and mascot (**Kavach**).
-Everything here comes from the shared GattyWorks mascot/banner generator in
-the workspace; regenerate there rather than hand-editing the SVGs.
+Maintained assets for this repo's README banner and mascot (**Saakshi**).
+Saakshi is the evidence witness for this project: a folded source sheet with
+line-number ticks, a face, and saffron, white, and green bands.
 
 ## Banner
 
@@ -12,11 +12,11 @@ Project-themed: the colors and facts come from this repo, with the mascot as
 one element. `banner.html` is a self-contained reference page showing the
 banner plus the exact theme tokens it was built from.
 
-## Mascot - Kavach
+## Mascot - Saakshi
 
 | Static | Blinking |
 | --- | --- |
-| ![Kavach static](mascot.svg) | ![Kavach blinking](mascot-animated.svg) |
+| ![Saakshi static](mascot.svg) | ![Saakshi blinking](mascot-animated.svg) |
 
 `mascot.svg` is the static sprite; `mascot-animated.svg` blinks (CSS inside
 the SVG, honors prefers-reduced-motion). Both are transparent-background,
