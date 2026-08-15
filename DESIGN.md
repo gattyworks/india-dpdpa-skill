@@ -24,9 +24,8 @@ the ink background, teal accent, and tricolor rule bar plus the facts on it
 come from this repo itself, not from a shared org template, and the mascot
 is one element of it, not the whole banner. `design/banner.html` is a
 self-contained reference page showing the banner plus the theme tokens it
-was built from. Referenced from README.md by a plain relative img src (this
-repo is private: raw.githubusercontent.com URLs 404 without auth, and
-GitHub only rewrites relative img paths). The old mascot-only
+was built from. Referenced from README.md by a plain relative img src so
+GitHub rewrites the asset path for the current branch. The old mascot-only
 `.github/banner-*.svg` files are removed.
 
 The standalone mascot sprites live alongside it: `design/mascot.svg`
@@ -34,11 +33,9 @@ The standalone mascot sprites live alongside it: `design/mascot.svg`
 SVG, honors prefers-reduced-motion). `design/README.md` showcases all of
 these assets.
 
-## Replaced the old banner
+## Historical banner
 
-This repo previously had its own banner (`assets/banner-dark.png` /
-`banner-light.png`, plus source `.svg` files and a `banner.html` proofing
-page, teal gradient with the GattyWorks monogram). The mascot banner
-replaces it outright instead of stacking alongside it, per the repo owner.
-`assets/logo.*` and `assets/social-preview.*` are separate assets and were
-left untouched. See `CHANGELOG.md` for the dated entry.
+This repo previously stored a separate banner and social assets under
+`assets/`, plus mascot-only banner variants under `.github/`. Those files
+are no longer present. The maintained design source is `design/banner.svg`;
+see `CHANGELOG.md` for the history.

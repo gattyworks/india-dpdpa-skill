@@ -1,9 +1,11 @@
 # Third-Party Vendor Agreement
 
-_Purpose: commercial contract layer (broader than a pure DPA) governing any vendor that receives or touches personal data, with data-protection obligations embedded. DPDP mapping: S.8(2) (processing via contract), S.8(5) (reasonable security safeguards). Source: https://www.dpdpa.com/templates/thirdpartyvendoragreementtemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: commercial contract layer, broader than a pure DPA, governing a vendor that receives or touches personal data. DPDP mapping: S.8(2) (processing via contract), S.8(5) (reasonable security safeguards). Source: https://www.dpdpa.com/templates/thirdpartyvendoragreementtemplate.html. Paraphrased structure. Third-party structure and statutory mapping reviewed 2026-08-15._
 
 **When required**
-When sharing personal data with any third-party vendor (resellers, integrators, support providers) - used where a full DPA is paired with or folded into a master services agreement. The Fiduciary stays accountable for the vendor's processing.
+Readiness artifact for sharing personal data with a third-party vendor such as a reseller,
+integrator, or support provider. It may sit beside a DPA or inside a master services agreement.
+The future-phase S.8 duties do not disappear when processing is outsourced.
 
 **Required clauses checklist** (paraphrased)
 - Definitions and scope of services.

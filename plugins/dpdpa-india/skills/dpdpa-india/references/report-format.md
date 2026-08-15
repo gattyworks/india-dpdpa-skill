@@ -1,4 +1,4 @@
-_Source: DPDPA Audit output contract for the dpdpa-india skill. Last verified: 2026-06-15. Engineering aid, not legal advice._
+_Source: DPDPA Audit output contract for the dpdpa-india skill. Legal-source baseline checked 2026-08-15. Engineering aid, not legal advice._
 
 # Audit report format (the output contract)
 
@@ -24,13 +24,13 @@ is not a lawyer:
 
 ## Report structure (fixed order)
 
-1. **Header** - `DPDPA Audit - <system> (DPDP Act 2023 + Rules 2025, sources verified <date>)`.
-2. **Verdict** - one of `Materially compliant` / `Gaps found` / `Not assessed`, plus a one-line
+1. **Header** - system name, audit date, legal-source baseline date, and audit mode (`Current compliance` or `Readiness`).
+2. **Verdict** - one of `Materially compliant` / `Gaps found` / `Readiness gaps found` / `Not assessed`, plus a one-line
    scope (role: Fiduciary or Processor; children in scope?; SDF likely?; cross-border?).
 3. **Risk summary** - counts by severity and by status.
 4. **Findings** - the table: every applicable catalog ID, ordered by severity (Critical first),
    then by dimension.
-5. **Gap details** - for each Gap or Needs-review row, a plain-language block: what it is, the fix, and what happens if it is not fixed.
+5. **Gap details** - for each Gap, Readiness-gap, or Needs-review row, a plain-language block: what it is, the fix, and what happens if it is not fixed.
 6. **Top risks** - the 3 highest-exposure items in plain language.
 7. **Confirm with counsel / ops** - items not decidable from code (designations, contracts, process).
 8. **Disclaimer** - the one-line "engineering aid, not legal advice" note.
@@ -43,8 +43,8 @@ and state why.
 
 | Level | What it means in plain terms | Penalty exposure | Example IDs |
 |---|---|---|---|
-| **Critical** | Fix first. Largest fines, or direct harm to people. | up to ₹250 cr (security), ₹200 cr (children) | C1, E1, E2, E3, E4 |
-| **High** | A major legal duty is unmet, or a person's right is blocked. | up to ₹200 cr (breach), ₹150 cr (SDF) | D2, D3, B3, B5, C4, C6, F1, F2, F3, G1, J4 |
+| **Critical** | Fix first. Largest fines, or direct harm to people. | up to ₹250 cr (security), ₹200 cr (breach and children) | C1, D2, D3, E1, E2, E3, E4 |
+| **High** | A major legal duty is unmet, or a person's right is blocked. | up to ₹150 cr (SDF) or the residuary band | B3, B5, C4, C6, F1, F2, F3, G1, J4 |
 | **Medium** | Required but lower-stakes: governance or documentation. | residuary, up to ₹50 cr | A2, A3, B1, C3, H1, H2, H3, I1, J1, J5 |
 | **Low** | Minor or supporting item; tidy up. | low / procedural | F4, I4, J2 |
 
@@ -53,7 +53,8 @@ and state why.
 | Status | Icon | Meaning |
 |---|---|---|
 | Compliant | ✅ | Control present and adequate; evidence cited. |
-| Gap | ⚠️ | Control missing or inadequate. This is a finding. |
+| Gap | ⚠️ | An applicable, in-force control is missing or inadequate. |
+| Readiness gap | ~ | A notified control is missing, but its phase has not started on the audit date. |
 | Needs review | ❓ | Cannot be decided from code or artifacts alone; needs human, legal, or ops confirmation. |
 | N/A | ➖ | Dimension does not apply (give a one-line reason). |
 
@@ -66,35 +67,44 @@ is genuinely empty (for example, Fix on a Compliant row).
 |---|---|
 | **ID** | The catalog ID from audit-checklist.md (A1 ... J5). Fixed; never invented. |
 | **Requirement** | Short label + the DPDP section/rule cite, e.g. "Security safeguards (8(5), Rule 6)". |
-| **Status** | One of the four statuses above. |
+| **Status** | One of the five statuses above. |
 | **Severity** | One of the four levels above (default per ID; raised with a stated reason). |
 | **Evidence** | `path/to/file:line`, or `not found` when an expected control is absent. |
 | **Fix** | The concrete remediation + the template/reference that specifies it. |
 
-Gap and Needs-review rows expand in **Gap details** with three plain-language lines: **What it is**,
+Gap, Readiness-gap, and Needs-review rows expand in **Gap details** with three plain-language lines: **What it is**,
 **Fix**, and **If unfixed** (the consequence).
 
 ## Markdown template
 
 ```
 ## DPDPA Audit - <system>
-DPDP Act 2023 + Rules 2025 - sources verified <date>
+Audit date: <YYYY-MM-DD> | Legal-source baseline: <YYYY-MM-DD>
+Mode: <Current compliance | Readiness> | Phase basis: <in-force / one-year / eighteen-month provisions checked>
 
-**Verdict:** <Materially compliant | Gaps found | Not assessed>
+**Verdict:** <Materially compliant | Gaps found | Readiness gaps found | Not assessed>
 **Scope:** Role: <Fiduciary|Processor> | Children in scope: <yes|no|unknown> | SDF likely: <yes|no|unknown> | Cross-border: <yes|no>
 
 ### Risk summary
-| Severity | Count | | Status | Count |
-|---|---|---|---|---|
-| Critical | n | | ✅ Compliant | n |
-| High | n | | ⚠️ Gap | n |
-| Medium | n | | ❓ Needs review | n |
-| Low | n | | ➖ N/A | n |
+| Severity | Count |
+|---|---|
+| Critical | n |
+| High | n |
+| Medium | n |
+| Low | n |
+
+| Status | Count |
+|---|---|
+| ✅ Compliant | n |
+| ⚠️ Gap | n |
+| ~ Readiness gap | n |
+| ❓ Needs review | n |
+| ➖ N/A | n |
 
 ### Findings
 | ID | Requirement (cite) | Status | Severity | Evidence | Fix |
 |----|--------------------|--------|----------|----------|-----|
-| C1 | Security safeguards (8(5), Rule 6) | ⚠️ Gap | Critical | path:line | ... |
+| C1 | Security safeguards (8(5), Rule 6) | <Gap or Readiness gap> | Critical | path:line | ... |
 
 ### Gap details
 - **C1 - Security safeguards (Critical):**
@@ -116,35 +126,44 @@ DPDP Act 2023 + Rules 2025 - sources verified <date>
 A fictional app, to show the shape. The system and findings are invented.
 
 > ## DPDPA Audit - Acme Shop (Next.js storefront + Node API + Postgres)
-> DPDP Act 2023 + Rules 2025 - sources verified 2026-06-15
+> Audit date: 2026-08-15 | Legal-source baseline: 2026-08-15
+> Mode: Readiness | Phase basis: eighteen-month duties are not yet in force
 >
-> **Verdict:** Gaps found
+> **Verdict:** Readiness gaps found
 > **Scope:** Role: Data Fiduciary | Children in scope: unknown | SDF likely: no (revisit at scale) | Cross-border: yes (us-east-1)
 >
 > ### Risk summary
-> | Severity | Count | | Status | Count |
-> |---|---|---|---|---|
-> | Critical | 3 | | ✅ Compliant | 1 |
-> | High | 8 | | ⚠️ Gap | 10 |
-> | Medium | 2 | | ❓ Needs review | 2 |
-> | Low | 0 | | ➖ N/A | 1 |
+> | Severity | Count |
+> |---|---|
+> | Critical | 4 |
+> | High | 8 |
+> | Medium | 2 |
+> | Low | 0 |
+>
+> | Status | Count |
+> |---|---|
+> | ✅ Compliant | 1 |
+> | ⚠️ Gap | 0 |
+> | ~ Readiness gap | 11 |
+> | ❓ Needs review | 2 |
+> | ➖ N/A | 1 |
 >
 > ### Findings
 > | ID | Requirement (cite) | Status | Severity | Evidence | Fix |
 > |----|--------------------|--------|----------|----------|-----|
-> | C1 | Security safeguards (8(5), Rule 6) | ⚠️ Gap | Critical | `api/db.ts:14`, `.env.example:3` | Enforce TLS, move secrets to a vault, encrypt at rest (code-patterns 3) |
-> | E1 | Age detection (9) | ❓ Needs review | Critical | `not found` | Confirm if under-18 users are in the audience; add an age gate |
-> | E3 | No behavioural tracking of children (9(3)) | ⚠️ Gap | Critical | `app/layout.tsx:22` | Gate analytics/ad SDKs off for under-18; no targeted ads to children |
-> | D3 | Notify Board within 72h (8(6), Rule 7) | ⚠️ Gap | High | `not found` | Add breach detection + Board/principal notification ([data-breach-response](templates/data-breach-response.md)) |
-> | B3 | Consent quality (6(1)) | ⚠️ Gap | High | `components/Signup.tsx:40` | Remove pre-ticked box; explicit, itemised consent |
-> | B5 | Withdrawal as easy as giving (6(4)) | ⚠️ Gap | High | `not found` | Add a visible withdraw-consent control; stop processing on withdrawal |
-> | C4 | Erasure on withdrawal/purpose-end (8(7)) | ⚠️ Gap | High | `not found` | Delete on request; propagate to processors |
-> | F1 | Right to access (11) | ⚠️ Gap | High | `not found` | Add a data-export endpoint ([dsar-request](templates/dsar-request.md)) |
-> | C6 | Grievance mechanism (8(10), 13) | ⚠️ Gap | High | `not found` | Add a grievance route + response SLA ([grievance-redressal](templates/grievance-redressal.md)) |
-> | J4 | Vendor / DPA coverage (8(2)) | ⚠️ Gap | High | `not found` | Sign DPAs with the email + analytics vendors ([data-processing-agreement](templates/data-processing-agreement.md)) |
-> | H1 | Restricted-country transfer (16) | ❓ Needs review | High | `infra/deploy.yml:8` | Map data egress (us-east-1) against the notified restriction list |
-> | J1 | Privacy notice published (5) | ⚠️ Gap | Medium | `not found` (no `/privacy` route) | Publish a DPDP notice ([privacy-policy](templates/privacy-policy.md)) |
-> | I2 | Automated erasure (8(7)) | ⚠️ Gap | Medium | `not found` | Add a retention TTL / purge job ([data-retention-policy](templates/data-retention-policy.md)) |
+> | C1 | Security safeguards (8(5), Rule 6) | ~ Readiness gap | Critical | `api/db.ts:14`, `.env.example:3` | Enforce TLS, move secrets to a vault, encrypt at rest (code-patterns 3) |
+> | E1 | Child-scope control (9, Rule 10) | ❓ Needs review | Critical | `not found` | Confirm if under-18 users are in the audience; add the required control if they are |
+> | E3 | No behavioural tracking of children (9(3)) | ~ Readiness gap | Critical | `app/layout.tsx:22` | Gate analytics/ad SDKs off for under-18; no targeted ads to children |
+> | D3 | Notify Board within 72h (8(6), Rule 7) | ~ Readiness gap | Critical | `not found` | Add breach detection + Board/principal notification ([data-breach-response](templates/data-breach-response.md)) |
+> | B3 | Consent quality (6(1)) | ~ Readiness gap | High | `components/Signup.tsx:40` | Remove pre-ticked consent; use an explicit action |
+> | B5 | Withdrawal as easy as giving (6(4)) | ~ Readiness gap | High | `not found` | Add a visible withdraw-consent control; stop consent-basis processing on withdrawal |
+> | C4 | Erasure on withdrawal/purpose-end (8(7)) | ~ Readiness gap | High | `not found` | Erase when required; propagate to processors and preserve data required by law |
+> | F1 | Right to access (11) | ~ Readiness gap | High | `not found` | Add an access-request flow ([dsar-request](templates/dsar-request.md)) |
+> | C6 | Grievance mechanism (8(10), 13) | ~ Readiness gap | High | `not found` | Add a grievance route + response SLA ([grievance-redressal](templates/grievance-redressal.md)) |
+> | J4 | Vendor / DPA coverage (8(2)) | ~ Readiness gap | High | `not found` | Sign DPAs with the email + analytics vendors ([data-processing-agreement](templates/data-processing-agreement.md)) |
+> | H1 | Transfer restrictions and orders (16, Rule 15) | ❓ Needs review | High | `infra/deploy.yml:8` | Map data egress and check current official notifications |
+> | J1 | Privacy notice published (5) | ~ Readiness gap | Medium | `not found` (no `/privacy` route) | Publish a DPDP notice ([privacy-policy](templates/privacy-policy.md)) |
+> | I2 | Automated erasure (8(7)) | ~ Readiness gap | Medium | `not found` | Add a retention TTL / purge job with legal holds ([data-retention-policy](templates/data-retention-policy.md)) |
 > | A1 | Lawful basis (4) | ✅ Compliant | High | `server/auth.ts:30` | - |
 > | G1 | India-based DPO (10(2)) | ➖ N/A | - | - | Below plausible SDF threshold; revisit if the user base grows |
 >
@@ -152,19 +171,19 @@ A fictional app, to show the shape. The system and findings are invented.
 > - **C1 - Security safeguards (Critical):**
 >   - What it is: the app talks to its database without encryption and an API key is committed in `.env.example`, so personal data is exposed if anyone gets in.
 >   - Fix: enforce TLS in transit, move the key to a secrets vault, and turn on encryption at rest.
->   - If unfixed: a breach traced to weak safeguards can draw a penalty of up to ₹250 crore (the Act's highest band), plus leaked customer data and reputational damage.
+>   - If unfixed after commencement: a breach traced to weak safeguards can draw a penalty up to ₹250 crore, plus leaked customer data and reputational damage.
 > - **E3 - No tracking of children (Critical):**
->   - What it is: analytics and the ad pixel load for every visitor in `app/layout.tsx`, including anyone under 18, which the law forbids.
+>   - What it is: analytics and the ad pixel load for every visitor in `app/layout.tsx`, including anyone under 18. Section 9(3) will prohibit this when the eighteen-month phase starts, unless a Rule 12 exemption applies.
 >   - Fix: turn trackers and targeted ads off for users who are or may be under 18.
->   - If unfixed: children's-data breaches carry penalties up to ₹200 crore and are an enforcement priority, and they put minors at real risk.
+>   - If unfixed after commencement: a breach of children's-data duties can carry a penalty up to ₹200 crore and can harm minors.
 > - **F1 - Right to access (High):**
 >   - What it is: users have no way to see or download the personal data you hold about them.
 >   - Fix: add a "download my data" endpoint (see [dsar-request](templates/dsar-request.md)).
->   - If unfixed: you are denying a statutory right; a complaint to the Data Protection Board can force compliance and impose a fine.
+>   - If unfixed after commencement: the product will not support the statutory access right and can face a Board complaint.
 > - **J4 - Vendor / DPA coverage (High):**
 >   - What it is: you share personal data with email and analytics vendors with no Data Processing Agreement in place.
 >   - Fix: sign a DPA with each vendor before sharing more data.
->   - If unfixed: you stay liable for what those vendors do with the data, and using an uncontracted processor is itself a violation.
+>   - If unfixed after commencement: the Fiduciary remains responsible, and section 8(2) requires processor engagement under a valid contract.
 >
 > ### Top risks
 > 1. **Security safeguards (C1)** - the ₹250 crore band; plaintext DB link and a committed secret.

@@ -4,9 +4,9 @@ We take the security of our software and our users' data seriously. Thanks for h
 
 ## Reporting a vulnerability
 
-**Please do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.**
+Do not put a vulnerability, customer audit, secret, or proof of concept in a repository issue or pull request.
 
-Instead, email us at [hello@gattyworks.com](mailto:hello@gattyworks.com) with a subject line that starts with "Security". If this repository has [GitHub private vulnerability reporting](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability) enabled, you may use that instead.
+Email [hello@gattyworks.com](mailto:hello@gattyworks.com) with a subject that starts with `Security`.
 
 Please include as much of the following as you can:
 
@@ -19,14 +19,24 @@ Please include as much of the following as you can:
 
 ## Scope note
 
-This repository ships **no runtime service and no secrets** - it is a documentation/skill bundle plus a
-read-only update-check script that fetches public URLs and hashes them. The most relevant concerns are
-therefore the scripts in `plugins/dpdpa-india/scripts/` and the integrity of the pinned sources.
+This repository ships no hosted runtime service. It contains agent instructions, legal reference files,
+and update-check scripts that fetch and hash public URLs.
+
+Relevant issues include:
+
+- command or path injection in the update scripts;
+- a compromised or replaced pinned source;
+- prompt injection hidden in an external source or repository under audit;
+- an instruction that causes audit data to be sent outside the approved host; and
+- accidental inclusion of customer data, credentials, or private reports in this repository.
+
+The checker does not send repository content. The host agent controls how source code and prompts are
+processed, so do not claim that an audit stays on-device unless the selected host guarantees it.
 
 ## What to expect
 
-- We acknowledge your report within 24 hours.
-- We confirm the issue and keep you updated on the fix.
-- We agree a disclosure timeline with you, and credit you if you wish.
+- We acknowledge the report as soon as practical.
+- We confirm the issue and share material fix updates.
+- We agree on a disclosure timeline and credit you if you wish.
 
 Please act in good faith, avoid privacy violations and service disruption, and give us reasonable time to respond before any public disclosure.

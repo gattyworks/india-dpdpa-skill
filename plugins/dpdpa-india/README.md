@@ -1,7 +1,8 @@
 # dpdpa-india (plugin)
 
-Audit an app, codebase, or data flow against **India's Digital Personal Data Protection Act 2023
-+ DPDP Rules 2025**. Part of the `gattyworks-compliance` marketplace.
+Open-source GattyWorks audit for an app, codebase, or data flow under **India's Digital Personal Data
+Protection Act 2023 + DPDP Rules 2025**. It has 49 checks across 10 dimensions and 13
+policy-artifact specifications.
 
 ## Install
 

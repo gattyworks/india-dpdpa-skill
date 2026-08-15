@@ -1,4 +1,4 @@
-_Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
+_Primary source: DPDP Act 2023, MeitY. Last reviewed: 2026-08-15. Most penalty provisions are in the eighteen-month phase under G.S.R. 843(E)._
 
 # Penalties & Adjudication (33-34 + The Schedule)
 

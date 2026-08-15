@@ -6,8 +6,8 @@ advice**, is not a substitute for professional counsel, and using it does not cr
 lawyer-client relationship.
 
 The law is new and commences in phases; statutory text, notified rules, country lists, and
-designations change over time. References in this skill reflect sources verified on the date
-stamped in each file and may be out of date.
+designations change over time. References in this skill reflect their dated source headers and may
+be out of date. A matching hash at a known URL does not prove that no new notification exists.
 
 GattyWorks and contributors make **no warranty** of accuracy, completeness, or fitness for any
 purpose, and **accept no liability** for any loss arising from reliance on this skill. Always run

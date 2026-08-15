@@ -1,4 +1,4 @@
-_Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
+_Primary sources: DPDP Act 2023 and final DPDP Rules 2025 pinned in `scripts/sources.lock.json`. Last reviewed: 2026-08-15._
 
 # Consent & Notice (4-7) + Consent Manager
 
@@ -20,7 +20,7 @@ Every consent request under 6 must be **accompanied or preceded by a notice** fr
 Additional notice rules:
 - **5(2)** - For consent obtained **before** commencement of the Act, the fiduciary must, as soon as reasonably practicable, give a notice covering the same items; it may continue processing until consent is withdrawn.
 - **5(3)** - Must offer the notice in **English or any language in the Eighth Schedule** to the Constitution.
-- Exact "manner" of the notice is **to be prescribed** by rules (verify final rules).
+- Rule 3 now specifies the notice format. It must stand on its own, use clear and plain language, itemise the personal data, describe the purpose and enabled goods, services, or uses, and provide links or means for withdrawal, rights, and Board complaints.
 
 ## 6 - Consent
 > **6(1)** Consent "shall be **free, specific, informed, unconditional and unambiguous with a clear affirmative action**, and shall signify an agreement to the processing of her personal data for the specified purpose and be limited to such personal data as is necessary for such specified purpose."
@@ -61,16 +61,16 @@ A Data Fiduciary may process personal data **without fresh consent** for:
 - [ ] Lists the **specific personal data** collected and the **specific purpose**.
 - [ ] Explains **how to withdraw consent** (6(4)) and **how to raise a grievance** (13).
 - [ ] Explains **how to complain to the Data Protection Board**.
-- [ ] Available in **English + Eighth-Schedule languages**; clear, plain language.
+- [ ] The consent request is accessible in **English or an Eighth-Schedule language**; the notice uses clear, plain language.
 - [ ] Legacy/pre-Act consents: retro-notice issued as soon as practicable (5(2)).
 
 **Consent (6)**
-- [ ] Captured via **clear affirmative action** (no pre-ticked boxes, no bundling).
-- [ ] **Itemised / granular** per purpose; only data **necessary** for each purpose.
+- [ ] Captured via **clear affirmative action** with no pre-ticked consent.
+- [ ] Each specified purpose is clear; consent covers only data **necessary** for that purpose.
 - [ ] **No conditional bundling** (consent to unrelated processing not forced as a precondition).
 - [ ] No invalid clauses (e.g. waivers of statutory rights).
 - [ ] **DPO / authorised contact** details shown (where applicable).
-- [ ] **Withdrawal is as easy as granting** - one-click/equivalent, same channel.
+- [ ] **Withdrawal is as easy as granting** through a comparably easy route.
 - [ ] On withdrawal: processing **stops** at the fiduciary **and all processors** within a reasonable time.
 - [ ] **Consent records retained** (timestamp, version of notice, scope) to discharge the 6(10) burden of proof.
 - [ ] **Consent Manager** integration supported where used (give/manage/review/withdraw).

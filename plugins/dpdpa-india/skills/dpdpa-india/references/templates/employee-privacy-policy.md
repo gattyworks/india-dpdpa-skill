@@ -1,9 +1,12 @@
 # Employee Privacy / Data Protection Policy
 
-_Purpose: govern lawful handling of employee personal data across the employment lifecycle. DPDP mapping: S.8 (Fiduciary obligations); employment-related processing may rely on the "legitimate uses" basis (S.7) for certain HR purposes, but principles and security still apply. Source: https://www.dpdpa.com/templates/employeedataprotectionpolicytemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: govern handling of employee personal data across the employment lifecycle. DPDP mapping: S.7(i) (specified employment-related legitimate uses), S.8 (Fiduciary obligations). Source: https://www.dpdpa.com/templates/employeedataprotectionpolicytemplate.html. Paraphrased structure. Third-party structure and statutory mapping reviewed 2026-08-15._
 
 **When required**
-Any organization processing personal data of employees (and candidates/contractors) in India. Note that some employment processing falls under S.7 "legitimate uses" (not requiring fresh consent), but transparency, minimization, security, and rights obligations still attach.
+Readiness artifact for an organization processing employee, candidate, or contractor personal
+data in India. S.7(i) covers specified employment-related uses; it is not a blanket basis for all
+workforce processing. Map each purpose separately and apply the future-phase S.8 obligations when
+they commence.
 
 **Required clauses checklist** (paraphrased)
 - Introduction establishing the compliance basis.

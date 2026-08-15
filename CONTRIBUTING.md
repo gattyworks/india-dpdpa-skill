@@ -1,48 +1,55 @@
-# Contributing to dpdpa-india
+# Maintaining dpdpa-india
 
-Thanks for your interest in contributing. This repo is part of the [GattyWorks](https://github.com/gattyworks)
-`gattyworks-compliance` skill family. By participating, you agree to our [Code of Conduct](CODE_OF_CONDUCT.md).
+This is a public GattyWorks repository. Contributors use this process for legal, audit, packaging,
+and documentation changes. The [Code of Conduct](CODE_OF_CONDUCT.md) applies.
 
-## Ways to help
+## Legal changes
 
-- **Correct the law.** The most valuable contribution. If a reference is wrong, stale, or imprecise,
-  open a PR or issue that **cites the exact section/rule and a primary source** (gazette, MeitY, or the
-  notified Rules). Accuracy beats everything here.
-- **Sharpen the audit.** Better checklist items, detection patterns, or template mappings.
-- **Report a bug or request a feature** in the skill, scripts, or plugin packaging.
+- Cite the exact section or rule and a primary source.
+- Read the final notified text. Do not rely on a draft or memory.
+- Check the commencement phase before calling a requirement in force.
+- Mark unresolved points as `(verify)`.
+- Keep third-party template content paraphrased and attributed.
+- Update a `Last reviewed` header only for files you actually checked.
 
-## Ground rules for legal content
+The official MeitY Act, Rules, corrigendum, commencement, and Board sources are pinned in
+[`plugins/dpdpa-india/scripts/sources.lock.json`](plugins/dpdpa-india/scripts/sources.lock.json).
+The checker detects changes at known URLs. It does not discover new notifications at new URLs.
 
-- Cite the **section/rule number** and the **source** for every legal claim. Never paraphrase the law
-  from memory.
-- Mark anything you can't fully verify as `(verify)` rather than asserting it.
-- Keep third-party template content **paraphrased and attributed** - do not mirror commercial templates
-  verbatim. Statutory text (Act/Rules/Schedule) is government work and may be quoted.
-- When you change a reference, run `scripts/check-updates.py --update` only after you've re-verified
-  against the upstream source, and note the source date in the file header.
+## Workflow
 
-## Development workflow
+1. Create a short-lived branch.
+2. Make one focused change.
+3. Run the source checker without `--update`.
+4. Review the official MeitY DPDP Rules page for new documents.
+5. Update dependent references.
+6. Re-pin only after review if a known source changed.
+7. Run the repository checks.
+8. Open a pull request against `main`.
 
-We work in short-lived branches and ship through pull requests. We never push directly to `main`.
+Run the canonical checker from the repository root:
 
-1. Create a branch with a descriptive name, e.g. `fix/rule-7-breach-timeline`.
-2. Make a focused change. Update the dated source header if you touched a reference.
-3. Run the update checker and any relevant script (`python scripts/check-updates.py`).
-4. Open a pull request against `main` with a clear description and the sources you used.
-5. A maintainer reviews it. Address feedback, then we merge.
+```bash
+python plugins/dpdpa-india/scripts/check-updates.py
+```
+
+Use `--update` only after you review every changed source. The checker refuses a partial update if
+any source cannot be fetched.
 
 ## Pull request checklist
 
-- Legal claims cite a section/rule **and** a primary source.
-- Reference file headers carry an accurate "Last verified" date.
-- No secrets, keys, or credentials are committed.
-- The change is scoped to a single concern.
+- Legal claims have a section or rule and a primary source.
+- The report contract and checklist use the same IDs, statuses, and severity defaults.
+- Claude and Codex entry points still delegate to the same canonical playbook.
+- Manifest versions match when a release version changes.
+- Markdown links resolve.
+- Public repository and install links are accurate.
+- No secrets or customer audit data are committed.
 
 ## Commit messages
 
-- Imperative mood: "Add", "Fix", "Refactor".
-- Keep the summary under ~72 characters; add a body when context helps.
+Use an imperative summary under 72 characters when possible. Examples:
 
-## Questions
-
-Email [hello@gattyworks.com](mailto:hello@gattyworks.com).
+- `Fix Rule 8 retention wording`
+- `Pin the Rules corrigendum`
+- `Add readiness status to reports`

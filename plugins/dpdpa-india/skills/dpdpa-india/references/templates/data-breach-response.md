@@ -1,9 +1,12 @@
 # Data Breach Response / Notice
 
-_Purpose: standardized process and notice for intimating a personal data breach to the Data Protection Board of India and to affected Data Principals. DPDP mapping: S.8(6) (duty to give intimation of breach); Rule 7 (intimation of personal data breach - content and timelines). Source: https://www.dpdpa.com/templates/noticeofdatabreachtemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: standardized process and notice for intimating a personal data breach to the Data Protection Board of India and to affected Data Principals. DPDP mapping: S.8(6) (duty to give intimation of breach); Rule 7 (intimation of personal data breach, content and timelines). Source: https://www.dpdpa.com/templates/noticeofdatabreachtemplate.html. Paraphrased structure. Third-party structure and statutory mapping reviewed 2026-08-15._
 
 **When required**
-On any personal data breach (unauthorized processing, disclosure, loss, or alteration). S.8(6) requires the Fiduciary to notify the Board and each affected principal. Under Rule 7, the Fiduciary must intimate affected principals without delay and report to the Board promptly, with a detailed follow-up report within 72 hours (or such longer period as the Board allows).
+Future-phase readiness artifact as of 2026-08-15. Once S.8(6) and Rule 7 commence, a Data
+Fiduciary must intimate each affected Data Principal and the Board without delay. The detailed
+Board submission is due within 72 hours of becoming aware of the breach, unless the Board allows
+a longer period on a written request.
 
 > Caution: dpdpa.com pages sometimes summarize this as a flat "72-hour" rule. The precise obligation is: immediate intimation to principals + initial Board intimation without delay + a detailed report within 72 hours. Verify wording against Rule 7 before relying on it.
 
@@ -19,7 +22,7 @@ On any personal data breach (unauthorized processing, disclosure, loss, or alter
 
 **Audit signals**
 - A documented breach-response runbook with named owner and escalation tree.
-- Defined timelines aligned to Rule 7 (immediate principal intimation + 72-hour Board report).
+- Defined timelines aligned to Rule 7 (intimation without delay plus the detailed Board submission within 72 hours of awareness).
 - Templates/drafts ready for both Board notification and principal notification.
 - Incident logging/monitoring that can detect a breach (alerting, audit logs, SIEM).
 - Evidence of breach drills or a real incident handled to spec.

@@ -1,8 +1,8 @@
-_Source: DPDP Act 2023 (Act 22 of 2023), MeitY. Last verified: 2026-06-15._
+_Primary sources: DPDP Act 2023 and final DPDP Rules 2025 pinned in `scripts/sources.lock.json`. Last reviewed: 2026-08-15._
 
 # Data Principal Rights & Duties (11-15)
 
-These rights apply against a fiduciary to whom the Data Principal **previously gave consent** (incl. 7(a) voluntary-provision processing). The exact request "manner" is **to be prescribed** by rules in several places (verify final Rules).
+These rights apply against a fiduciary to whom the Data Principal previously gave consent, including 7(a) voluntary-provision processing. Rule 14 requires publication of the request method and any identifier needed under the terms of service.
 
 ## 11 - Right to access information about personal data
 On request, the Data Principal can obtain:
@@ -12,7 +12,7 @@ On request, the Data Principal can obtain:
 - **11(2) - exception:** (b) and (c) do **not** apply to sharing with a legally authorised fiduciary made in writing for **prevention/detection/investigation of offences or cyber incidents**, or prosecution/punishment.
 
 **System must support:**
-- A **data-access / "download my data" endpoint** producing a human-readable summary of stored personal data and processing purposes.
+- A **data-access response flow** producing the summary required by 11. Section 11 is not a general data-portability right.
 - A **data-sharing register / lineage** recording every downstream fiduciary/processor and what was shared (to answer 11(1)(b)).
 - An **identity-verified request intake** workflow.
 
@@ -23,12 +23,12 @@ On request, the Data Principal can obtain:
 
 **System must support:**
 - **Edit/correct/complete** flows for personal data fields.
-- A **deletion pipeline** that erases across primary stores, backups, and processors, with a **lawful-retention override** check.
+- A **deletion pipeline** for active stores and processors, with legal-retention holds and a documented backup-expiry or restoration-deletion process.
 - Audit logging of correction/erasure actions.
 
 ## 13 - Right of grievance redressal
 - **13(1):** right to **readily available means of grievance redressal** from the **Data Fiduciary or Consent Manager** for any act/omission regarding their obligations or the exercise of her rights.
-- **13(2):** the fiduciary/Consent Manager must **respond within the prescribed period** from receipt. *(No fixed number in the Act - "such period as may be prescribed"; verify the Rules' response window.)*
+- **13(2):** the fiduciary or Consent Manager must respond within the prescribed period. Rule 14 requires it to publish a reasonable period that does not exceed 90 days.
 - **13(3):** the Data Principal must **exhaust this grievance route before approaching the Board**.
 
 **System must support:**
@@ -60,8 +60,8 @@ A Data Principal shall:
 
 | Right |  | Must build |
 |---|---|---|
-| Access summary + sharing list | 11 | Data-export endpoint; data-sharing/lineage register; verified request intake |
+| Access summary + sharing list | 11 | Access-response flow; data-sharing/lineage register; verified request intake |
 | Correction / completion / updating | 12(2) | Editable-field workflows |
 | Erasure | 12(3) | Deletion pipeline incl. processors/backups; retention-exception check |
-| Grievance redressal | 13 | Grievance channel + SLA-tracked ticketing within prescribed period (verify) |
+| Grievance redressal | 13 | Grievance channel + SLA-tracked ticketing within a published period of no more than 90 days |
 | Nomination | 14 | Nominee capture + death/incapacity-triggered rights transfer |

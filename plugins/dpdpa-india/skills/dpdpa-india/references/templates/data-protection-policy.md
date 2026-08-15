@@ -1,9 +1,12 @@
 # Data Protection Policy (Org-wide)
 
-_Purpose: the master internal governance document setting principles, roles, and accountability for all personal data processing. DPDP mapping: S.8 (general obligations of the Data Fiduciary), S.10 (Significant Data Fiduciary obligations). Source: https://www.dpdpa.com/templates/dataprotectionpolicytemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: the master internal governance document setting principles, roles, and accountability for personal data processing. DPDP mapping: S.8 (general obligations of the Data Fiduciary), S.10 (Significant Data Fiduciary obligations). Source: https://www.dpdpa.com/templates/dataprotectionpolicytemplate.html. Paraphrased structure. Third-party structure and statutory mapping reviewed 2026-08-15._
 
 **When required**
-All Data Fiduciaries should maintain one; effectively mandatory-grade for Significant Data Fiduciaries (SDFs) who must demonstrate accountability and appoint a DPO (S.10). Distinct from the public privacy policy - this is the internal operating standard.
+Recommended readiness artifact for Data Fiduciaries. The Act does not name a general document
+called a "Data Protection Policy," but the artifact helps operationalize S.8 duties. Future-phase
+SDF duties under S.10 require stronger governance controls. This internal standard is distinct
+from a public privacy policy.
 
 **Required clauses checklist** (paraphrased)
 - Introduction and definitions.
@@ -11,7 +14,7 @@ All Data Fiduciaries should maintain one; effectively mandatory-grade for Signif
 - Data protection principles: lawfulness, fairness, transparency, purpose limitation, minimization, accuracy, storage limitation, integrity/confidentiality.
 - Governance structure: DPO role and responsibilities, escalation lines.
 - Policy implementation across teams and processors.
-- Handling of special / sensitive categories and children's data.
+- Risk-based handling of financial, health, biometric, children's, and other high-impact data. DPDPA does not create a GDPR-style special-category taxonomy.
 - Privacy by Design and by Default requirements.
 - Breach notification linkage (intimation duties).
 - Monitoring, audit, and compliance review.

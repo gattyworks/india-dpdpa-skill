@@ -1,63 +1,81 @@
-# FAQ & troubleshooting
-
-Short answers to the questions that come up when running the **dpdpa-india** skill. For how to run an audit see [Usage](usage.md); for keeping the legal references current see [Staying current](staying-current.md).
+# FAQ and troubleshooting
 
 ## Is this legal advice?
 
-No. The skill is an **engineering aid** that helps you find *likely* gaps against India's Digital Personal Data Protection Act, 2023 (Act 22 of 2023) and the DPDP Rules, 2025. It is not legal advice, not a substitute for counsel, and using it creates no lawyer-client relationship. Always have a qualified Indian data-protection practitioner review your situation before you rely on any result. See the full [disclaimer](../plugins/dpdpa-india/skills/dpdpa-india/references/disclaimer.md).
+No. The skill finds likely engineering gaps. It does not replace qualified Indian legal counsel.
 
-## Does it send my code or data anywhere?
+## Is the repository public?
 
-No. The audit runs **locally in your agent** - it reads your files and reasons over the bundled references; nothing about your codebase leaves the machine.
+Yes. The source, install steps, legal references, and audit method are public under the MIT license.
+Customer code, audit evidence, and client reports are never part of this repository.
 
-The only component that touches the network is the update checker, [`check-updates.py`](../plugins/dpdpa-india/scripts/check-updates.py). It issues **GET requests to public legal-source URLs**, hashes each response, and diffs the hash against `sources.lock.json`. It transmits no part of your code, data, or audit - it sends a request and reads back the public page.
+## Does the audit send code anywhere?
 
-## "DPDP" vs "DPDPA" - which is right?
+The skill itself has no upload service. The source checker sends GET requests only to the URLs in
+`sources.lock.json`.
 
-Both refer to the same law. The statute is the **Digital Personal Data Protection Act, 2023**; "DPDP Act" / "DPDP" is the form used through this skill, and "DPDPA" is a common shorthand (and the name of the `dpdpa.com` / `dpdpa.in` knowledge hubs). The skill triggers on either spelling - "audit my app for DPDP", "is this DPDPA compliant", and similar phrasings all work.
+The host agent controls how code and prompts are processed. Do not say that code stays on-device
+unless the selected host and configuration guarantee it.
 
-## How current is it?
+## Does the skill edit code?
 
-| Fact | Value |
-|------|-------|
-| Sources verified | 2026-06-15 |
-| DPDP Rules 2025 notified | 13 Nov 2025 (G.S.R. 846(E)) |
-| Substantive obligations | phase in by ~2027 |
+The audit workflow reports findings and fixes. It does not request edits. A coding agent may still
+have write access, and a separate user request can authorise implementation. Check the host and the
+task scope before an audit.
 
-The regime commences in phases, so sources move. Before relying on an audit, run the update checker (see [Staying current](staying-current.md)):
+## How current is the legal baseline?
 
-```
-python "${CLAUDE_PLUGIN_ROOT}/scripts/check-updates.py"
-```
+| Item | Status |
+|---|---|
+| Known source hashes checked | 2026-08-15 |
+| Final Rules | G.S.R. 846(E), 13 November 2025 |
+| Corrigendum | G.S.R. 892(E), December 2025 |
+| Board establishment | G.S.R. 844(E), November 2025 |
+| Most product-facing duties | Eighteen-month phase; not yet in force on 2026-08-15 |
 
-It re-fetches each pinned source and flags any that changed, telling you which reference files to re-verify.
+The checker detects changes to known URLs. It cannot discover a new notification at a new URL.
+Review the official MeitY DPDP Rules page each month and before a release.
 
-## Am I a Significant Data Fiduciary (SDF)?
+## What is a readiness gap?
 
-You don't self-declare. Under 10(1), the Central Government **designates** a fiduciary or class as an SDF, weighing factors such as volume and sensitivity of data processed, risk to Data Principals' rights, and impact on India's sovereignty/integrity, electoral democracy, State security, and public order.
+A readiness gap is an unmet, notified requirement whose commencement phase has not started on the
+audit date. A current `Gap` means an applicable requirement is already in force. The report must not
+mix the two.
 
-If designated, 10(2) adds obligations: appoint a **Data Protection Officer based in India** (reporting to the board, named grievance contact), engage an **independent data auditor** for periodic data audits, and run **periodic DPIAs** for high-risk processing. See [fiduciary-obligations.md](../plugins/dpdpa-india/skills/dpdpa-india/references/fiduciary-obligations.md). The skill flags when you *could* fall in scope; designation itself is a government act.
+## Am I a Significant Data Fiduciary?
 
-## Does the skill modify my code?
+The Central Government designates an SDF or class under 10(1). A company does not self-declare.
+The audit can show that a product has characteristics relevant to designation, but it cannot make
+the designation.
 
-No. It **audits and reports** - it produces a verdict, a risk table, and per-gap findings with `file:line` evidence and a recommended fix (and the template that closes the gap). It does not edit your files. Applying the fixes is your call.
+No SDF designation was located in the official sources reviewed on 2026-08-15. Check current
+notifications before relying on that statement.
 
-## Windows troubleshooting
+## Does DPDPA include data portability?
 
-**Which variant do I run?** The checker ships as `check-updates.py`, `.ps1`, and `.sh`. On Windows, run the Python script (`python check-updates.py`) if you have Python, or the PowerShell variant (`check-updates.ps1`) otherwise. All three do the same job.
+No general data-portability right appears in 11 to 14. Section 11 provides an access right. Do not
+turn that into a GDPR-style portability claim.
 
-**PowerShell execution policy.** If `.ps1` is blocked, run it for the current session only:
+## How does the checker fail?
+
+The checker exits with code 1 when a known source changes. It exits with code 2 when one or more
+sources cannot be checked. A fetch error means currentness is unknown, not current.
+
+On Windows:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File check-updates.ps1
+python plugins/dpdpa-india/scripts/check-updates.py
 ```
 
-**`meity.gov.in` returns 403 in the checker.** Expected and handled: some government/WAF-fronted hosts reject obvious bots, so the checker sends a real browser `User-Agent`. If a fetch still fails, it's reported as a non-fatal `ERROR` (errors alone don't fail the run). Re-run to retry transient network issues - reachable sources still report current.
+If Python is unavailable:
 
-## Does it work outside Claude Code?
+```powershell
+powershell -ExecutionPolicy Bypass -File plugins/dpdpa-india/scripts/check-updates.ps1
+```
 
-Yes. The skill is a portable **`SKILL.md` + references** bundle with no runtime and no secrets. Drop [`plugins/dpdpa-india/skills/dpdpa-india/`](../plugins/dpdpa-india/skills/dpdpa-india/) into any agent that reads markdown context (Cursor, Windsurf, the Claude Agent SDK, your own RAG), or just tell the model to read `SKILL.md` and audit against it. The update checker is plain stdlib Python and runs anywhere.
+## Are penalty values predictions?
 
-## How are penalties "estimated"?
+No. The skill maps a finding to a statutory maximum category and uses that as one severity input.
+The Board applies the factors in 33(2). A maximum is not a prediction of an actual penalty.
 
-They aren't predicted. The skill **maps each finding to the maximum penalty band** in the Act's Schedule - for example, a reasonable-security-safeguards failure (8(5)) maps to the highest band, up to **Rs 250 crore**. That is a severity signal tied to statutory maximums, not a forecast of what any Board would actually impose. Treat it as a way to rank gaps by exposure, not as a number you will be fined.
+See the full [disclaimer](../plugins/dpdpa-india/skills/dpdpa-india/references/disclaimer.md).

@@ -1,9 +1,13 @@
 # Consent Notice / Consent Form
 
-_Purpose: capture free, informed, specific, unambiguous, affirmative consent and deliver the itemized notice that must accompany it. DPDP mapping: S.5 (Notice), S.6 (Consent); Rule 3 (notice content). Source: https://www.dpdpa.com/templates/consentformfordataprocessingtemplate.html. Paraphrased structure. Last verified: 2026-06-15._
+_Purpose: capture free, informed, specific, unambiguous, affirmative consent and deliver the itemized notice that must accompany it. DPDP mapping: S.5 (Notice), S.6 (Consent); Rule 3 (notice content). Source: https://www.dpdpa.com/templates/consentformfordataprocessingtemplate.html. Paraphrased structure. Third-party structure and statutory mapping reviewed 2026-08-15._
 
 **When required**
-Whenever consent is the lawful basis for processing (i.e., not a "legitimate use" under S.7). Under S.6 consent must be free, specific, informed, unconditional, unambiguous, with a clear affirmative action, and limited to the data necessary for the stated purpose. The accompanying notice (S.5 / Rule 3) must be itemized and available in English plus the Eighth Schedule languages.
+Future-phase readiness artifact as of 2026-08-15. Use it whenever consent is the applicable basis
+for processing rather than a legitimate use under S.7. Under S.6, consent must be free, specific,
+informed, unconditional, unambiguous, given through a clear affirmative action, and limited to the
+data necessary for the stated purpose. The notice must be itemized. The Data Principal must be
+able to access it in English or any language specified in the Eighth Schedule to the Constitution.
 
 **Required clauses checklist** (paraphrased)
 - Itemized list of the personal data to be collected.
@@ -13,7 +17,7 @@ Whenever consent is the lawful basis for processing (i.e., not a "legitimate use
 - How to withdraw consent and the consequence of withdrawal.
 - Contact for the Data Protection Officer / grievance channel and the Data Protection Board complaint route.
 - Affirmative opt-in mechanism (unticked box / explicit action) - no pre-checked boxes or implied consent.
-- Reference to availability of the notice in the principal's chosen language (English + Eighth Schedule languages).
+- A way for the principal to access the notice in English or a chosen Eighth Schedule language.
 - Consent declaration / signature or timestamped acceptance block.
 
 **Audit signals**

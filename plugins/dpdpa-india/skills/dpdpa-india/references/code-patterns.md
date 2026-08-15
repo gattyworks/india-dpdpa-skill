@@ -1,10 +1,11 @@
-_Engineering aid for evidence-gathering during a DPDP audit. Last verified: 2026-06-15._
+_Engineering aid for evidence-gathering during a DPDPA audit. Last reviewed: 2026-08-15._
 
 # Codebase detection patterns
 
 How to find **evidence** for each checklist dimension in a real repository. Patterns are
 `ripgrep` (`rg`); adapt to the stack. A match is a *lead*, not a verdict - read the surrounding
-code before scoring. Absence of a match for an *expected* control is itself a finding.
+code before scoring. Treat absence as `not found` evidence only after a scoped search. Use `Needs
+review` when the control can live in operations, contracts, or another system.
 
 ## 1. Map the personal-data surface (do this first)
 
@@ -18,21 +19,22 @@ rg -l -i "create table|CREATE TABLE|@Entity|class .*\(models\.Model\)|Schema\(|p
 # Inbound collection points (forms, request bodies, query params)
 rg -i -n "req\.(body|query|params)|request\.(POST|GET|data)|formData|@RequestBody"
 ```
-Output: a data inventory (category -> where stored -> purpose -> shared with). Drives dimension **A**.
+Output: a data inventory with category, storage, purpose, and recipients. It drives dimension **A**.
 
 ## 2. Consent & notice (dimensions B)
 
 ```bash
 # Consent capture / storage
 rg -i -n "consent|opt[-_]?in|opt[-_]?out|gdpr|privacy_?(accepted|agreed)|terms_?accepted"
-# Pre-ticked / bundled consent smell (⚠️ 6 violation)
+# Pre-ticked consent smell
 rg -i -n "checked\s*=\s*[\"']?true|defaultChecked|isChecked\s*=\s*true"
 # Withdrawal path (must exist and be easy - B5)
 rg -i -n "withdraw|revoke|unsubscribe|delete_?consent|opt_?out"
 # Consent audit trail / versioned notice (B6)
 rg -i -n "consent_?(log|history|record|version|timestamp)|notice_?version"
 ```
-No consent table + no withdrawal route ⇒ **B3/B5/B6 gaps**. Pre-ticked boxes ⇒ **B3 Critical**.
+No consent evidence and no withdrawal route can support **B3/B5/B6** after a scoped search.
+Pre-ticked consent is a **B3 High** lead.
 
 ## 3. Security safeguards (dimension C1 - the ₹250 cr band)
 
@@ -41,14 +43,15 @@ No consent table + no withdrawal route ⇒ **B3/B5/B6 gaps**. Pre-ticked boxes �
 rg -i -n "https|tls|ssl|hsts|encrypt|aes|kms|crypto\.|bcrypt|argon2|scrypt|pbkdf2"
 # Plaintext-password / weak-hash smells
 rg -i -n "md5|sha1\b|password\s*=\s*[\"']|plain_?text|base64.*pass"
-# Secrets in code (⚠️ also a breach risk)
+# Secrets in code (also a breach risk)
 rg -i -n "(api[_-]?key|secret|token|password|aws_access)\s*[:=]\s*[\"'][A-Za-z0-9/\+]{12,}"
 # Access control / authz
 rg -i -n "authorize|rbac|permission|role|isAdmin|@PreAuthorize|require_auth|middleware.*auth"
 # Audit logging present
 rg -i -n "audit_?log|access_?log|logger\.(info|audit)|winston|pino|log4j"
 ```
-Hardcoded secrets, MD5/SHA1 password hashing, no TLS enforcement, no authz layer ⇒ **C1 Critical**.
+Hardcoded secrets or weak password hashing can support a **C1 Critical** finding. Confirm how TLS,
+storage encryption, and authorisation are enforced before treating a missing repository match as a gap.
 
 ## 4. PII in logs (silent breach risk - D/C1)
 
@@ -63,7 +66,8 @@ PII written to logs/analytics in plaintext is a confidentiality compromise - fla
 ```bash
 rg -i -n "breach|incident|data_?leak|notify.*(board|authority|user)|security_?event"
 ```
-No incident/breach handling code or runbook reference ⇒ **D1/D5 gaps**.
+If response controls should be in the repository and are not found, record **D1/D5** evidence.
+Otherwise ask operations and use `Needs review`.
 
 ## 6. Children's data (dimension E)
 
@@ -72,17 +76,18 @@ rg -i -n "age|birth_?date|dob|under_?18|minor|child|parental|guardian|coppa|age_
 # Tracking/ads SDKs that must NOT target children
 rg -i -n "google.*analytics|gtag|facebook.*pixel|fbq|mixpanel|amplitude|segment|adsense|admob|appsflyer"
 ```
-Ad/tracking SDKs + a plausibly under-18 audience + no age gate ⇒ **E1/E3 Critical**.
+Ad or tracking SDKs plus a plausibly under-18 audience require review under **E1/E3**. Check Rule
+12 exemptions and the actual control before scoring.
 
 ## 7. Data Principal rights endpoints (dimension F)
 
 ```bash
-# Access / export
+# Access response; export terms are useful search leads but DPDPA has no general portability right
 rg -i -n "export.*data|download.*data|data_?export|gdpr.*export|/me\b|account/data"
 # Correction / erasure / account deletion
 rg -i -n "delete_?account|erase|right_?to_?(access|erasure)|/(dsar|data-request)|forget"
 ```
-No data-export and no account-deletion path ⇒ **F1/F2 High gaps**.
+No access-response or erasure path can support **F1/F2 High** after a scoped search.
 
 ## 8. Retention & erasure (dimension I)
 
@@ -90,7 +95,7 @@ No data-export and no account-deletion path ⇒ **F1/F2 High gaps**.
 # Scheduled erasure / TTL
 rg -i -n "retention|ttl|expire|purge|cron|scheduler|cleanup_?job|soft_?delete|deleted_?at"
 ```
-"Soft delete only / keep forever", no purge job, no TTL ⇒ **I1/I2 gaps**. Look for the 3-year
+"Soft delete only / keep forever", no purge job, or no TTL can support **I1/I2**. Look for the three-year
 inactivity rule if the app is e-commerce / gaming / social media at scale (**I3**).
 
 ## 9. Cross-border transfer (dimension H)
@@ -101,7 +106,8 @@ rg -i -n "us-east|us-west|eu-west|region\s*[:=]|s3\.amazonaws|cdn|cloudfront|fir
 # Third-party data egress
 rg -i -n "fetch\(|axios|httpclient|webhook|export.*to|send.*to.*(api|partner|vendor)"
 ```
-Map every external sink to a country. Transfers to a notified restricted country ⇒ **H1**.
+Map every external sink to a country and identify foreign-State access paths. Check current Act 16
+notifications and Rule 15 orders before scoring **H1**.
 
 ## 10. Governance artifacts (dimension J)
 
@@ -111,7 +117,8 @@ rg -l -i "privacy[-_ ]?policy|privacy\.(md|html|tsx|jsx|vue)|terms|cookie[-_ ]?p
 # DPA / vendor agreements in repo or docs
 rg -l -i "data processing agreement|\bDPA\b|sub-?processor|vendor agreement"
 ```
-Missing privacy route/page ⇒ **J1**. No DPA references for third parties ⇒ **J4 High**.
+Missing repository artifacts can support **J1** or **J4**, but policies and contracts can live outside
+the codebase. Use `Needs review` until their absence is confirmed.
 
 ---
 

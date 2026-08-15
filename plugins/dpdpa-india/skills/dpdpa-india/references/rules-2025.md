@@ -1,120 +1,134 @@
-# DPDP Rules, 2025 - Reference
+# DPDP Rules, 2025 reference
 
-**Sources:** MeitY Gazette Notification G.S.R. 846(E), Digital Personal Data Protection Rules, 2025 (notified 13 Nov 2025); PIB release (17 Nov 2025); cross-verified against dpdpa.com rule pages, Latham & Watkins "DPDPA vs. GDPR" (Apr 2026), EY India, S.S. Rana & Co., Bar & Bench.
-**Last verified: 2026-06-15**
+**Primary sources:** [DPDP Rules, 2025, G.S.R. 846(E)](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf), [corrigendum, G.S.R. 892(E)](https://www.meity.gov.in/static/uploads/2025/12/3c7ebbae0e5456f493f486e6845df86b.pdf), [Act commencement notification, G.S.R. 843(E)](https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf), [Board establishment, G.S.R. 844(E)](https://www.meity.gov.in/static/uploads/2025/11/cc217843dc3bcb37b2b05bcc3b4e031f.pdf), and [Board member-count notification, G.S.R. 845(E)](https://www.meity.gov.in/static/uploads/2025/11/f6c0837972422cf79d890bfe84cc04d6.pdf).
 
-## Status: NOTIFIED / FINAL (not draft)
+**Last reviewed:** 2026-08-15. Engineering aid, not legal advice.
 
-- **Draft Rules:** published 3 Jan 2025 (consultation).
-- **Final Rules:** **notified 13 November 2025** via Gazette G.S.R. 846(E). This is the operative text. The 3 Jan 2025 draft is superseded.
-- The DPDP **Act, 2023** + these Rules together form the regime. MeitY has indicated residual gaps will be addressed via FAQs rather than amendments.
+## Current legal status
 
-### Phased commencement (verify exact rule-citation dates against gazette)
-| Phase | Effective | What comes into force |
+The final Rules were notified on 13 November 2025. The December 2025 corrigendum fixes wording and cross-reference errors in the gazette. It does not change the phased commencement periods.
+
+Most product-facing duties are notified but are not yet in force as of 2026-08-15. Treat an audit now as a readiness audit unless an in-force provision applies.
+
+| Phase | Provisions | Start set by the notifications |
 |---|---|---|
-| Immediate | 13 Nov 2025 | Rules 1-2 and ~17-21 - establishment & operationalisation of the Data Protection Board of India |
-| +12 months | ~13 Nov 2026 | Rule 4 - Consent Manager registration regime |
-| +18 months | **~13 May 2027** (LW cites "12 May 2027") | Substantive Data Fiduciary obligations (notice, security, breach, retention, children, SDF duties): Rules 3, 5-16, 22-23 |
+| In force | Act 1(2), 2, 18 to 26, 35, 38 to 43, 44(1), 44(3); Rules 1, 2, 17 to 21 | Official Gazette publication in November 2025 |
+| One-year phase | Act 6(9), 27(1)(d); Rule 4 | One year after Official Gazette publication |
+| Eighteen-month phase | Act 3 to 5, 6(1) to 6(8), 6(10), 7 to 17, 27 except 27(1)(d), 28 to 34, 36, 37, 44(2); Rules 3, 5 to 16, 22, 23 | Eighteen months after Official Gazette publication |
 
-Enforcement risk is low in the interim; the window is a transition period.
+Do not turn these periods into a calendar date without checking the gazette publication date used for the calculation.
 
----
+The Board was established in the National Capital Region through G.S.R. 844(E). G.S.R. 845(E) states that the Board shall consist of four members. A May 2026 recruitment notice sought a Chairperson and four other Members. Confirm the final appointments and composition before making an operational claim about the Board.
 
-## 1. Notice / consent format & content (Rule ~3 / Second Schedule)
+## Rule 3: notice
 
-Notice must be given at or before seeking consent, in **clear and plain language**, **standalone** (distinct from other info), and must include:
-- Categories of personal data collected.
-- The **specified purpose**, with a specific description of the goods/services/functions enabled.
-- **Itemised** description sufficient for informed consent.
-- Mechanisms to (i) **withdraw consent**, (ii) exercise DPDPA rights, and (iii) **complain to the Data Protection Board**.
-- A link/means to access the Consent Manager / data fiduciary platform.
+The notice must be understandable on its own and use clear, plain language. It must include:
 
-Consent standard (Act 6): **free, specific, informed, unconditional, unambiguous, with clear affirmative action**, limited to the specified purpose. Data principal may access the consent request in **English or any of the 22 languages in the Eighth Schedule** of the Constitution. Withdrawal must be as easy as giving consent.
+- an itemised description of the personal data;
+- the specified processing purpose and the goods, services, or uses enabled;
+- a link or other means to withdraw consent with comparable ease;
+- a way to exercise rights under the Act; and
+- a way to complain to the Board.
 
-## 2. Consent Manager - registration & obligations (Rule 4 / First Schedule)
+## Rule 4 and First Schedule: Consent Managers
 
-- Must be a **company incorporated in India**, registered with the Data Protection Board.
-- **Net worth ≥ ₹2 crore** (verify exact figure against First Schedule) plus: sufficient technical/operational/financial capacity; corporate good standing and sound financial condition; adequate capital structure; fit-and-proper directors/KMP; conflict-of-interest provisions in corporate documents.
-- Must operate an **accessible, transparent, interoperable platform** letting data principals give, review, manage, and withdraw consent.
-- Must act in data principals' interest, maintain records, avoid conflicts with fiduciaries, and meet technical/organisational standards to be published by the Board.
+A Consent Manager applicant must be an Indian company and have net worth of at least ₹2 crore. It must have the required technical, operational, financial, governance, and conflict controls.
 
-## 3. Reasonable security safeguards (Rule 6) - outcome-based, technology-neutral
+The platform must let a Data Principal give, manage, review, and withdraw consent. Consent records must remain available for at least seven years. The Consent Manager must not read the personal data shared through the platform.
 
-Apply to fiduciary **and** any processor (via contract). Enumerated measures:
-- **(a) Encryption / obfuscation / masking / virtual tokens** mapped to the personal data.
-- **(b) Access control** to the computer resources used by fiduciary/processor.
-- **(c) Logging, monitoring and review** to detect, investigate, and remediate unauthorised access and prevent recurrence.
-- **(d) Business continuity** - measures (including **data backups**) to keep processing if confidentiality/integrity/availability is compromised.
-- **(e) Log + personal-data retention for ≥ 1 year** for detection/investigation/remediation.
-- **(f) Contractual measures** binding data processors to take reasonable security safeguards.
-- Reasonable technical/organisational measures to ensure effective observance.
+This regime enters the one-year phase. A normal Data Fiduciary is not automatically required to become or use a Consent Manager.
 
-## 4. Personal data breach intimation (Rule 7)
+## Rule 6: security safeguards
 
-**No risk/materiality threshold - every personal data breach is reportable** (note divergence from GDPR's risk-based approach).
+Rule 6 lists minimum measures for data held or controlled by a Data Fiduciary, including processing by a processor:
 
-- **To affected Data Principals - without delay**, in their own interest, describing: nature/extent/timing of breach; likely consequences; mitigation measures taken by the fiduciary; safety steps the principal should take; contact point for queries.
-- **To the Data Protection Board - two steps:**
-  1. **Without delay** - initial intimation (description, nature, extent, timing, location, likely impact).
-  2. **Within 72 hours of becoming aware** (extendable on Board's allowance) - detailed report: updated/broader facts; events/circumstances/reasons; mitigation measures; **remedial measures** to prevent recurrence; findings on the person who caused it; report on intimations given to principals.
+- encryption, obfuscation, masking, or virtual tokens where appropriate;
+- access controls;
+- logs, monitoring, review, investigation, and recurrence prevention;
+- continuity measures, including backups;
+- one year of relevant logs and personal data for detection, investigation, remediation, and continuity, unless another law requires otherwise;
+- processor contract terms for safeguards; and
+- technical and organisational measures for effective observance.
 
-> **Breach timeline (verified):** affected Data Principals - *without delay*; Data Protection Board - *without delay* (initial) **+ detailed report within 72 hours** of awareness.
+Rule 6 is in the eighteen-month phase.
 
-## 5. Data retention / erasure time-limits (Rule 8 + Third Schedule)
+## Rule 7: breach notices
 
-- **General rule (Rule 8(1)):** erase personal data once the specified purpose is no longer served (and consent isn't the basis / no legal retention duty), i.e. when the principal neither seeks the service nor exercises rights within the applicable period.
-- **48-hour pre-erasure notice (Rule 8(2)):** at least **48 hours** before erasure, the fiduciary must inform the principal (who can prevent erasure by logging in / re-engaging).
-- **Log/data retention floor (Rule 8(3)):** retain personal data, traffic data, and processing logs **≥ 1 year** (for Seventh Schedule classes / security purposes).
-- **Third Schedule - specified-purpose-expires-after-3-years classes** (data treated as no longer serving its purpose **3 years** after the principal's last engagement, then erase):
+Rule 7 does not state a risk or materiality threshold.
 
-| Class | User threshold (India) |
+The Data Fiduciary must notify each affected Data Principal without delay. The notice must cover the nature, extent, and timing of the breach, likely consequences, mitigation, safety steps, and a contact point.
+
+The Data Fiduciary must notify the Board in two steps:
+
+1. Send an initial description without delay.
+2. Send the listed details within 72 hours after learning of the breach, or within a longer period allowed by the Board in writing.
+
+Rule 7 is in the eighteen-month phase. Other incident-reporting laws can apply earlier or on a shorter clock.
+
+## Rule 8 and Third Schedule: erasure and retention
+
+Rule 8 applies a three-year inactivity rule only to specified purposes and these classes:
+
+| Class | Threshold in India |
 |---|---|
-| E-commerce entity | ≥ **2 crore (20 million)** registered users |
-| Online gaming intermediary | ≥ **50 lakh (5 million)** registered users |
-| Social media intermediary | ≥ **2 crore (20 million)** registered users |
+| E-commerce entity | At least 2 crore registered users |
+| Online gaming intermediary | At least 50 lakh registered users |
+| Social media intermediary | At least 2 crore registered users |
 
-> **Retention (verified):** 3-year retention cap for the three Third-Schedule fiduciary classes above; 48-hour pre-erasure notice; ≥1-year log/data floor under Rule 8(3).
+The period runs from the later of the Principal's last relevant engagement or rights request and commencement of the Rules. The Third Schedule excludes account access and specified virtual-token access from the listed purposes.
 
-## 6. Children's data - verifiable consent & age verification (Rule ~10 / Fourth Schedule)
+The Data Fiduciary must send at least 48 hours' notice before erasure under Rule 8(1). Rule 8(3) also requires one year of personal data, traffic data, and processing logs for the Seventh Schedule purposes, unless another legal rule requires longer retention.
 
-- Child = **under 18**. Processing a child's (or a person-with-disability's) data requires **verifiable consent of the parent/lawful guardian** (Act 9).
-- Verifiable consent requires the fiduciary to: (i) obtain parent/guardian consent; (ii) **confirm the consenter is an identifiable adult** using reliable identity & age details - e.g. government-issued ID held by the fiduciary, voluntarily provided, or via a **virtual token issued by an authorised entity / DigiLocker-type provider**; (iii) verify the parent-child relationship.
-- **Prohibitions:** no processing detrimental to a child's well-being; **no behavioural tracking / no targeted advertising directed at children.**
-- **Exemptions:** situation-specific carve-outs predominantly for **healthcare and educational institutions** processing children's data in a verifiably safe manner; government may extend exemptions to further classes (yet to be notified).
+Do not describe this as a general three-year cap. It is a purpose-deeming rule for listed classes and purposes.
 
-## 7. Significant Data Fiduciary (SDF) extra duties (Rule ~12-13)
+## Rules 9 to 12: contact, children, and guardians
 
-Government designates SDFs by volume/sensitivity of data, risk to principals, sovereignty/integrity of India, electoral democracy, State security, public order. **(Specific designation list/criteria yet to be notified - verify.)** Additional duties:
-- Appoint a **DPO based in India**, reporting to the board of directors; acts as grievance-redress contact.
-- Conduct **DPIA + independent audit every 12 months**; auditor furnishes a report with significant observations to the Board.
-- **Observe due diligence to verify that algorithmic software** used for processing is not likely to pose a risk to data principals' rights.
-- **Cross-border restriction:** may be barred from transferring **specified categories of personal data and related traffic data** outside India (de facto localisation; categories to be notified). Reporting indicates SDFs are prohibited from transferring **traffic data** out of India.
-- Appoint an **India-based representative** (the India DPO may fill this role).
+Rule 9 requires a Data Fiduciary to publish a business contact for questions about processing.
 
-## 8. Cross-border transfer rules (Rule ~14 / Act 16)
+Rule 10 requires appropriate measures and due diligence to confirm that a person identifying as a parent is an identifiable adult before processing a child's personal data. It permits reliable details already held, voluntarily supplied identity and age details, or a virtual token from an authorised entity. It does not expressly require a separate parent-child relationship document in every case.
 
-- **Permissive default:** transfers allowed to **any country except those on a government restricted-list** (no negative-list orders passed as of last verification - verify).
-- Transfers must meet conditions set by the government via **general or special order** (none yet issued).
-- **No adequacy-decision and no SCC-type mechanism** exists (unlike GDPR).
-- SDFs additionally subject to the **localisation** restriction above for notified categories.
+Rule 11 covers consent by a lawful guardian for a person with disability. Rule 12 and the Fourth Schedule create limited exemptions for specified fiduciaries and purposes. Apply each exemption only when its conditions are met.
 
-## 9. Data Protection Board - procedure highlights (Rules ~17-21)
+These rules are in the eighteen-month phase.
 
-- Board is **digital-by-design**; functions as an adjudicatory body. Operational rules in force since 13 Nov 2025.
-- Data principal must **first exhaust the fiduciary's grievance-redressal** mechanism (resolution within **≤ 90 days**) before approaching the Board.
-- Board may direct **urgent remedial/mitigation measures** on a breach.
-- **Inquiry timeline:** ~6 months, extendable by ~3 months with recorded reasons (verify exact wording).
-- **Appeals** lie to the **Telecom Disputes Settlement and Appellate Tribunal (TDSAT)** (verify rule/section citation).
+## Rule 13: Significant Data Fiduciaries
 
-## Penalties (Act, Schedule)
+An SDF must:
 
-Per-instance financial penalties ranging from **₹50 crore (₹500 million) up to ₹250 crore (₹2.5 billion)** depending on the breach (e.g. up to ₹250 crore for failure to take reasonable security safeguards). **Turnover-percentage model NOT used** (contrast GDPR's 4%).
+- complete a DPIA and audit once in each twelve-month period after designation;
+- send significant observations from the DPIA and audit to the Board;
+- check that technical measures, including algorithmic software, are not likely to risk Data Principal rights; and
+- keep specified personal data and related traffic data in India if the Central Government specifies those categories.
 
----
+The Act separately requires an India-based DPO and an independent data auditor. No SDF class or localisation category was located in the official sources reviewed on 2026-08-15.
 
-### Provisions still uncertain / not yet notified (flagged)
-- SDF designation **list and detailed criteria** - not yet notified.
-- Cross-border **restricted-country list** and transfer-condition orders - not yet issued.
-- Specific **categories** subject to SDF localisation - to be notified.
-- Consent-Manager net-worth exact figure and Board technical standards - **verify** against First Schedule text.
-- Exact rule numbers for notice/children/transfer/Board sourced partly from secondary analyses - **verify against the gazette** before relying for legal advice.
+## Rule 14: rights and grievances
+
+A Data Fiduciary and, where applicable, a Consent Manager must publish the means and identifiers needed to exercise rights. They must also publish a grievance-response period that is reasonable and does not exceed 90 days.
+
+The Act requires a Data Principal to exhaust the available grievance process before approaching the Board.
+
+## Rule 15 and Act 16: transfers outside India
+
+Act 16 lets the Central Government restrict transfers to a notified country or territory. Rule 15 separately permits the Central Government to set requirements for making personal data available to a foreign State, or to a person or entity under its control.
+
+No restricted-country notification or Rule 15 order was located in the official sources reviewed on 2026-08-15. Sector-specific localisation rules can still apply.
+
+## Rules 17 to 23: Board, appeals, and information
+
+Rules 17 to 21 cover Board appointments, service terms, meetings, inquiry timing, digital-office operation, and staff. Rule 19 sets a six-month inquiry period and permits recorded extensions of up to three months at a time.
+
+Rules 22 and 23 cover digital appeals and Central Government information requests. They are in the eighteen-month phase.
+
+## Penalty context
+
+The Schedule includes caps from ₹10,000 for a breach of Data Principal duties to ₹250 crore for a failure to take reasonable security safeguards. It does not use a turnover-percentage formula.
+
+## Items that still require a current official check
+
+- final Board appointments and current operating channels;
+- SDF designations;
+- personal-data categories specified under Rule 13(4);
+- country or territory restrictions under Act 16;
+- orders under Rule 15; and
+- standards or assurance frameworks published by the Board for Consent Managers.

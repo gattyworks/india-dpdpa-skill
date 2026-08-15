@@ -1,117 +1,76 @@
 # Extending the skill
 
-`dpdpa-india` is the first jurisdiction in the `gattyworks-compliance` family. The whole design is meant to be cloned: a country's law lives in versioned reference files, an audit playbook turns them into findings, and an update checker tells you when the law has drifted. This page covers the five ways the skill grows - a new jurisdiction, a corrected legal reference, a template note, a release, and the direction of the family.
+This public repository has one canonical playbook. Extend it without creating a second legal
+corpus or a host-specific fork.
 
-This is an engineering aid, not legal advice. Everything here is about packaging and provenance; the legal substance still gets re-verified by a human (see [Legal and provenance](legal-and-provenance.md)).
+## Change a legal reference
 
-Before contributing, read [`CONTRIBUTING.md`](../CONTRIBUTING.md) - it carries the binding ground rules. Legal claims cite a section/rule **and** a primary source; never paraphrase the law from memory; mark anything you can't fully verify as `(verify)`; and work in short-lived branches through pull requests against `main`.
+1. Start with the primary source.
+2. Cite the exact section, rule, schedule, or notification.
+3. Check the commencement phase.
+4. Update every dependent file listed in `sources.lock.json`.
+5. Update `Last reviewed` only on files you checked.
+6. Run the source checker and link checks.
+7. Use a pull request against `main`.
 
-## 1. Add a new jurisdiction
+Do not re-pin a changed source before reviewing it. Do not use a secondary article to override the
+gazette.
 
-A sibling jurisdiction (say `gdpr-eu` or `ccpa-us`) is a new plugin in the same marketplace that mirrors `dpdpa-india`'s structure one-for-one. Clone the shape, then refill the law.
+## Change a checklist item
 
-### The structure to clone
+The canonical catalog has 49 IDs, A1 to J5. Preserve IDs when refining wording. An ID change is a
+breaking report-contract change and requires a major version.
 
-```
-.claude-plugin/marketplace.json        # add a plugins[] entry
-plugins/<name>/
-  .claude-plugin/plugin.json           # plugin manifest
-  commands/                            # /<name>-audit, /<name>-update-check
-  scripts/                             # check-updates.{py,ps1,sh} + sources.lock.json
-  skills/<name>/
-    SKILL.md                           # the audit playbook
-    references/                        # the law, distilled
-      templates/                       # paraphrased policy artifacts
-```
+For each check, confirm:
 
-The live example, top to bottom:
+- the legal cite;
+- the commencement phase;
+- whether it is a statutory duty or an engineering control;
+- the default severity;
+- the evidence pattern; and
+- the remediation artifact.
 
-| Layer | File in `dpdpa-india` |
+Update `audit-checklist.md`, `report-format.md`, examples, and affected docs together.
+
+## Change a template specification
+
+Template files are expected-artifact specifications. They are not legal documents ready for
+production use.
+
+Keep third-party structure paraphrased and attributed. Add a primary cite for every legal claim.
+Register a new artifact in `templates/README.md` and the canonical `SKILL.md` reference map.
+
+## Add a host entry point
+
+Host entry points must delegate to
+[`plugins/dpdpa-india/skills/dpdpa-india/SKILL.md`](../plugins/dpdpa-india/skills/dpdpa-india/SKILL.md).
+Do not copy the reference tree into a Claude, Codex, or another host directory.
+
+The current host paths are:
+
+- Claude Code: `plugins/dpdpa-india/`
+- Codex: `.agents/skills/dpdpa-india/SKILL.md`
+
+## Versioning
+
+| Change | Version effect |
 |---|---|
-| Marketplace entry | [`.claude-plugin/marketplace.json`](../.claude-plugin/marketplace.json) |
-| Plugin manifest | [`plugins/dpdpa-india/.claude-plugin/plugin.json`](../plugins/dpdpa-india/.claude-plugin/plugin.json) |
-| Audit playbook | [`plugins/dpdpa-india/skills/dpdpa-india/SKILL.md`](../plugins/dpdpa-india/skills/dpdpa-india/SKILL.md) |
-| References | [`plugins/dpdpa-india/skills/dpdpa-india/references/`](../plugins/dpdpa-india/skills/dpdpa-india/references/) |
-| Templates | [`plugins/dpdpa-india/skills/dpdpa-india/references/templates/`](../plugins/dpdpa-india/skills/dpdpa-india/references/templates/) |
-| Update checker | [`plugins/dpdpa-india/scripts/`](../plugins/dpdpa-india/scripts/) |
+| Typo or source-date correction with no audit result change | patch |
+| New check, evidence pattern, or artifact with compatible output | minor |
+| Renamed path, changed ID, changed status contract, or incompatible output | major |
 
-### Steps
+The rename from `dpdp-india` to `dpdpa-india` and the readiness-status contract make the next
+release a major version.
 
-1. **Register the plugin.** Add an entry to the `plugins` array in `marketplace.json` - `name`, `source` (`./plugins/<name>`), `description`, `version` (`1.0.0` for a first release), and `keywords`. The marketplace `name` stays `gattyworks-compliance`; its `metadata.description` already promises "India (DPDP) first; more jurisdictions to follow."
-2. **Write the plugin manifest.** `plugins/<name>/.claude-plugin/plugin.json` carries `name`, `description`, `version`, `author` (gattyworks), `homepage`/`repository`, `license` (MIT), and `keywords`. End the description with the same framing line: **Engineering aid, not legal advice.**
-3. **Write `SKILL.md`.** Keep `dpdpa-india`'s shape: YAML front matter (`name`, trigger-rich `description`), a four-pass audit method (scope -> checklist -> evidence -> report), a fixed output format (verdict + risk table + findings by severity), a reference map table, a "Staying current" section that invokes the checker, and the disclaimer footer.
-4. **Fill the references.** One file per topic, each with a dated source header and a primary-source citation. Carry the same backbone: a checklist engine, codebase detection patterns, the statutory index, the penalty schedule, rights, and a jurisdiction-to-jurisdiction comparison.
-5. **Add the templates.** Paraphrased, attributed policy artifacts under `references/templates/`, with a `README.md` index - see rule 3 below.
-6. **Add the commands.** Mirror [`dpdpa-audit.md`](../plugins/dpdpa-india/commands/dpdpa-audit.md) and [`dpdpa-update-check.md`](../plugins/dpdpa-india/commands/dpdpa-update-check.md), renamed to `/<name>-audit` and `/<name>-update-check`.
-7. **Reuse the update checker.** Copy `scripts/check-updates.{py,ps1,sh}` verbatim - the logic is jurisdiction-agnostic. Only `sources.lock.json` changes: re-pin it to the new country's gazette, regulator, and secondary sources. See [Staying current](staying-current.md).
+Before a release:
 
-### Reuse branding and the update-checker
+1. Complete the legal-source runbook.
+2. Keep plugin and marketplace versions identical.
+3. Update `CHANGELOG.md` from actual commits.
+4. Test Claude and Codex entry points.
+5. Confirm the repository and install links are public and accurate.
+6. Confirm no customer data, credentials, or private audit reports are included.
+7. Create the tag and release only after approval.
 
-The update-checker scripts and the community-health/branding assets are family property, not India-specific. Copy the scripts unchanged. Reuse the branding system - banner, logo, social preview, and the standard health files (README, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT, LICENSE) - adapting only the jurisdiction name and law. Keep the gattyworks owner block and the `github.com/gattyworks` URLs consistent across manifests so the family reads as one product.
-
-## 2. Correct or add a legal reference
-
-This is the highest-value contribution - accuracy beats everything. The law is a moving target: the DPDP Act 2023 (Act 22 of 2023) commences in phases and the DPDP Rules 2025 were notified only on 13 Nov 2025 (G.S.R. 846(E)).
-
-| Do | Why |
-|---|---|
-| Cite the exact **section/rule number** and a **primary source** | Gazette, MeitY, or the notified Rules - never the law from memory |
-| Keep the **dated source header** ("Last verified") accurate | The whole provenance chain hangs off it |
-| Mark uncertainty as `(verify)` | Better an honest flag than a confident error |
-| Run `check-updates.py --update` **after** re-verifying | Re-pins the hash so the checker stops flagging the source |
-| Scope the change to one concern | Easier review; the PR checklist requires it |
-
-Workflow: branch (e.g. `fix/rule-7-breach-timeline`), make the focused edit, update the dated header if you touched a reference, then re-verify against the upstream source **before** re-pinning. Only then run:
-
-```
-python scripts/check-updates.py --update
-```
-
-Open the PR against `main` with the sources you used. A maintainer re-verifies before merge. Re-pinning records *that* a source moved - a human still confirms *what* changed and whether the reference text is right. Details in [Staying current](staying-current.md) and [Legal and provenance](legal-and-provenance.md).
-
-## 3. Add or change a template note
-
-Templates are paraphrased reference artifacts, not legal documents. There are 13 today under `references/templates/`, indexed by [`templates/README.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/templates/README.md).
-
-The line that governs them:
-
-- **Paraphrase and attribute.** Capture the substance in your own words and name the source. Never mirror commercial template text verbatim - that content is licensed, and copying it is both a legal and a provenance hazard.
-- **Statutory text is quotable.** The Act, the Rules, and the Schedule are government work and may be quoted directly with a citation.
-- **Cite like any reference.** A template that asserts a legal requirement carries the same section/rule + primary-source citation as a reference file, and the same `(verify)` flag when unsure.
-
-When adding a template, register it in the templates `README.md` index and point at it from `SKILL.md`'s reference map and report step, so a gap the audit finds resolves to a concrete artifact (a missing privacy notice points at [`privacy-policy.md`](../plugins/dpdpa-india/skills/dpdpa-india/references/templates/privacy-policy.md)).
-
-## 4. Versioning and release
-
-The project uses semantic versioning and a Keep a Changelog-style [`CHANGELOG.md`](../CHANGELOG.md). The first release is `1.0.0` (2026-06-15).
-
-Pick the bump:
-
-| Change | Bump |
-|---|---|
-| Corrected/added law, a new template, a refined checklist item | patch / minor |
-| New jurisdiction plugin, new commands, a breaking change to output or layout | minor / major |
-
-Release steps:
-
-1. Bump `version` in `plugins/<name>/.claude-plugin/plugin.json` and the matching `marketplace.json` entry (keep them in lockstep).
-2. Add a dated `CHANGELOG.md` section under the new version - `Added` / `Changed` / `Fixed`, plus a `Notes` line for anything legal readers must know (e.g. a re-verification date or a phased-commencement caveat).
-3. Merge to `main` through a PR.
-4. Tag the release and publish it:
-
-```
-gh release create vX.Y.Z --title "vX.Y.Z" --notes-from-tag
-```
-
-Match the changelog and the release notes so the published artifact reads the same as the repo history.
-
-## 5. The family vision
-
-`gattyworks-compliance` is a country-by-country family: one marketplace, one branding system, one update-checker design, and one audit shape - refilled per jurisdiction. India (DPDP) ships first. The EU (GDPR) and US (CCPA and friends) are the natural siblings, each a peer plugin under the same marketplace rather than a fork.
-
-The contract that makes them a family: every plugin distills primary law into dated, hash-pinned reference files; turns them into an evidence-backed audit; and stays honest about drift through the shared checker. Same engineering discipline, different statute. And always the same footer - engineering aid, not legal advice.
-
-## See also
-
-- [Staying current](staying-current.md) - the update checker and the re-pinning runbook.
-- [Legal and provenance](legal-and-provenance.md) - sourcing rules, citation discipline, and the disclaimer.
+Do not change the MIT license as part of a normal release. That needs a separate legal and product
+decision.
